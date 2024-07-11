@@ -1,0 +1,5 @@
+node_modules
+src/css/*.css
+*.lock
+*.DS_Store
+.idea
