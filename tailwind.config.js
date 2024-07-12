@@ -67,7 +67,7 @@ module.exports = {
         },
         extend: {
             boxShadow: {
-
+                'color-1': '0px 0px 25px 0px rgba(0, 0, 0, 0.15);'
             },
             colors: {
                 transparent: 'transparent',
@@ -76,6 +76,7 @@ module.exports = {
                 grey: '#AAAAAA',
                 'light-grey': '#C4C4C4',
                 'super-light-grey': '#E5E5E5',
+                'grey-2': '#F6F6F6',
                 secondary: 'rgba(25, 24, 27, 0.05)',
                 white: '#ffffff',
                 purple: '#3f3cbb',
