@@ -1,16 +1,26 @@
-<footer class="bg-white">
-    <section class="pt-16">
+<footer class="bg-white w-full mt-auto overflow-hidden">
+    <section class="pt-16 pb-[84px]">
         <div class="container">
             <div class="grid grid-cols-12 gap-x-8">
-                <div class="col-span-6">
-                    <div class="max-w-[453px] flex flex-col">
-                        <span class="block mb-6">SUBSCRIBE</span>
-                        <p class="pl-[36px] border-l-[5px] border-yellow">To have new coupon lists delivered directly to your inbox</p>
+                <div class="col-span-6 relative">
+                    <div class="absolute w-full max-w-[100%] top-0 left-0 footer-bg z-1"></div>
+                    <div class="max-w-[453px] flex flex-col relative z-2">
+                        <span class="block mb-6 text-H1 font-semibold">SUBSCRIBE</span>
+                        <p class="pl-[36px] border-l-[5px] border-yellow text-topTitle">To have new coupon lists <br> delivered directly to
+                            your inbox</p>
                     </div>
                 </div>
                 <div class="col-span-6">
                     <div class="flex flex-col gap-y-4">
-                        <span>We do not send spam or share your mail with third parties</span>
+                        <p class="text-Body">We do not send spam or share your mail with third parties</p>
+                        <form class="flex items-center w-full">
+                            <label class="text-none" for="subscribe-form">Subscribe</label>
+                            <input class="input h-[63px] text-Body3 w-full px-5 py-2.5 rounded-l border border-super-light-grey focus:ring-0 focus:border-super-light-grey outline-none"
+                                   id="subscribe-form" type="email" placeholder="Input you email and hit enter ...">
+                            <button class="h-[63px] flex items-center justify-center uppercase bg-yellow font-semibold hover:bg-yellow-hover transition py-5 px-[30px] text-Body4"
+                                    type="submit">Subscribe
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -20,10 +30,10 @@
         <div class="container">
             <div class="grid grid-cols-12 gap-x-8">
                 <div class="col-span-6 flex items-center">
-                    <a href="index.html">
+                    <a class="" href="index.html">
                         <img class="w-[194px]" src="img/Main-logo-white.svg" alt="1SaleRX">
                     </a>
-                    <p class="ml-16">1SaleRX &#169; All rights reserved</p>
+                    <p class="ml-16 text-Body3">1SaleRX &#169; All rights reserved</p>
                 </div>
                 <div class="col-span-6 flex">
                     <ul class="flex items-center gap-x-8 ml-auto">
@@ -34,7 +44,8 @@
                             <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Disclaimers</a>
                         </li>
                         <li>
-                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Terms of Use</a>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Terms of
+                                Use</a>
                         </li>
                     </ul>
                 </div>

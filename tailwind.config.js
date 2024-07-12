@@ -27,7 +27,7 @@ module.exports = {
             '100-auto': '100% auto',
         },
         fontFamily: {
-            sans: ['Sola', 'sans-serif'],
+            sans: ['Sora', 'sans-serif'],
         },
         fontSize: {
             none: ['0px', '0px'],
@@ -86,6 +86,7 @@ module.exports = {
                 red: '#E52A47',
                 bermuda: '#78dcca',
                 yellow: '#F5CA35',
+                'yellow-hover': '#dfb730',
             },
             letterSpacing: {
 
@@ -107,6 +108,7 @@ module.exports = {
                 '6/24': '25%',
                 '7/24': '29.166667%',
                 '8/24': '33.333333%',
+                '2.5': '10px',
             },
         },
     },

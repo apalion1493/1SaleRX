@@ -19,15 +19,15 @@
 
 @layer base {
 	html {
-		font-family: 'Sola', system-ui, sans-serif;
+		font-family: 'Sora', system-ui, sans-serif;
 		font-optical-sizing: auto;
-		@apply text-primary font-normal;
+		font-weight: 400;
+		@apply text-primary;
 	}
 }
 
 .input::placeholder {
-	letter-spacing: -0.032px;
-	@apply uppercase;
+	@apply text-Body3 text-light-grey;
 }
 
 .pagination-num {
@@ -119,6 +119,14 @@ input[type='search']::-webkit-search-results-decoration {
 	width: 100%;
 	padding-left: 0;
 	overflow: visible;
+}
+
+.button {
+	&.btn-medium {
+		@apply h-[50px]
+	}
+
+	@apply text-Body4 px-10 h-[60px] md:py-3 rounded-full border transition border-yellow bg-yellow items-center justify-center hover:bg-transparent text-primary
 }
 
 @media (max-width: 1279.98px) {
