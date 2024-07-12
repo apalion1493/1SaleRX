@@ -13,9 +13,7 @@
     <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-            rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <style>
         .loader-wrapper {
@@ -86,16 +84,53 @@
 <!--    <div id="loader" class="loader w-16 h-16">-->
 <!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
 <!--    </div>-->
-<main id="content" class="flex flex-col justify-between min-h-screen hidden">
+<main id="content" class="flex flex-col justify-between min-h-screen">
     <header>
 
 </header>
 
 
-    <footer class="">
-    <section>
+    <footer class="bg-white">
+    <section class="pt-16">
         <div class="container">
-
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-6">
+                    <div class="max-w-[453px] flex flex-col">
+                        <span class="block mb-6">SUBSCRIBE</span>
+                        <p class="pl-[36px] border-l-[5px] border-yellow">To have new coupon lists delivered directly to your inbox</p>
+                    </div>
+                </div>
+                <div class="col-span-6">
+                    <div class="flex flex-col gap-y-4">
+                        <span>We do not send spam or share your mail with third parties</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-dark py-8 text-white">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-6 flex items-center">
+                    <a href="index.html">
+                        <img class="w-[194px]" src="img/Main-logo-white.svg" alt="1SaleRX">
+                    </a>
+                    <p class="ml-16">1SaleRX &#169; All rights reserved</p>
+                </div>
+                <div class="col-span-6 flex">
+                    <ul class="flex items-center gap-x-8 ml-auto">
+                        <li>
+                            <a class="text-base transition-color hover:text-yellow" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Disclaimers</a>
+                        </li>
+                        <li>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 </footer>

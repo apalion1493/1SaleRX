@@ -19,18 +19,19 @@
 
 @layer base {
 	html {
-		font-family: 'Poppins', system-ui, sans-serif;
-		@apply text-primary;
+		font-family: 'Sola', system-ui, sans-serif;
+		font-optical-sizing: auto;
+		@apply text-primary font-normal;
 	}
 }
 
 .input::placeholder {
 	letter-spacing: -0.032px;
-	@apply text-body5 uppercase text-grey-1 md:text-body6;
+	@apply uppercase;
 }
 
 .pagination-num {
-	@apply flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full bg-secondary text-t2 font-medium uppercase transition;
+	@apply flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full bg-secondary font-medium uppercase transition;
 
 	&.active {
 		@apply bg-primary text-white;
@@ -38,7 +39,7 @@
 }
 
 .swiper-pagination-bullet {
-	@apply inline-flex h-14 w-14 md:h-[10px] md:w-[10px] md:min-w-[10px] md:min-h-[10px] md:text-none items-center justify-center bg-secondary text-t2 font-medium text-primary opacity-100;
+	@apply inline-flex h-14 w-14 md:h-[10px] md:w-[10px] md:min-w-[10px] md:min-h-[10px] md:text-none items-center justify-center bg-secondary font-medium text-primary opacity-100;
 }
 
 .swiper-pagination-bullet-active {
@@ -60,7 +61,7 @@
 .swiper-button-next,
 .swiper-button-prev {
 	font-size: 0;
-	@apply h-14 w-14 sm:h-11 sm:w-11 rounded-full bg-primary opacity-100 shadow-shadow-5 transition;
+	@apply h-14 w-14 sm:h-11 sm:w-11 rounded-full bg-primary opacity-100 transition;
 
 	&::after {
 		display: none;
