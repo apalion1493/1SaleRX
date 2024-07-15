@@ -119,3 +119,38 @@
 }
 
 // Checkbox Style End
+
+// Pagination Style Start
+
+.pagination-button {
+  $this: &;
+
+  &--disabled {
+    cursor: auto;
+    pointer-events: none;
+
+    #{$this}--arrow {
+      @apply block
+    }
+
+    #{$this}--arrow-red {
+      @apply hidden
+    }
+
+    @apply border-light-grey
+  }
+
+  &:not(#{$this}--disabled) {
+    #{$this}--arrow {
+      @apply hidden
+    }
+
+    #{$this}--arrow-red {
+      @apply block
+    }
+  }
+
+  @apply flex items-center justify-center text-none size-10 border rounded-full border-red;
+}
+
+// Pagination Style End
