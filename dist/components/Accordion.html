@@ -1,0 +1,14 @@
+<div class="FAQ-block w-full divide-y divide-slate-300 overflow-hidden rounded-xl border border-slate-300 bg-slate-100/40 text-slate-700 dark:divide-slate-700 dark:border-slate-700 dark:bg-slate-800/50 dark:text-slate-300">
+    <div x-data="{ isExpanded: false }" class="divide-y divide-slate-300 dark:divide-slate-700">
+        <button id="controlsAccordionItemOne" type="button" class="flex w-full items-center justify-between gap-4 bg-slate-100 p-4 text-left underline-offset-2 hover:bg-slate-100/75 focus-visible:bg-slate-100/75 focus-visible:underline focus-visible:outline-none dark:bg-slate-800 dark:hover:bg-slate-800/75 dark:focus-visible:bg-slate-800/75" aria-controls="accordionItemOne" @click="isExpanded = ! isExpanded" :class="isExpanded ? 'text-onSurfaceStrong dark:text-onSurfaceDarkStrong font-bold'  : 'text-onSurface dark:text-onSurfaceDark font-medium'" :aria-expanded="isExpanded ? 'true' : 'false'">
+            <span class="FAQ-block__icon">Q</span>
+            @@title
+        </button>
+        <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region" aria-labelledby="controlsAccordionItemOne" x-collapse>
+            <div class="p-4 text-sm sm:text-base text-pretty">
+                <span class="FAQ-block__icon">A</span>
+                @@text
+            </div>
+        </div>
+    </div>
+</div>

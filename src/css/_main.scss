@@ -154,3 +154,13 @@
 }
 
 // Pagination Style End
+
+// FAQ Style Start
+
+.FAQ-block {
+  &__icon {
+    @apply w-8 h-8 flex items-center justify-center mr-5 font-semibold uppercase text-Body4 rounded-full overflow-hidden;
+  }
+}
+
+// FAQ Style End
