@@ -55,11 +55,60 @@
     @@include('components/Blog-Card.html', {
     'style': '',
     'link': '#',
-    'img': 'img/Product-1.png',
+    'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
     })
     <br>
     <br>
 
+    @@include('components/Blog-Card.html', {
+    'style': 'blog-card--big',
+    'link': '#',
+    'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+    })
+    <br>
+    <br>
+
+    @@include('components/Blog-Card.html', {
+    'style': 'blog-card--small',
+    'link': '#',
+    'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+    })
+    <br>
+    <br>
+    @@include('components/input.html', {
+    'common-style': '',
+    'styleInput': '',
+    'label': 'Last Name <span class="text-red">*</span>',
+    'type': 'text',
+    'placeholder': '',
+    'idInput': 'ID1',
+    'errorStyle': 'block',
+    })
+    <br>
+    <br>
+    @@include('components/textarea.html', {
+    'commonStyle': '',
+    'styleTextarea': '',
+    'label': 'Message <span class="text-red">*</span>',
+    'type': 'text',
+    'placeholder': '',
+    'idTextarea': 'ID2',
+    'rows': '3',
+    })
+
+    <br>
+    <br>
+    @@include('components/checkbox.html', {
+    'styleText': '',
+    'text': 'I have read and agree to the Terms',
+    'errorText': 'Please confirm that you agree',
+    'errorStyle': '',
+    })
+
+    <br>
+    <br>
+    <br>
+    @@include('components/Filter.html')
 
 
     @@include('components/Footer.html')

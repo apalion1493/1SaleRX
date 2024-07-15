@@ -1,29 +1,30 @@
-<div class="flex flex-col justify-between p-8 hover:shadow-color-1 outline-1 outline-dashed outline-light-grey transition rounded @@style">
-    <div class="flex items-center justify-center rounded mb-4 overflow-hidden min-h-[223px] h-[223px]">
+<a href="@@link" class="blog-card group @@style">
+    <div class="blog-card__img">
         <img class="object-cover" src="@@img" alt="@@alt">
     </div>
     <div class="flex flex-col items-start h-full">
         <div class="flex items-center gap-x-6">
-            <data class="flex items-center" value="July 18, 2024">
-                <span class="Calendar-icon mr-2"></span>July 18, 2024
+            <data class="flex items-center text-grey text-Body6" value="July 18, 2024">
+                <span class="Calendar-icon mr-2 relative -top-[2px]"></span>July 18, 2024
             </data>
-            <div class="flex items-center">
-                <span class="Time-icon mr-2"></span>
+            <div class="blog-card__timeRead">
+                <span class="Time-icon mr-2 relative -top-[2px]"></span>
                 <span>5 min read</span>
             </div>
         </div>
-        <div class="my-6 flex items-center justify-between w-full">
+        <div class="blog-card__line">
             <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
             <span class="block w-full border-t border-grey-2"></span>
         </div>
-        <div class="mb-8">
-            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.</p>
+        <div class="blog-card__content">
+            <span class="blog-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            <p class="blog-card__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.</p>
         </div>
-        <a class="flex items-start gap-x-2 text-primary uppercase hover:text-yellow transition-colors flex w-full mt-auto" href="@@link">
-    <span class="font-semibold text-Body">READ MORE</span>
-    <i class="Plus-icon"></i>
-</a>
+
+        <div class="button-text-arrow group-hover:text-yellow">
+            <span class="font-semibold text-Body">READ MORE</span>
+            <i class="Plus-icon"></i>
+        </div>
 
     </div>
-</div>
+</a>

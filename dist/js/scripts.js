@@ -37,8 +37,6 @@ focus-trap/dist/focus-trap.esm.js:
 window.addEventListener('DOMContentLoaded', () => {
     console.log('Loaded Scripts')
 
-    const player = new Plyr('#player');
-
     const swiper1 = new Swiper('.splide-1', {
         // Optional parameters
         direction: 'horizontal',

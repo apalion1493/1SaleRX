@@ -7,3 +7,115 @@
 }
 
 // Footer Style End
+
+// Blog Card Style Start
+
+.blog-card {
+  $this: &;
+
+  &__img {
+
+    img {
+      @apply rounded max-h-full w-full h-full;
+    }
+
+    @apply flex items-center justify-center mb-4 overflow-hidden min-h-[223px] h-[223px]
+  }
+
+  &__text {
+    @apply text-Body6 text-grey
+  }
+
+  &__line {
+    @apply my-6 flex items-center justify-between w-full
+  }
+
+  &__timeRead {
+    @apply flex items-center text-grey text-Body6
+  }
+
+  &__content {
+    @apply mb-8 flex flex-col
+  }
+
+  &__title {
+    @apply font-semibold text-H2 mb-2 block
+  }
+
+  &--big {
+    #{$this}__img {
+      @apply min-h-[365px] h-[365px]
+    }
+
+    #{$this}__text {
+      @apply text-Body3
+    }
+  }
+
+  &--small {
+    #{$this}__img {
+      @apply min-h-[98px] h-[98px] max-w-[133px] mb-0
+    }
+
+    #{$this}__text {
+      @apply hidden
+    }
+
+    #{$this}__line {
+      @apply hidden
+    }
+
+    #{$this}__timeRead {
+      @apply hidden
+    }
+
+    .button-text-arrow {
+      @apply hidden
+    }
+
+    #{$this}__content {
+      @apply mb-0 mt-3
+    }
+
+    #{$this}__title {
+      @apply text-Body mb-0
+    }
+
+    @apply flex-row items-center p-5 gap-x-4
+  }
+
+  @apply flex flex-col justify-between p-8 hover:shadow-color-1 outline-1 outline-dashed outline-light-grey transition rounded
+}
+
+// Blog Card Style End
+
+// Button with arrow Style Start
+.button-text-arrow {
+  @apply flex items-start gap-x-2 text-primary uppercase hover:text-yellow transition-colors flex w-full mt-auto
+}
+// Button with arrow Style End
+
+// Checkbox Style Start
+
+.custom-checkbox {
+
+  &__block {
+    @apply relative -top-[1px]
+  }
+
+  input[type='checkbox'] {
+    @apply hidden;
+  }
+
+  input[type='checkbox']:checked + .checkmark {
+    @apply flex;
+  }
+
+  .checkmark {
+    @apply absolute hidden -top-[1px] left-0 flex items-center justify-center pointer-events-none;
+  }
+
+  @apply relative inline-flex items-center cursor-pointer;
+}
+
+// Checkbox Style End
