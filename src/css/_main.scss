@@ -159,7 +159,7 @@
 
 .FAQ-block {
   &__icon {
-    @apply w-8 h-8 flex items-center justify-center mr-5 font-semibold uppercase text-Body4 rounded-full overflow-hidden;
+    @apply w-8 min-w-8 h-8 flex items-center justify-center mr-5 font-semibold uppercase text-Body4 rounded-full overflow-hidden;
   }
 }
 
