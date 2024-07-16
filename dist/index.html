@@ -85,43 +85,200 @@
 <!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
 <!--    </div>-->
 <main id="content" class="flex flex-col items-center min-h-screen">
-    <header class="w-full">
-    header
+    <header class="w-full bg-white ">
+    <div class="border-b border-super-light-grey py-[27px]">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-2 flex items-center">
+                    <a href="index.html">
+                        <img src="img/Main-logo.svg" alt="1SaleRx Logo">
+                    </a>
+                </div>
+                <div class="col-span-8 flex items-center">
+                    <div x-data="{ query: '', results: [1, 2, 3], showResults: false }" @click.away="showResults = false"
+     class='flex flex-col w-full relative'>
+    <label for="Id-4" class="text-none absolute -z-10">Search</label>
+    <form
+            class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-border-2 overflow-hidden pl-5 pr-2'>
+        <div class="relative w-full">
+            <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
+                   x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
+                   class="input w-full bg-white border-0 focus:ring-0 focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
+            <button type="button" x-show="query.length > 0" @click="query = ''" aria-label="Clear search button"
+                    class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path
+                            d="M10.2616 0.318046L6.00014 4.57951L1.73867 0.318046C1.31253 -0.108101 0.744331 -0.108101 0.318185 0.318046C-0.107962 0.744192 -0.107962 1.31239 0.318185 1.73853L4.57965 6L0.318185 10.2615C-0.107962 10.6876 -0.107962 11.2558 0.318185 11.682C0.744331 12.1081 1.31253 12.1081 1.73867 11.682L6.00014 7.42049L10.2616 11.682C10.6878 12.1081 11.2559 12.1081 11.6821 11.682C12.1082 11.2558 12.1082 10.6876 11.6821 10.2615L7.42063 6L11.6821 1.73853C12.1082 1.31239 12.1082 0.744192 11.6821 0.318046C11.2559 -0.108101 10.6878 -0.108101 10.2616 0.318046Z"
+                            fill="#19181B" />
+                </svg>
+            </button>
+        </div>
+        <button x-show="!query.length > 0" type='submit' aria-label="Search button"
+                class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10 lg:top-2">
+            <i class='Search-icon block'></i>
+        </button>
+    </form>
+    <div x-show="showResults && query.length > 0"
+         class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-gray-200 rounded-lg shadow-shadow-2 z-10">
+        <ul>
+            <template x-for="result in results" :key="result.id">
+                <li class="py-2 text-Body3 cursor-pointer" @click="selectResult(result)">
+                    <span x-text="result.title"></span>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+
+                </div>
+                <div class="col-span-2 flex items-center">
+                    <div class="flex items-center gap-x-5">
+                        <i class="Telephone-icon"></i>
+                        <div class="flex flex-col items-start gap-y-1">
+                            <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                            <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636 123 - 4567</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="grid grid-cols-12 gap-x-8">
+            <div class="col-span-12">
+                <nav class="pt-4 mega-menu">
+                    <ul class="flex items-center gap-x-8">
+                        <li class="mega-menu__items active pb-[18px] ">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Home-icon"></i>
+                                <span class="text-Body">Home</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Products-icon"></i>
+                                <span class="text-Body">Products</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="About-icon"></i>
+                                <span class="text-Body">About Us</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="FAQ-icon"></i>
+                                <span class="text-Body">FAQ</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Contact-icon"></i>
+                                <span class="text-Body">Contact Us</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Blog-icon"></i>
+                                <span class="text-Body">Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>
 
-
-    <a class="button flex" href="#">
-    <span class="font-medium uppercase">button link</span>
-</a>
-    <br>
-    <br>
-    <button class="button flex" type="button" aria-label="button">
-    <span class="font-medium uppercase">button</span>
-</button>
-    <br>
-    <br>
-
-    <button class="button flex btn-medium" type="button" aria-label="button medium">
-    <span class="font-medium uppercase">button medium</span>
-</button>
-    <br>
-    <br>
-
-    <a class="flex items-start gap-x-2 text-primary uppercase hover:text-yellow transition-colors " href="#">
-    <span class="font-semibold text-Body">READ MORE</span>
-    <i class="Plus-icon"></i>
-</a>
-    <br>
-    <br>
-    <div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded ">
+    <section class="py-4 pt-8">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-12">
+                    <a class="rounded overflow-hidden w-full" href="#">
+                        <img class="w-full" src="img/Banner-1.jpg" alt="Banner">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="pt-4 pb-8">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-4">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                        <div class="h-[72px] mb-4 flex items-center">
+                            <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
+                                <i class="Search-medicals-icon absolute top-1/2 -translate-y-1/2 -right-4"></i>
+                            </span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-H2 block mb-4">Search For Medications</span>
+                            <p class="text-Body3 text-grey">Easily find the medications you are looking for. We price match with an additional 10% discount.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                        <div class="h-[72px] mb-4 flex items-center">
+                            <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
+                                <i class="Prescription-icon absolute top-1/2 -translate-y-1/2 -right-[18px]"></i>
+                            </span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-H2 block mb-4">Order Your Prescription</span>
+                            <p class="text-Body3 text-grey">Place your order online or by phone with a prescription for your meds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                        <div class="h-[72px] mb-4 flex items-center">
+                            <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
+                                <i class="Delivery-icon absolute top-1/2 -translate-y-1/2 -right-[23px]"></i>
+                            </span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-H2 block mb-4">Fast Shipping</span>
+                            <p class="text-Body3 text-grey">Place your order online or by phone with a prescription for your meds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-[56px] ">
+        <div class="container">
+            <div class="bg-white p-8 rounded">
+                <div class="grid grid-cols-12 gap-x-8">
+                    <div class="col-span-12">
+                        <h1>Coming Soon</h1>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded ">
     <div class="flex items-center justify-center mb-4 overflow-hidden min-h-[275px] h-[275px]">
         <img class="object-cover" src="img/Product-1.png" alt="@@alt">
     </div>
     <div class="flex flex-col items-start h-full">
-        <span class="block mb-1 text-primary font-semibold text-H2">Exforge </span>
+        <span class="block mb-1 text-primary font-semibold text-H2">Exforge</span>
         <p class="block mb-6 text-Body6 text-grey">10 mg / 160 mg 28 tabs</p>
         <div class="flex items-center uppercase gap-x-2">
-            <span class="text-grey text-H2 line-through">$109.99</span>
+            <span class="text-grey text-H2 line-through">$120.99</span>
             <span class="text-primary font-semibold text-topTitle">$109.99</span>
         </div>
         <div class="mt-6 mb-8 flex items-center justify-between w-full">
@@ -133,8 +290,133 @@
 </a>
     </div>
 </div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded ">
+    <div class="flex items-center justify-center mb-4 overflow-hidden min-h-[275px] h-[275px]">
+        <img class="object-cover" src="img/Product-1.png" alt="@@alt">
+    </div>
+    <div class="flex flex-col items-start h-full">
+        <span class="block mb-1 text-primary font-semibold text-H2">Exforge</span>
+        <p class="block mb-6 text-Body6 text-grey">10 mg / 160 mg 28 tabs</p>
+        <div class="flex items-center uppercase gap-x-2">
+            <span class="text-grey text-H2 line-through">$120.99</span>
+            <span class="text-primary font-semibold text-topTitle">$109.99</span>
+        </div>
+        <div class="mt-6 mb-8 flex items-center justify-between w-full">
+            <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+            <span class="block w-full border-t border-grey-2"></span>
+        </div>
+        <a class="button flex btn-medium w-full mt-auto" href="#">
+    <span class="font-medium uppercase">button</span>
+</a>
+    </div>
+</div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded ">
+    <div class="flex items-center justify-center mb-4 overflow-hidden min-h-[275px] h-[275px]">
+        <img class="object-cover" src="img/Product-1.png" alt="@@alt">
+    </div>
+    <div class="flex flex-col items-start h-full">
+        <span class="block mb-1 text-primary font-semibold text-H2">Exforge</span>
+        <p class="block mb-6 text-Body6 text-grey">10 mg / 160 mg 28 tabs</p>
+        <div class="flex items-center uppercase gap-x-2">
+            <span class="text-grey text-H2 line-through">$120.99</span>
+            <span class="text-primary font-semibold text-topTitle">$109.99</span>
+        </div>
+        <div class="mt-6 mb-8 flex items-center justify-between w-full">
+            <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+            <span class="block w-full border-t border-grey-2"></span>
+        </div>
+        <a class="button flex btn-medium w-full mt-auto" href="#">
+    <span class="font-medium uppercase">button</span>
+</a>
+    </div>
+</div>
+                    </div>
+                    <div class="col-span-3">
+                        <div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded ">
+    <div class="flex items-center justify-center mb-4 overflow-hidden min-h-[275px] h-[275px]">
+        <img class="object-cover" src="img/Product-1.png" alt="@@alt">
+    </div>
+    <div class="flex flex-col items-start h-full">
+        <span class="block mb-1 text-primary font-semibold text-H2">Exforge</span>
+        <p class="block mb-6 text-Body6 text-grey">10 mg / 160 mg 28 tabs</p>
+        <div class="flex items-center uppercase gap-x-2">
+            <span class="text-grey text-H2 line-through">$120.99</span>
+            <span class="text-primary font-semibold text-topTitle">$109.99</span>
+        </div>
+        <div class="mt-6 mb-8 flex items-center justify-between w-full">
+            <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+            <span class="block w-full border-t border-grey-2"></span>
+        </div>
+        <a class="button flex btn-medium w-full mt-auto" href="#">
+    <span class="font-medium uppercase">button</span>
+</a>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <a href="#" class="blog-card group ">
+
+
+
+
+
+    <section class="hidden">
+        })
+
+
+        <a class="button flex" href="#">
+    <span class="font-medium uppercase">button link</span>
+</a>
+        <br>
+        <br>
+        <button class="button flex" type="button" aria-label="button">
+    <span class="font-medium uppercase">button</span>
+</button>
+        <br>
+        <br>
+
+        <button class="button flex btn-medium" type="button" aria-label="button medium">
+    <span class="font-medium uppercase">button medium</span>
+</button>
+        <br>
+        <br>
+
+        <a class="flex items-start gap-x-2 text-primary uppercase hover:text-yellow transition-colors " href="#">
+    <span class="font-semibold text-Body">READ MORE</span>
+    <i class="Plus-icon"></i>
+</a>
+        <br>
+        <br>
+        <div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded ">
+    <div class="flex items-center justify-center mb-4 overflow-hidden min-h-[275px] h-[275px]">
+        <img class="object-cover" src="img/Product-1.png" alt="@@alt">
+    </div>
+    <div class="flex flex-col items-start h-full">
+        <span class="block mb-1 text-primary font-semibold text-H2">@@title</span>
+        <p class="block mb-6 text-Body6 text-grey">@@dosage</p>
+        <div class="flex items-center uppercase gap-x-2">
+            <span class="text-grey text-H2 line-through">@@oldPrice</span>
+            <span class="text-primary font-semibold text-topTitle">@@price</span>
+        </div>
+        <div class="mt-6 mb-8 flex items-center justify-between w-full">
+            <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+            <span class="block w-full border-t border-grey-2"></span>
+        </div>
+        <a class="button flex btn-medium w-full mt-auto" href="#">
+    <span class="font-medium uppercase">button</span>
+</a>
+    </div>
+</div>
+        <br>
+        <br>
+        <a href="#" class="blog-card group ">
     <div class="blog-card__img">
         <img class="object-cover" src="img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png" alt="@@alt">
     </div>
@@ -164,10 +446,10 @@
 
     </div>
 </a>
-    <br>
-    <br>
+        <br>
+        <br>
 
-    <a href="#" class="blog-card group blog-card--big">
+        <a href="#" class="blog-card group blog-card--big">
     <div class="blog-card__img">
         <img class="object-cover" src="img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png" alt="@@alt">
     </div>
@@ -197,10 +479,10 @@
 
     </div>
 </a>
-    <br>
-    <br>
+        <br>
+        <br>
 
-    <a href="#" class="blog-card group blog-card--small">
+        <a href="#" class="blog-card group blog-card--small">
     <div class="blog-card__img">
         <img class="object-cover" src="img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png" alt="@@alt">
     </div>
@@ -230,9 +512,9 @@
 
     </div>
 </a>
-    <br>
-    <br>
-    <div class="form-group flex flex-col items-start ">
+        <br>
+        <br>
+        <div class="form-group flex flex-col items-start ">
     <label class="mb-[6px] text-Body6" for="ID1">Last Name <span class="text-red">*</span></label>
     <input
         class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
@@ -241,9 +523,9 @@
         type="text" id="ID1" placeholder="">
     <small class="self-end text-Body8 text-red mt-1 block">Name is required</small>
 </div>
-    <br>
-    <br>
-    <div class="form-group flex flex-col items-start overflow-hidden ">
+        <br>
+        <br>
+        <div class="form-group flex flex-col items-start overflow-hidden ">
     <label class="mb-[6px] text-Body6" for="ID2">Message <span class="text-red">*</span></label>
     <textarea
         class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
@@ -252,9 +534,9 @@
         id="ID2" placeholder="" rows="3"></textarea>
 </div>
 
-    <br>
-    <br>
-    <div class="flex flex-col">
+        <br>
+        <br>
+        <div class="flex flex-col">
     <label class="custom-checkbox">
         <span class="custom-checkbox__block">
             <i class="Check-box-inactive-icon"></i>
@@ -268,10 +550,10 @@
     <small class="text-Body8 text-red mt-3 ">Please confirm that you agree</small>
 </div>
 
-    <br>
-    <br>
-    <br>
-    <div x-data="{
+        <br>
+        <br>
+        <br>
+        <div x-data="{
         options: [
             {
                 value: 'Popular',
@@ -363,12 +645,12 @@
         </ul>
     </div>
 </div>
-    <br>
-    <br>
-    <br>
+        <br>
+        <br>
+        <br>
 
-    <div class="container">
-        <nav class="w-full flex justify-between" aria-label="pagination">
+        <div class="container">
+            <nav class="w-full flex justify-between" aria-label="pagination">
     <a href="#" class="pagination-button pagination-button--disabled" aria-label="previous page">
         <i class="Arrow-red rotate-180 pagination-button--arrow pagination-button--arrow-red"></i>
         <i class="Arrow-direction-right-icon rotate-180 pagination-button--arrow"></i>
@@ -398,11 +680,11 @@
 </nav>
 
 
-        <br>
-        <br>
-        <br>
+            <br>
+            <br>
+            <br>
 
-        <div class="FAQ-block w-full overflow-hidden text-slate-700">
+            <div class="FAQ-block w-full overflow-hidden text-slate-700">
     <div x-data="{ isExpanded: false }" class="">
         <button id="controlsAccordionItemOne" type="button"
                 class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
@@ -422,7 +704,7 @@
     </div>
 </div>
 
-        <div class="FAQ-block w-full overflow-hidden text-slate-700">
+            <div class="FAQ-block w-full overflow-hidden text-slate-700">
     <div x-data="{ isExpanded: false }" class="">
         <button id="controlsAccordionItemOne" type="button"
                 class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
@@ -443,49 +725,12 @@
 </div>
 
 
-        <br>
-        <br>
-        <br>
-        <div class="relative">
-            <div x-data="{ query: '', results: [1, 2, 3], showResults: false }" @click.away="showResults = false"
-     class='flex flex-col w-full relative'>
-    <label for="Id-4" class="text-none absolute -z-10">Search</label>
-    <form
-            class='flex items-center rounded-[40px] w-full h-[45px] lg:h-14 border border-border-2 overflow-hidden pl-5 pr-2'>
-        <div class="relative w-full">
-            <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
-                   x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
-                   class="input w-full bg-white border-0 focus:ring-0 focus:bg-transparent focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
-            <button type="button" x-show="query.length > 0" @click="query = ''" aria-label="Clear search button"
-                    class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path
-                            d="M10.2616 0.318046L6.00014 4.57951L1.73867 0.318046C1.31253 -0.108101 0.744331 -0.108101 0.318185 0.318046C-0.107962 0.744192 -0.107962 1.31239 0.318185 1.73853L4.57965 6L0.318185 10.2615C-0.107962 10.6876 -0.107962 11.2558 0.318185 11.682C0.744331 12.1081 1.31253 12.1081 1.73867 11.682L6.00014 7.42049L10.2616 11.682C10.6878 12.1081 11.2559 12.1081 11.6821 11.682C12.1082 11.2558 12.1082 10.6876 11.6821 10.2615L7.42063 6L11.6821 1.73853C12.1082 1.31239 12.1082 0.744192 11.6821 0.318046C11.2559 -0.108101 10.6878 -0.108101 10.2616 0.318046Z"
-                            fill="#19181B" />
-                </svg>
-            </button>
-        </div>
-        <button x-show="!query.length > 0" type='submit' aria-label="Search button"
-                class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10 lg:top-2">
-            <i class='Search-icon block'></i>
-        </button>
-    </form>
-    <div x-show="showResults && query.length > 0"
-         class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-gray-200 rounded-lg shadow-shadow-2 z-10">
-        <ul>
-            <template x-for="result in results" :key="result.id">
-                <li class="py-2 text-Body3 cursor-pointer" @click="selectResult(result)">
-                    <span x-text="result.title"></span>
-                </li>
-            </template>
-        </ul>
-    </div>
-</div>
+            <br>
+            <br>
+            <br>
 
         </div>
-    </div>
-
-
+    </section>
     <footer class="bg-white w-full mt-auto overflow-hidden">
     <section class="pt-16 pb-[84px]">
         <div class="container">

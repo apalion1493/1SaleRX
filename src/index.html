@@ -11,133 +11,251 @@
 <!--    </div>-->
 <main id="content" class="flex flex-col items-center min-h-screen">
     @@include('components/Header.html', {
-    'commonStyle': ' '
+    'commonStyle': ' ',
     })
 
-
-    @@include('components/Link.html', {
-    'style': 'flex',
-    'url': '#',
-    'title': 'button link'
-    })
-    <br>
-    <br>
-    @@include('components/button.html', {
-    'style': 'flex',
-    'type': 'button',
-    'title': 'button',
-    'ariaLabel': 'button',
-    })
-    <br>
-    <br>
-
-    @@include('components/button.html', {
-    'style': 'flex btn-medium',
-    'type': 'button',
-    'title': 'button medium',
-    'ariaLabel': 'button medium',
-    })
-    <br>
-    <br>
-
-    @@include('components/rm-button.html', {
-    'style': '',
-    'url': '#',
-    })
-    <br>
-    <br>
-    @@include('components/Product-Card.html', {
-    'style': '',
-    'link': '#',
-    'img': 'img/Product-1.png',
-    })
-
-    @@include('components/Blog-Card.html', {
-    'style': '',
-    'link': '#',
-    'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-    })
-    <br>
-    <br>
-
-    @@include('components/Blog-Card.html', {
-    'style': 'blog-card--big',
-    'link': '#',
-    'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-    })
-    <br>
-    <br>
-
-    @@include('components/Blog-Card.html', {
-    'style': 'blog-card--small',
-    'link': '#',
-    'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-    })
-    <br>
-    <br>
-    @@include('components/input.html', {
-    'common-style': '',
-    'styleInput': '',
-    'label': 'Last Name <span class="text-red">*</span>',
-    'type': 'text',
-    'placeholder': '',
-    'idInput': 'ID1',
-    'errorStyle': 'block',
-    })
-    <br>
-    <br>
-    @@include('components/textarea.html', {
-    'commonStyle': '',
-    'styleTextarea': '',
-    'label': 'Message <span class="text-red">*</span>',
-    'type': 'text',
-    'placeholder': '',
-    'idTextarea': 'ID2',
-    'rows': '3',
-    })
-
-    <br>
-    <br>
-    @@include('components/checkbox.html', {
-    'styleText': '',
-    'text': 'I have read and agree to the Terms',
-    'errorText': 'Please confirm that you agree',
-    'errorStyle': '',
-    })
-
-    <br>
-    <br>
-    <br>
-    @@include('components/Filter.html')
-    <br>
-    <br>
-    <br>
-
-    <div class="container">
-        @@include('components/Pagination.html')
-
-        <br>
-        <br>
-        <br>
-
-        @@include('components/Accordion.html', {
-        'title': 'Who is 1salerx?',
-        'text': '1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur assumenda doloribus earum error, inventore natus obcaecati quibusdam saepe sed. Animi dolore, in quo sapiente suscipit voluptas voluptatem. Quasi, repellendus.'
-        })
-        @@include('components/Accordion.html', {
-        'title': 'Who is 1salerx?',
-        'text': '1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity.'
-        })
-
-        <br>
-        <br>
-        <br>
-        <div class="relative">
-            @@include('components/Search-bar.html')
+    <section class="py-4 pt-8">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-12">
+                    <a class="rounded overflow-hidden w-full" href="#">
+                        <img class="w-full" src="img/Banner-1.jpg" alt="Banner">
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+    <section class="pt-4 pb-8">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-4">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                        <div class="h-[72px] mb-4 flex items-center">
+                            <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
+                                <i class="Search-medicals-icon absolute top-1/2 -translate-y-1/2 -right-4"></i>
+                            </span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-H2 block mb-4">Search For Medications</span>
+                            <p class="text-Body3 text-grey">Easily find the medications you are looking for. We price match with an additional 10% discount.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                        <div class="h-[72px] mb-4 flex items-center">
+                            <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
+                                <i class="Prescription-icon absolute top-1/2 -translate-y-1/2 -right-[18px]"></i>
+                            </span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-H2 block mb-4">Order Your Prescription</span>
+                            <p class="text-Body3 text-grey">Place your order online or by phone with a prescription for your meds.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-4">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                        <div class="h-[72px] mb-4 flex items-center">
+                            <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
+                                <i class="Delivery-icon absolute top-1/2 -translate-y-1/2 -right-[23px]"></i>
+                            </span>
+                        </div>
+                        <div class="flex flex-col items-start">
+                            <span class="font-semibold text-H2 block mb-4">Fast Shipping</span>
+                            <p class="text-Body3 text-grey">Place your order online or by phone with a prescription for your meds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-[56px] ">
+        <div class="container">
+            <div class="bg-white p-8 rounded">
+                <div class="grid grid-cols-12 gap-x-8">
+                    <div class="col-span-12">
+                        <h1>Coming Soon</h1>
+                    </div>
+                    <div class="col-span-3">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-1.png',
+                        'title': 'Exforge',
+                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                    <div class="col-span-3">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-1.png',
+                        'title': 'Exforge',
+                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                    <div class="col-span-3">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-1.png',
+                        'title': 'Exforge',
+                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                    <div class="col-span-3">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-1.png',
+                        'title': 'Exforge',
+                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
+
+
+
+
+    <section class="hidden">
+        })
+
+
+        @@include('components/Link.html', {
+        'style': 'flex',
+        'url': '#',
+        'title': 'button link'
+        })
+        <br>
+        <br>
+        @@include('components/button.html', {
+        'style': 'flex',
+        'type': 'button',
+        'title': 'button',
+        'ariaLabel': 'button',
+        })
+        <br>
+        <br>
+
+        @@include('components/button.html', {
+        'style': 'flex btn-medium',
+        'type': 'button',
+        'title': 'button medium',
+        'ariaLabel': 'button medium',
+        })
+        <br>
+        <br>
+
+        @@include('components/rm-button.html', {
+        'style': '',
+        'url': '#',
+        })
+        <br>
+        <br>
+        @@include('components/Product-Card.html', {
+        'style': '',
+        'link': '#',
+        'img': 'img/Product-1.png',
+        })
+        <br>
+        <br>
+        @@include('components/Blog-Card.html', {
+        'style': '',
+        'link': '#',
+        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+        })
+        <br>
+        <br>
+
+        @@include('components/Blog-Card.html', {
+        'style': 'blog-card--big',
+        'link': '#',
+        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+        })
+        <br>
+        <br>
+
+        @@include('components/Blog-Card.html', {
+        'style': 'blog-card--small',
+        'link': '#',
+        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+        })
+        <br>
+        <br>
+        @@include('components/input.html', {
+        'common-style': '',
+        'styleInput': '',
+        'label': 'Last Name <span class="text-red">*</span>',
+        'type': 'text',
+        'placeholder': '',
+        'idInput': 'ID1',
+        'errorStyle': 'block',
+        })
+        <br>
+        <br>
+        @@include('components/textarea.html', {
+        'commonStyle': '',
+        'styleTextarea': '',
+        'label': 'Message <span class="text-red">*</span>',
+        'type': 'text',
+        'placeholder': '',
+        'idTextarea': 'ID2',
+        'rows': '3',
+        })
+
+        <br>
+        <br>
+        @@include('components/checkbox.html', {
+        'styleText': '',
+        'text': 'I have read and agree to the Terms',
+        'errorText': 'Please confirm that you agree',
+        'errorStyle': '',
+        })
+
+        <br>
+        <br>
+        <br>
+        @@include('components/Filter.html')
+        <br>
+        <br>
+        <br>
+
+        <div class="container">
+            @@include('components/Pagination.html')
+
+            <br>
+            <br>
+            <br>
+
+            @@include('components/Accordion.html', {
+            'title': 'Who is 1salerx?',
+            'text': '1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur assumenda doloribus earum error, inventore natus obcaecati quibusdam saepe sed. Animi dolore, in quo sapiente suscipit voluptas voluptatem. Quasi, repellendus.'
+            })
+            @@include('components/Accordion.html', {
+            'title': 'Who is 1salerx?',
+            'text': '1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity.'
+            })
+
+            <br>
+            <br>
+            <br>
+
+        </div>
+    </section>
     @@include('components/Footer.html')
 </main>
 

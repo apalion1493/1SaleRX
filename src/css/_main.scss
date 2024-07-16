@@ -84,7 +84,7 @@
     @apply flex-row items-center p-5 gap-x-4
   }
 
-  @apply flex flex-col justify-between p-8 hover:shadow-color-1 outline-1 outline-dashed outline-light-grey transition rounded
+  @apply flex flex-col justify-between p-8 bg-white hover:shadow-color-1 outline-1 outline-dashed outline-light-grey transition rounded
 }
 
 // Blog Card Style End
@@ -164,3 +164,26 @@
 }
 
 // FAQ Style End
+
+// Mega Menu Header Style Start
+
+.mega-menu {
+  &__items {
+    &.active {
+      @apply border-b-[5px] border-yellow font-semibold
+    }
+
+    @apply border-b-[5px] border-transparent h-full pt-1 transition-all hover:border-yellow
+  }
+
+  &__line {
+
+    span {
+      @apply absolute top-[5px] -translate-y-1/2
+    }
+
+    @apply relative h-[30px]
+  }
+}
+
+// Mega Menu Header Style End

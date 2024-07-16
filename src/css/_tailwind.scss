@@ -13,7 +13,7 @@
 
 @layer components {
 	.container {
-		@apply px-4 minsm:max-w-[672px] minmd:max-w-[800px] minlg:max-w-[1056px] minxl:max-w-[1346px];
+		@apply px-4 w-full minsm:max-w-[672px] minmd:max-w-[800px] minlg:max-w-[1056px] minxl:max-w-[1346px];
 	}
 }
 
@@ -22,8 +22,12 @@
 		font-family: 'Sora', system-ui, sans-serif;
 		font-optical-sizing: auto;
 		font-weight: 400;
-		@apply text-primary;
+		@apply text-primary bg-grey-2;
 	}
+}
+
+section {
+	@apply w-full
 }
 
 .input::placeholder {

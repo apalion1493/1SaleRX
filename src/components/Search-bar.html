@@ -2,11 +2,11 @@
      class='flex flex-col w-full relative'>
     <label for="Id-4" class="text-none absolute -z-10">Search</label>
     <form
-            class='flex items-center rounded-[40px] w-full h-[45px] lg:h-14 border border-border-2 overflow-hidden pl-5 pr-2'>
+            class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-border-2 overflow-hidden pl-5 pr-2'>
         <div class="relative w-full">
             <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
                    x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
-                   class="input w-full bg-white border-0 focus:ring-0 focus:bg-transparent focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
+                   class="input w-full bg-white border-0 focus:ring-0 focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
             <button type="button" x-show="query.length > 0" @click="query = ''" aria-label="Clear search button"
                     class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
                 <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
