@@ -6,4 +6,17 @@
 
         }))
     })
+
+    function fetchResults() {
+        this.results = []
+        if (this.query.length > 0) {
+            // Имитация поиска. Поменять на реальный API вызов или логику поиска.
+            this.results = [
+                {id: 1, title: 'Result 1'},
+                {id: 2, title: 'Result 2'},
+                {id: 3, title: 'Result 3'},
+            ]
+        }
+        this.showResults = this.results.length > 0
+    }
 </script>
