@@ -29,7 +29,7 @@
         <div class="container">
             <div class="grid grid-cols-12 gap-x-8">
                 <div class="col-span-4">
-                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden outline-dashed outline-light-grey outline-1 rounded">
                         <div class="h-[72px] mb-4 flex items-center">
                             <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
                                 <i class="Search-medicals-icon absolute top-1/2 -translate-y-1/2 -right-4"></i>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="col-span-4">
-                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden outline-dashed outline-light-grey outline-1 rounded">
                         <div class="h-[72px] mb-4 flex items-center">
                             <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
                                 <i class="Prescription-icon absolute top-1/2 -translate-y-1/2 -right-[18px]"></i>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <div class="col-span-4">
-                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden">
+                    <div class="flex flex-col items-start py-5 px-6 bg-white h-full overflow-hidden outline-dashed outline-light-grey outline-1 rounded">
                         <div class="h-[72px] mb-4 flex items-center">
                             <span class="relative bg-yellow rounded-full w-[72px] h-[72px]">
                                 <i class="Delivery-icon absolute top-1/2 -translate-y-1/2 -right-[23px]"></i>
@@ -73,11 +73,17 @@
     <section class="mb-[56px] ">
         <div class="container">
             <div class="bg-white p-8 rounded">
-                <div class="grid grid-cols-12 gap-x-8">
+                <div class="grid grid-cols-12 gap-8">
                     <div class="col-span-12">
-                        <h1>Coming Soon</h1>
+                        <div class="flex flex-col mb-6">
+                            <h1 class="text-H1 block mb-5 font-semibold">Coming Soon</h1>
+                            <div class="flex items-center gap-x-6">
+                                <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                                <span class="w-full border-b border-super-light-grey"></span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
                         @@include('components/Product-Card.html', {
                         'style': '',
                         'link': '#',
@@ -88,7 +94,40 @@
                         'price': '$109.99',
                         })
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-2.jpg',
+                        'title': 'Dymista Nasal Spray',
+                        'dosage': '137 mcg / 50 mcg 1 bottle',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-3.jpg',
+                        'title': 'Glucophage',
+                        'dosage': '1000 mg - 120 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-4.jpg',
+                        'title': 'Eliquis',
+                        'dosage': '2,5 mg - 60 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
                         @@include('components/Product-Card.html', {
                         'style': '',
                         'link': '#',
@@ -99,27 +138,67 @@
                         'price': '$109.99',
                         })
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
                         @@include('components/Product-Card.html', {
                         'style': '',
                         'link': '#',
-                        'img': 'img/Product-1.png',
-                        'title': 'Exforge',
-                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'img': 'img/Product-2.jpg',
+                        'title': 'Dymista Nasal Spray',
+                        'dosage': '137 mcg / 50 mcg 1 bottle',
                         'oldPrice': '$120.99',
                         'price': '$109.99',
                         })
                     </div>
-                    <div class="col-span-3">
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
                         @@include('components/Product-Card.html', {
                         'style': '',
                         'link': '#',
-                        'img': 'img/Product-1.png',
-                        'title': 'Exforge',
-                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'img': 'img/Product-3.jpg',
+                        'title': 'Glucophage',
+                        'dosage': '1000 mg - 120 tabs',
                         'oldPrice': '$120.99',
                         'price': '$109.99',
                         })
+                    </div>
+                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-4.jpg',
+                        'title': 'Eliquis',
+                        'dosage': '2,5 mg - 60 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-8">
+                <div class="col-span-12">
+                    <div>
+                        <span>WHO IS</span>
+                        <h2>1SaleRX?</h2>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="col-span-6">
+                    <div>
+                        <p>1SaleRX is changing the face of online shopping for brand and certified generic prescription medications by offering the absolute lowest prices on the medicines consumers truly want and need.</p>
+                        <div>
+                            <p>Built solely with the intention to provide consumers with spectacular discounts. Our service is new and innovative but our experience is venerable but simple that brings delight to consumers with high quality brand and generic medications 1SaleRX flash sales offer something new every week, with limited time sales bringing an added layer of excitement. All of this has made 1SaleRX the destination for those who seek great prices and just as importantly, those who enjoy saving money.
+                                <br>
+                                <br>
+                                Now, 1SaleRX is looking to position itself for the future by building a service-centric brand dedicated to keeping its customers happy and loyal, at prices that make prescription medications affordable</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-6">
+                    <div class="p-5 overflow-hidden flex items-center justify-center border border-super-light-grey rounded">
+                        <img class="w-full" src="img/Pills1.png" alt="">
                     </div>
                 </div>
             </div>

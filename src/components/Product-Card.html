@@ -1,4 +1,4 @@
-<div class="flex flex-col h-[542px] hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded @@style">
+<a href="@@link" class="flex flex-col h-[542px] group hover:shadow-color-1 p-5 bg-white outline-1 outline-dashed outline-light-grey transition rounded @@style">
     <div class="flex items-center justify-center mb-4 overflow-hidden min-h-[275px] h-[275px]">
         <img class="object-cover" src="@@img" alt="@@alt">
     </div>
@@ -13,10 +13,11 @@
             <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
             <span class="block w-full border-t border-grey-2"></span>
         </div>
-        @@include('Link.html', {
-        'style': 'flex btn-medium w-full mt-auto',
-        'url': '@@link',
-        'title': 'button'
+        @@include('button.html', {
+        'style': 'flex btn-medium w-full mt-auto group-hover:bg-transparent',
+        'title': 'button',
+        'type': 'button',
+        'ariaLabel': 'button',
         })
     </div>
-</div>
+</a>
