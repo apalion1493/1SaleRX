@@ -1028,6 +1028,9 @@ select {
 .max-w-xs {
   max-width: 20rem;
 }
+.flex-1 {
+  flex: 1 1 0%;
+}
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -1131,6 +1134,10 @@ select {
 }
 .whitespace-nowrap {
   white-space: nowrap;
+}
+.break-normal {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 .rounded {
   border-radius: 0.25rem;
@@ -1350,6 +1357,9 @@ select {
 }
 .pt-8 {
   padding-top: 2rem;
+}
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 .text-left {
   text-align: left;
