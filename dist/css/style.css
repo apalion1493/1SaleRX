@@ -861,6 +861,10 @@ select {
 .col-span-8 {
   grid-column: span 8 / span 8;
 }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -1013,8 +1017,14 @@ select {
 .w-full {
   width: 100%;
 }
+.w-\[45px\] {
+  width: 45px;
+}
 .min-w-14 {
   min-width: 3.5rem;
+}
+.min-w-\[45px\] {
+  min-width: 45px;
 }
 .max-w-\[100\%\] {
   max-width: 100%;
@@ -1064,6 +1074,9 @@ select {
 }
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+.grid-cols-8 {
+  grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 .flex-row {
   flex-direction: row;
@@ -1122,6 +1135,9 @@ select {
 }
 .gap-y-4 {
   row-gap: 1rem;
+}
+.gap-y-5 {
+  row-gap: 1.25rem;
 }
 .self-end {
   align-self: flex-end;
@@ -1315,6 +1331,10 @@ select {
 .py-\[27px\] {
   padding-top: 27px;
   padding-bottom: 27px;
+}
+.px-14 {
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
 }
 .pb-14 {
   padding-bottom: 3.5rem;
@@ -2554,6 +2574,14 @@ input[type=search]::-webkit-search-results-decoration {
   .xl\:col-span-4 {
     grid-column: span 4 / span 4;
   }
+
+  .xl\:col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+
+  .xl\:col-span-10 {
+    grid-column: span 10 / span 10;
+  }
 }
 @media (max-width: 1023px) {
 
@@ -2563,6 +2591,14 @@ input[type=search]::-webkit-search-results-decoration {
 
   .lg\:col-span-6 {
     grid-column: span 6 / span 6;
+  }
+
+  .lg\:col-span-12 {
+    grid-column: span 12 / span 12;
+  }
+
+  .lg\:hidden {
+    display: none;
   }
 
   .lg\:h-10 {
