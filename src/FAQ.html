@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/head.html', {
+'title': 'Contact Us'
+})
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen">
+    @@include('components/Header.html', {
+    'commonStyle': ' ',
+    })
+
+    <section class="py-6">
+        <div class="container">
+            <nav class="text-sm font-medium text-slate-700 dark:text-slate-300" aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-x-2">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-none">
+                            <i class="Home-icon"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center text-Body8 text-light-grey" aria-current="page">FAQ</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container">
+            <div class="bg-white py-12 px-8 rounded">
+                <div class="grid grid-cols-12 gap-8">
+                    <div class="col-span-12">
+                        <div class="flex flex-col items-center mb-14">
+                            <div class="flex items-baseline justify-center w-full">
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                                <h1 class="text-H1 font-semibold mb-4 px-8">FAQ</h1>
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                            </div>
+                            <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-8 gap-y-10">
+                    <div class="col-span-6">
+                        <div class="flex flex-col h-full border-b border-super-light-grey">
+                            <div class="flex items-center gap-y-4">
+                                <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
+                                <p class="font-semibold text-Body">Who is 1salerx?</p>
+                            </div>
+                            <div class="pt-4 pb-8 flex items-start">
+                                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
+                                <p class="pt-1 text-Body">1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="flex flex-col h-full border-b border-super-light-grey">
+                            <div class="flex items-center gap-y-4">
+                                <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
+                                <p class="font-semibold text-Body">What do you offer?</p>
+                            </div>
+                            <div class="pt-4 pb-8 flex items-start">
+                                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
+                                <p class="pt-1 text-Body">
+                                    1SaleRx offers coupons on weekly basis for brand medications at no cost. Coupons are free and branded medications are free on our site. This is not a Joke!
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="flex flex-col h-full border-b border-super-light-grey">
+                            <div class="flex items-center gap-y-4">
+                                <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
+                                <p class="font-semibold text-Body">Why branded medications are free?</p>
+                            </div>
+                            <div class="pt-4 pb-8 flex items-start">
+                                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
+                                <p class="pt-1 text-Body">
+                                    Yes, free! 1salerx, over the years, has made contacts in the wholesale and retail medication industry, over-stock medication buyers, mail-order companies and many others in the health care business. Our network allows us to bring you weekly deals on prescription medications.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="flex flex-col h-full border-b border-super-light-grey">
+                            <div class="flex items-center gap-y-4">
+                                <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
+                                <p class="font-semibold text-Body">Do 1SaleRx Coupons Expire?</p>
+                            </div>
+                            <div class="pt-4 pb-8 flex items-start">
+                                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
+                                <p class="pt-1 text-Body">
+                                    Yes. Coupons expire after 30 days from the time you received it in your email.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="flex flex-col h-full">
+                            <div class="flex items-center gap-y-4">
+                                <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
+                                <p class="font-semibold text-Body">How does 1SaleRx make money?</p>
+                            </div>
+                            <div class="pt-4 pb-8 flex items-start">
+                                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
+                                <p class="pt-1 text-Body">
+                                    We promote our network vendors and the same vendors pay us for every potential customer we refer, simplified marketing.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-6">
+                        <div class="flex flex-col h-full">
+                            <div class="flex items-center gap-y-4">
+                                <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
+                                <p class="font-semibold text-Body">Can you tell more about the process?</p>
+                            </div>
+                            <div class="pt-4 pb-8 flex items-start">
+                                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
+                                <div>
+                                    <p class="pt-1 text-Body">
+                                        You just need to follow next few steps:
+                                    </p>
+                                    <br>
+                                    <ol class="list-decimal pl-5 text-grey text-Body">
+                                        <li>
+                                            <p>
+                                                You select the weekly medication product you want;
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Fill in your Name, Email and the phone number;
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Our representative will call you to verify your inquiry;
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Upload or email your medication prescription from your doctor;
+                                            </p>
+                                        </li>
+                                        <li>
+                                            <p>
+                                                Pay for express shipping for the medications, depending on location the shipping is up to $80 in total for any medications.
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('components/Footer.html')
+</main>
+
+@@include('components/script.html')
+</body>
+
+</html>

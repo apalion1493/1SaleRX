@@ -1072,6 +1072,9 @@ select {
 .resize {
   resize: both;
 }
+.list-decimal {
+  list-style-type: decimal;
+}
 .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
@@ -1138,6 +1141,9 @@ select {
 }
 .gap-y-5 {
   row-gap: 1.25rem;
+}
+.gap-y-10 {
+  row-gap: 2.5rem;
 }
 .self-end {
   align-self: flex-end;
@@ -1380,6 +1386,9 @@ select {
 }
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+.pl-3 {
+  padding-left: 0.75rem;
 }
 .text-left {
   text-align: left;
