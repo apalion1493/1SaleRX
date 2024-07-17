@@ -54,7 +54,7 @@
 
   &--small {
     #{$this}__img {
-      @apply min-h-[98px] h-[98px] max-w-[133px] mb-0
+      @apply h-[98px] max-h-[98px] min-h-[98px] w-[133px] min-w-[133px] mb-0
     }
 
     #{$this}__text {

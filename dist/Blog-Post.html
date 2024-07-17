@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .loaded {
+            opacity: 1
+        }
+    </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Blog Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        .loader-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .loader {
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.1s forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.1s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     setTimeout(() => {
+        //         const loader = document.getElementById('loader');
+        //         const content = document.getElementById('content');
+        //         const body = document.querySelector('body');
+        //         loader.classList.add('fade-out');
+        //         loader.addEventListener('animationend', () => {
+        //             loader.classList.add('hidden');
+        //             content.classList.remove('hidden');
+        //             body.classList.remove('loader-wrapper')
+        //
+        //             content.classList.add('fade-in');
+        //         }, { once: true });
+        //     }, 500);
+        // });
+
+    </script>
+</head>
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen">
+    <header class="w-full bg-white ">
+    <div class="border-b border-super-light-grey py-[27px]">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-2 flex items-center">
+                    <a href="index.html">
+                        <img src="img/Main-logo.svg" alt="1SaleRx Logo">
+                    </a>
+                </div>
+                <div class="col-span-8 flex items-center">
+                    <div x-data="{ query: '', results: [1, 2, 3], showResults: false }" @click.away="showResults = false"
+     class='flex flex-col w-full relative'>
+    <label for="Id-4" class="text-none absolute -z-10">Search</label>
+    <form
+            class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-border-2 overflow-hidden pl-5 pr-2'>
+        <div class="relative w-full">
+            <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
+                   x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
+                   class="input w-full bg-white border-0 focus:ring-0 focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
+            <button type="button" x-show="query.length > 0" @click="query = ''" aria-label="Clear search button"
+                    class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <path
+                            d="M10.2616 0.318046L6.00014 4.57951L1.73867 0.318046C1.31253 -0.108101 0.744331 -0.108101 0.318185 0.318046C-0.107962 0.744192 -0.107962 1.31239 0.318185 1.73853L4.57965 6L0.318185 10.2615C-0.107962 10.6876 -0.107962 11.2558 0.318185 11.682C0.744331 12.1081 1.31253 12.1081 1.73867 11.682L6.00014 7.42049L10.2616 11.682C10.6878 12.1081 11.2559 12.1081 11.6821 11.682C12.1082 11.2558 12.1082 10.6876 11.6821 10.2615L7.42063 6L11.6821 1.73853C12.1082 1.31239 12.1082 0.744192 11.6821 0.318046C11.2559 -0.108101 10.6878 -0.108101 10.2616 0.318046Z"
+                            fill="#19181B" />
+                </svg>
+            </button>
+        </div>
+        <button x-show="!query.length > 0" type='submit' aria-label="Search button"
+                class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10 lg:top-2">
+            <i class='Search-icon block'></i>
+        </button>
+    </form>
+    <div x-show="showResults && query.length > 0"
+         class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-gray-200 rounded-lg shadow-shadow-2 z-10">
+        <ul>
+            <template x-for="result in results" :key="result.id">
+                <li class="py-2 text-Body3 cursor-pointer" @click="selectResult(result)">
+                    <span x-text="result.title"></span>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+
+                </div>
+                <div class="col-span-2 flex items-center">
+                    <div class="flex items-center gap-x-5">
+                        <i class="Telephone-icon"></i>
+                        <div class="flex flex-col items-start gap-y-1">
+                            <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                            <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636 123 - 4567</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="grid grid-cols-12 gap-x-8">
+            <div class="col-span-12">
+                <nav class="pt-4 mega-menu">
+                    <ul class="flex items-center gap-x-8">
+                        <li class="mega-menu__items active pb-[18px] ">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Home-icon"></i>
+                                <span class="text-Body">Home</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Products-icon"></i>
+                                <span class="text-Body">Products</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="About-icon"></i>
+                                <span class="text-Body">About Us</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="FAQ-icon"></i>
+                                <span class="text-Body">FAQ</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Contact-icon"></i>
+                                <span class="text-Body">Contact Us</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="#">
+                                <i class="Blog-icon"></i>
+                                <span class="text-Body">Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <section>
+        <div class="container">
+            <nav class="text-sm font-medium text-slate-700 dark:text-slate-300" aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-x-2">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-none">
+                            <i class="Home-icon"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center text-Body8 text-light-grey" aria-current="page">
+                        <a href="#" class="">
+                            Blog
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center text-Body8 text-light-grey" aria-current="page">Blog Post</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+
+    <footer class="bg-white w-full mt-auto overflow-hidden">
+    <section class="pt-16 pb-[84px]">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-6 relative">
+                    <div class="absolute w-full max-w-[100%] top-0 right-0 footer-bg z-1"></div>
+                    <div class="max-w-[453px] flex flex-col relative z-2">
+                        <span class="block mb-6 text-H1 font-semibold">SUBSCRIBE</span>
+                        <p class="pl-[36px] border-l-[5px] border-yellow text-topTitle">To have new coupon lists <br> delivered directly to
+                            your inbox</p>
+                    </div>
+                </div>
+                <div class="col-span-6">
+                    <div class="flex flex-col gap-y-4">
+                        <p class="text-Body">We do not send spam or share your mail with third parties</p>
+                        <form class="flex items-center w-full">
+                            <label class="text-none" for="subscribe-form">Subscribe</label>
+                            <input class="input h-[63px] text-Body3 w-full px-5 py-2.5 rounded-l border border-super-light-grey focus:ring-0 focus:border-super-light-grey outline-none"
+                                   id="subscribe-form" type="email" placeholder="Input you email and hit enter ...">
+                            <button class="h-[63px] flex items-center justify-center uppercase bg-yellow font-semibold hover:bg-yellow-hover transition py-5 px-[30px] text-Body4"
+                                    type="submit">Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bg-dark py-8 text-white overflow-hidden">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-6 flex items-center">
+                    <a class="" href="index.html">
+                        <img class="w-[194px]" src="img/Main-logo-white.svg" alt="1SaleRX">
+                    </a>
+                    <p class="ml-16 text-Body3">1SaleRX &#169; All rights reserved</p>
+                </div>
+                <div class="col-span-6 flex">
+                    <ul class="flex items-center gap-x-8 ml-auto">
+                        <li>
+                            <a class="text-base transition-color hover:text-yellow" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Disclaimers</a>
+                        </li>
+                        <li>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="#">Terms of
+                                Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+</main>
+
+<script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./js/scripts.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('data', () => ({
+
+        }))
+    })
+
+    function fetchResults() {
+        this.results = []
+        if (this.query.length > 0) {
+            // Имитация поиска. Поменять на реальный API вызов или логику поиска.
+            this.results = [
+                {id: 1, title: 'Result 1'},
+                {id: 2, title: 'Result 2'},
+                {id: 3, title: 'Result 3'},
+            ]
+        }
+        this.showResults = this.results.length > 0
+    }
+</script>
+</body>
+
+</html>
