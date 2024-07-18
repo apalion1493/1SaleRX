@@ -10,9 +10,64 @@
 <!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
 <!--    </div>-->
 <main id="content" class="flex flex-col items-center min-h-screen">
-    @@include('components/Header.html', {
-    'commonStyle': ' ',
-    })
+    <header class="w-full">
+        <div class="py-[27px]">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-x-8">
+                    <div class="col-span-2 flex items-center">
+                        <a href="index.html">
+                            <img src="img/Main-logo.svg" alt="1SaleRx Logo">
+                        </a>
+                    </div>
+                    <div class="col-span-8 flex items-center">
+                        <nav class="pt-4 mega-menu mx-auto">
+                            <ul class="flex items-center gap-x-6">
+                                <li class="mega-menu__items pb-[18px] ">
+                                    <a class="flex items-center gap-x-2" href="#">
+                                        <span class="text-Body">Home</span>
+                                    </a>
+                                </li>
+                                <li class="mega-menu__items pb-[18px]">
+                                    <a class="flex items-center gap-x-2" href="#">
+                                        <span class="text-Body">Products</span>
+                                    </a>
+                                </li>
+                                <li class="mega-menu__items pb-[18px]">
+                                    <a class="flex items-center gap-x-2" href="#">
+                                        <span class="text-Body">About Us</span>
+                                    </a>
+                                </li>
+                                <li class="mega-menu__items pb-[18px]">
+                                    <a class="flex items-center gap-x-2" href="#">
+                                        <span class="text-Body">FAQ</span>
+                                    </a>
+                                </li>
+                                <li class="mega-menu__items pb-[18px]">
+                                    <a class="flex items-center gap-x-2" href="#">
+                                        <span class="text-Body">Contact Us</span>
+                                    </a>
+                                </li>
+                                <li class="mega-menu__items pb-[18px]">
+                                    <a class="flex items-center gap-x-2" href="#">
+                                        <span class="text-Body">Blog</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="col-span-2 flex items-center">
+                        <div class="flex items-center gap-x-5">
+                            <i class="Telephone-icon"></i>
+                            <div class="flex flex-col items-start gap-y-1">
+                                <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                                <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636 123 - 4567</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
     <section class="mt-auto">
         <div class="container">
