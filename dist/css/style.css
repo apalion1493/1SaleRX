@@ -1161,6 +1161,10 @@ select {
 .gap-y-5 {
   row-gap: 1.25rem;
 }
+.gap-x-\[22px\] {
+  -moz-column-gap: 22px;
+       column-gap: 22px;
+}
 .self-end {
   align-self: flex-end;
 }
@@ -1458,6 +1462,9 @@ select {
 }
 .leading-\[130\%\] {
   line-height: 130%;
+}
+.leading-\[120\%\] {
+  line-height: 120%;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
