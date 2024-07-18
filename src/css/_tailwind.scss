@@ -22,7 +22,11 @@
 		font-family: 'Sora', system-ui, sans-serif;
 		font-optical-sizing: auto;
 		font-weight: 400;
-		@apply text-primary bg-grey-2;
+		@apply text-primary;
+	}
+
+	body {
+		@apply bg-grey-2;
 	}
 }
 

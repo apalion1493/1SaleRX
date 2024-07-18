@@ -32,6 +32,7 @@ module.exports = {
         fontSize: {
             none: ['0px', '0px'],
             base: ['16px', '140%'],
+            'display-1': ['50px', '100%'],
             H1: ['40px', '70%'],
             H1Mob: ['30px', '70%'],
             topTitle: ['24px', '120%'],
@@ -88,6 +89,7 @@ module.exports = {
                 bermuda: '#78dcca',
                 yellow: '#F5CA35',
                 'yellow-hover': '#dfb730',
+                beige: '#FAF7EE',
             },
             letterSpacing: {
 
