@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/head.html', {
+'title': 'Blog Page'
+})
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen">
+    @@include('components/Header.html', {
+    'commonStyle': ' ',
+    })
+
+    <section class="py-6">
+        <div class="container">
+            <nav class="text-sm font-medium text-slate-700 dark:text-slate-300" aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-x-2">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-none">
+                            <i class="Home-icon"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center text-Body8 text-light-grey" aria-current="page">Blog</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container">
+            <div class="bg-white py-12 px-8 rounded">
+                <div class="grid grid-cols-12 gap-8 mb-14">
+                    <div class="col-span-12">
+                         <div class="flex flex-col mb-4">
+                             <div class="flex items-center justify-between mb-5">
+                                 <h1 class="text-H1 font-semibold">Our Blog</h1>
+                                 @@include('components/Filter.html', {
+                                 'style': 'max-w-[288px]'
+                                 })
+                             </div>
+                             <div class="flex items-center gap-x-6">
+                                 <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                                 <span class="w-full border-b border-super-light-grey"></span>
+                             </div>
+                         </div>
+                     </div>
+                    <div class="col-span-6">
+                        @@include('components/Blog-Card.html', {
+                        'style': 'blog-card--big',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-6">
+                        @@include('components/Blog-Card.html', {
+                        'style': 'blog-card--big',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-4">
+                        @@include('components/Blog-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-4">
+                        @@include('components/Blog-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-4">
+                        @@include('components/Blog-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-4">
+                        @@include('components/Blog-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-4">
+                        @@include('components/Blog-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                    <div class="col-span-4">
+                        @@include('components/Blog-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
+                        })
+                    </div>
+                </div>
+                <div class="grid grid-cols-12 gap-x-8">
+                    <div class="col-span-12">
+                        @@include('components/Pagination.html')
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('components/Footer.html')
+</main>
+
+@@include('components/script.html')
+</body>
+
+</html>

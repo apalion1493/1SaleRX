@@ -1051,6 +1051,12 @@ select {
 .max-w-xs {
   max-width: 20rem;
 }
+.max-w-\[\] {
+  max-width: ;
+}
+.max-w-\[288px\] {
+  max-width: 288px;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
