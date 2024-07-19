@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/head.html', {
+'title': 'Product Page'
+})
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen">
+    @@include('components/Header.html', {
+    'commonStyle': ' ',
+    })
+
+    <section class="py-6">
+        <div class="container">
+            <nav class="text-sm font-medium text-slate-700 dark:text-slate-300" aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-x-2">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-none">
+                            <i class="Home-icon"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-Body8 text-light-grey">
+                            Products
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center text-Body8 text-light-grey" aria-current="page">Actos</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container">
+            <div class="bg-white py-12 px-0 rounded">
+                <div class="grid grid-cols-12 gap-x-8">
+                    <div class="col-span-1"></div>
+                    <div class="col-span-10">
+                        <div class="flex flex-col mb-4">
+                            <div class="flex items-center justify-start mb-5">
+                                <h1 class="text-H1 font-semibold inline-flex mr-2">Actos</h1>
+                                <span class="inline-flex gap-x-2 text-grey text-Body mt-2">/&nbsp;&nbsp;30mg,&nbsp;&nbsp;28 tabs</span>
+                                <div class="flex items-center ml-auto">
+                                    <span class="block mr-5 text-grey text-Body6">Share</span>
+                                    <ul class="flex items-center gap-x-3">
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="twitter-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="telegram-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="instagram-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="Facebook-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="Share-icon"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-x-6">
+                                <span class="w-[82px] border-b-[5px] border-yellow"></span>
+                                <span class="w-full border-b border-super-light-grey"></span>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-8">
+                            <div class="flex flex-col gap-y-20">
+                                <div class="flex gap-x-8">
+                                    <div>
+
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="mb-10 flex items-center">
+                                            <span>Price:</span>
+                                            <span>$25.99</span>
+                                            <span><span class="text-yellow">$</span>25.99</span>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span>Description</span>
+                                            <span>_____</span>
+                                            <p>Actos is a brand-name prescription drug. It’s FDA-approved to help control blood sugar levels in adults with type 2 diabetes. This is a condition in which where your body has a high level of glucose (sugar) in your blood. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-6">
+                                    <div>
+                                        <i></i>
+                                        <span>Drug info</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="w-[82px] border-b-[5px] border-yellow"></span>
+                                        <span class="w-full border-b border-super-light-grey"></span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="flex flex-col gap-y-6 max-w-[365px] w-full ml-auto">
+                                <div class="p-6 border rounded border-super-light-grey w-full">
+                                    <div class="flex flex-col gap-y-2 mb-6">
+                                        <span class="font-semibold text-H2">Get the product!</span>
+                                        <p class="text-grey text-base">Make sure your prescription is active</p>
+                                    </div>
+                                    <div class="flex flex-col gap-y-4">
+                                        @@include('components/input.html', {
+                                        'common-style': '',
+                                        'styleInput': '',
+                                        'label': 'Full Name <span class="text-red">*</span>',
+                                        'type': 'text',
+                                        'placeholder': '',
+                                        'idInput': 'ID1',
+                                        'errorStyle': 'block',
+                                        })
+                                        @@include('components/input.html', {
+                                        'common-style': '',
+                                        'styleInput': '',
+                                        'label': 'Email <span class="text-red">*</span>',
+                                        'type': 'email',
+                                        'placeholder': '',
+                                        'idInput': 'ID2',
+                                        'errorStyle': 'hidden',
+                                        })
+                                        @@include('components/input.html', {
+                                        'common-style': '',
+                                        'styleInput': '',
+                                        'label': 'Phone Number <span class="text-red">*</span>',
+                                        'type': 'text',
+                                        'placeholder': '',
+                                        'idInput': 'ID3',
+                                        'errorStyle': 'hidden',
+                                        })
+                                        @@include('components/FilterState.html', {
+                                        'idFilter': 'FilterStateId',
+                                        'label': 'Select State <span class="text-red">*</span>',
+                                        })
+                                        @@include('components/FilterPosition.html', {
+                                        'idFilter': 'FilterPositionId',
+                                        'label': 'Select Position <span class="text-red">*</span>',
+                                        })
+                                    </div>
+                                </div>
+                                @@include('components/checkbox.html', {
+                                'styleText': '',
+                                'text': 'I have read and agree to the Terms',
+                                'errorText': 'Please confirm that you agree',
+                                'errorStyle': '',
+                                })
+                                @@include('components/button.html', {
+                                'style': 'flex w-full',
+                                'type': 'submit',
+                                'title': 'Get Deal',
+                                'ariaLabel': 'Get Deal',
+                                })
+                            </form>
+                        </div>
+                        <div class="flex w-full overflow-hidden rounded mt-14 min-h-[175px] bg-primary">
+                            <div class="bg-yellow w-[60%] triangle flex items-center justify-end py-5 pl-10 pr-10">
+                                <p class="text-display-2 font-semibold">Pay to express shipping up to
+                                    $80 and get product for <span class="uppercase">free</span>!
+                                </p>
+                            </div>
+                            <div class="text-white flex flex-col justify-center px-6">
+                                <div class="max-w-[353px]">
+                                    <span class="block text-light-grey text-Body3">Note: </span>
+                                    <p class="text-Body3">We don’t accept patients with Medicare, Medicade or any other government or private insurance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('components/Footer.html')
+</main>
+
+@@include('components/script.html')
+</body>
+
+</html>

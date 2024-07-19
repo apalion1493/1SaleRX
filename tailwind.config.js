@@ -33,6 +33,7 @@ module.exports = {
             none: ['0px', '0px'],
             base: ['16px', '140%'],
             'display-1': ['50px', '100%'],
+            'display-2': ['35px', '100%'],
             H1: ['40px', '70%'],
             H1Mob: ['30px', '70%'],
             topTitle: ['24px', '120%'],

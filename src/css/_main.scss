@@ -187,3 +187,8 @@
 }
 
 // Mega Menu Header Style End
+
+.triangle {
+  background: url("../img/bg-yellow-svg.svg");
+  @apply flex bg-cover bg-right-top bg-no-repeat;
+}
