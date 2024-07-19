@@ -11,3 +11,4 @@ https://apalion1493.github.io/1SaleRX/dist/BlogPost.html <br/>
 https://apalion1493.github.io/1SaleRX/dist/Blog.html <br/>
 https://apalion1493.github.io/1SaleRX/dist/Preview.html <br/>
 https://apalion1493.github.io/1SaleRX/dist/Products.html <br/>
+https://apalion1493.github.io/1SaleRX/dist/ProductPage.html <br/>
