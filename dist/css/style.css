@@ -797,6 +797,9 @@ select {
 .relative {
   position: relative;
 }
+.sticky {
+  position: sticky;
+}
 .inset-0 {
   inset: 0px;
 }
@@ -832,6 +835,12 @@ select {
 }
 .top-full {
   top: 100%;
+}
+.top-1 {
+  top: 0.25rem;
+}
+.top-3 {
+  top: 0.75rem;
 }
 .-z-10 {
   z-index: -10;
@@ -952,6 +961,9 @@ select {
 }
 .mt-auto {
   margin-top: auto;
+}
+.ml-\[10px\] {
+  margin-left: 10px;
 }
 .block {
   display: block;
@@ -1235,6 +1247,10 @@ select {
 .border-0 {
   border-width: 0px;
 }
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1329,6 +1345,9 @@ select {
 }
 .p-8 {
   padding: 2rem;
+}
+.p-4 {
+  padding: 1rem;
 }
 .px-20 {
   padding-left: 5rem;
