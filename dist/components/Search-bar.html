@@ -2,7 +2,7 @@
      class='flex flex-col w-full relative'>
     <label for="Id-4" class="text-none absolute -z-10">Search</label>
     <form
-            class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-border-2 overflow-hidden pl-5 pr-2'>
+            class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-grey-2 overflow-hidden pl-5 pr-2'>
         <div class="relative w-full">
             <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
                    x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
@@ -22,7 +22,7 @@
         </button>
     </form>
     <div x-show="showResults && query.length > 0"
-         class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-gray-200 rounded-lg shadow-shadow-2 z-10">
+         class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-grey-2 rounded-lg shadow-shadow-2 z-10">
         <ul>
             <template x-for="result in results" :key="result.id">
                 <li class="py-2 text-Body3 cursor-pointer" @click="selectResult(result)">

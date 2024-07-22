@@ -39,6 +39,36 @@ section {
 	@apply text-Body3 text-light-grey;
 }
 
+.input[type="search"]::placeholder {
+	@apply text-super-light-grey focus:text-grey;
+}
+
+/* Стиль для скрытия оригинального input */
+input[type="range"]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 20px;
+	height: 20px;
+	background: #4A5568; /* Gray-700 */
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+input[type="range"]::-moz-range-thumb {
+	width: 20px;
+	height: 20px;
+	background: #4A5568; /* Gray-700 */
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+input[type="range"] {
+	-webkit-appearance: none;
+	width: 100%;
+	background: transparent; /* Убираем дефолтный стиль */
+	pointer-events: auto; /* Разрешаем события мыши */
+}
+
 .pagination-num {
 	@apply flex h-[52px] w-[52px] cursor-pointer items-center justify-center rounded-full bg-secondary font-medium uppercase transition;
 
