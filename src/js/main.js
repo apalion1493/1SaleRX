@@ -1,159 +1,19 @@
 window.addEventListener('DOMContentLoaded', () => {
     console.log('Loaded Scripts')
 
-    const swiper1 = new Swiper('.splide-1', {
-        // Optional parameters
-        direction: 'horizontal',
+    const swiper = new Swiper(".mySwiper", {
+        spaceBetween: 16,
         slidesPerView: 3,
-        spaceBetween: 24,
-        // loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (index + 1) + '</span>'
-            },
-            dynamicBullets: true,
-            clickable: true,
+        watchSlidesProgress: true,
+    });
+    const swiper2 = new Swiper(".mySwiper2", {
+        spaceBetween: 16,
+        navigation: null,
+        thumbs: {
+            swiper: swiper,
         },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-
-        breakpoints: {
-            1280: {
-                slidesPerView: 3,
-            },
-
-            1024: {
-                slidesPerView: 2,
-            },
-
-            0: {
-                slidesPerView: 1,
-            }
-        },
-    })
-
-    const swiper3 = new Swiper('.splide-3', {
-        // Optional parameters
-        slidesPerView: 'auto',
-        spaceBetween: 24,
-
-        // loop: true,
-
-        // If we need pagination
-        pagination: false,
-
-        // Navigation arrows
-        navigation: false,
-
-        // And if we need scrollbar
-        scrollbar: false,
-
-        breakpoints: {
-            1280: {
-                slidesPerView: 3,
-            },
-
-            768: {
-                slidesPerView: 2,
-            },
-
-            0: {
-                slidesPerView: 'auto',
-            },
-        },
-    })
-
-    const swiper4 = new Swiper('.splide-4', {
-        // Optional parameters
-        slidesPerView: 'auto',
-        spaceBetween: 24,
-
-        // loop: true,
-
-        // If we need pagination
-        pagination: {
-            el: '.swiper-pagination',
-            renderBullet: function (index, className) {
-                return '<span class="' + className + '">' + (index + 1) + '</span>'
-            },
-            dynamicBullets: true,
-            clickable: true,
-        },
-
-        // Navigation arrows
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-
-        // And if we need scrollbar
-        scrollbar: {
-            el: '.swiper-scrollbar',
-        },
-
-        breakpoints: {
-            1280: {
-                slidesPerView: 4,
-            },
-
-            1024: {
-                slidesPerView: 3,
-            },
-
-            768: {
-                slidesPerView: 2,
-            },
-
-            0: {
-                slidesPerView: 'auto',
-            }
-        },
-    })
+    });
 })
-
-let swiperInstance
-
-function initSwiper() {
-    if (window.innerWidth <= 768 && !swiperInstance) {
-        swiperInstance = new Swiper('.splide-2', {
-            // Optional parameters
-            direction: 'horizontal',
-            spaceBetween: 24,
-            slidesPerView: 'auto',
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            // Navigation arrows
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        })
-    } else if (window.innerWidth > 768 && swiperInstance) {
-        swiperInstance.destroy(true, true)
-        swiperInstance = null
-    }
-}
-
-// Инициализировать при загрузке страницы
-window.addEventListener('load', initSwiper)
-
-// Проверять при изменении размера окна
-window.addEventListener('resize', initSwiper)
 
 const modal = document.getElementById('modal')
 const openModalBtn = document.getElementById('openModal')
@@ -180,37 +40,6 @@ if (modal && openModalBtn && closeModalElements) {
         }
     })
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-    const wishlistButtonOpen = document.querySelector('#wishlist-open')
-    const wishlistBlock = document.querySelector('#wishlist')
-    const wishlistCloseBtn = document.querySelector('#wishlist-close')
-    const wishlistBg = document.querySelector('#wishlist-bg')
-
-    if (wishlistButtonOpen) {
-        wishlistButtonOpen.addEventListener('click', () => {
-            wishlistBlock.classList.add('active')
-            wishlistBg.classList.remove('hidden')
-            document.body.classList.add('overflow-hidden')
-        })
-    }
-
-    if (wishlistCloseBtn) {
-        wishlistCloseBtn.addEventListener('click', () => {
-            wishlistBlock.classList.remove('active')
-            wishlistBg.classList.add('hidden')
-            document.body.classList.remove('overflow-hidden')
-        })
-    }
-
-    if (wishlistBg) {
-        wishlistBg.addEventListener('click', () => {
-            wishlistBlock.classList.remove('active')
-            wishlistBg.classList.add('hidden')
-            document.body.classList.remove('overflow-hidden')
-        })
-    }
-})
 
 // JavaScript to toggle the mega menu
 const toggles = document.querySelectorAll('button[data-menu-target]')
@@ -281,87 +110,6 @@ document.addEventListener('click', event => {
             submenu.classList.add('hidden')
         })
     }
-})
-
-document.querySelectorAll('.product-card--favorites').forEach(icon => {
-    icon.addEventListener('click', function (event) {
-        event.preventDefault() // Предотвращаем переход по ссылке
-        event.stopPropagation() // Предотвращаем всплытие события клика к ссылке
-
-        const productId = this.getAttribute('data-product-id')
-        const productElement = document.getElementById(productId)
-
-        if (productElement.classList.contains('active')) {
-            productElement.classList.remove('active')
-            this.classList.remove('active')
-        } else {
-            productElement.classList.add('active')
-            this.classList.add('active')
-        }
-    })
-})
-
-window.addEventListener('load', () => {
-    const selectElements = document.querySelectorAll('.small-select')
-
-    if (selectElements.length > 0) {
-        selectElements.forEach(selectElement => {
-            selectElement.addEventListener('mousedown', event => {
-                event.stopPropagation()
-                selectElement.classList.add('open')
-            })
-
-            selectElement.addEventListener('blur', () => {
-                selectElement.classList.remove('open')
-            })
-
-            selectElement.addEventListener('change', () => {
-                selectElement.classList.remove('open')
-            })
-        })
-
-        document.addEventListener('click', () => {
-            selectElements.forEach(selectElement => {
-                selectElement.classList.remove('open')
-            })
-        })
-    } else {
-        console.warn('Элементы с классом .small-select не найдены в DOM.')
-    }
-})
-
-document.addEventListener('DOMContentLoaded', function () {
-    const headers = document.querySelectorAll('.accordion-header')
-
-    headers.forEach(header => {
-        header.addEventListener('click', function () {
-            const content = header.nextElementSibling
-            const icon = header.querySelector('.accordion-icon')
-
-            if (content.classList.contains('show')) {
-                content.style.maxHeight = content.scrollHeight + 'px'
-                setTimeout(() => {
-                    content.style.maxHeight = '0'
-                }, 10)
-                content.classList.remove('show')
-                icon.classList.remove('active')
-            } else {
-                document.querySelectorAll('.accordion-content').forEach(item => {
-                    if (item !== content) {
-                        item.style.maxHeight = '0'
-                        item.classList.remove('show')
-                        item.previousElementSibling
-                            .querySelector('.accordion-icon')
-                            .classList.remove('active')
-                    }
-                })
-
-                content.classList.add('show')
-                content.style.maxHeight = content.scrollHeight + 'px'
-                icon.classList.add('active')
-            }
-        })
-    })
 })
 
 document.addEventListener('DOMContentLoaded', () => {
