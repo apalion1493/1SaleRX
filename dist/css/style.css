@@ -943,6 +943,9 @@ body{
 .max-h-screen{
   max-height: 100vh;
 }
+.max-h-full{
+  max-height: 100%;
+}
 .min-h-\[175px\]{
   min-height: 175px;
 }
@@ -2747,6 +2750,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:ml-0{
     margin-left: 0px;
   }
+  .lg\:mb-3{
+    margin-bottom: 0.75rem;
+  }
   .lg\:hidden{
     display: none;
   }
@@ -2783,6 +2789,10 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:gap-y-5{
     row-gap: 1.25rem;
   }
+  .lg\:gap-x-0{
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
   .lg\:bg-contain{
     background-size: contain;
   }
@@ -2791,6 +2801,10 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:p-0{
     padding: 0px;
+  }
+  .lg\:py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .lg\:pr-\[75px\]{
     padding-right: 75px;
@@ -2805,8 +2819,20 @@ input[type=search]::-webkit-search-results-decoration {
     margin-left: auto;
     margin-right: auto;
   }
+  .md\:mb-3{
+    margin-bottom: 0.75rem;
+  }
+  .md\:hidden{
+    display: none;
+  }
   .md\:h-\[60px\]{
     height: 60px;
+  }
+  .md\:h-auto{
+    height: auto;
+  }
+  .md\:min-h-\[343px\]{
+    min-height: 343px;
   }
   .md\:w-full{
     width: 100%;
@@ -2823,8 +2849,32 @@ input[type=search]::-webkit-search-results-decoration {
   .md\:gap-y-5{
     row-gap: 1.25rem;
   }
+  .md\:gap-x-0{
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .md\:gap-y-8{
+    row-gap: 2rem;
+  }
   .md\:overflow-y-scroll{
     overflow-y: scroll;
+  }
+  .md\:p-4{
+    padding: 1rem;
+  }
+  .md\:px-0{
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .md\:px-4{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .md\:pl-4{
+    padding-left: 1rem;
+  }
+  .md\:pb-12{
+    padding-bottom: 3rem;
   }
   .md\:text-H1Mob{
     font-size: 30px;
@@ -2834,11 +2884,25 @@ input[type=search]::-webkit-search-results-decoration {
     font-size: 18px;
     line-height: 120%;
   }
+  .md\:text-Body4{
+    font-size: 16px;
+    line-height: 120%;
+  }
+  .md\:text-Body6{
+    font-size: 14px;
+    line-height: 140%;
+  }
 }
 
 @media (max-width: 639px){
   .sm\:flex-col{
     flex-direction: column;
+  }
+}
+
+@media (min-width: 768px){
+  .minmd\:hidden{
+    display: none;
   }
 }
 
