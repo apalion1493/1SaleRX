@@ -87,7 +87,7 @@
 <main id="content" class="flex flex-col items-center min-h-screen">
     <header class="w-full bg-white ">
     <div class="border-b border-super-light-grey py-[27px]">
-        <div class="container">
+        <div class="container overflow-hidden">
             <div class="grid grid-cols-12 gap-x-8">
                 <div class="col-span-2 flex items-center">
                     <a href="index.html">
@@ -143,7 +143,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container overflow-hidden">
         <div class="grid grid-cols-12 gap-x-8">
             <div class="col-span-12">
                 <nav class="pt-4 mega-menu">
@@ -212,7 +212,7 @@
                 <ol class="flex flex-wrap items-center gap-x-2">
                     <li class="flex items-center">
                         <a href="index.html" class="text-none">
-                            <i class="Home-icon"></i>
+                            <i class="Home-icon-small"></i>
                             Home
                         </a>
                     </li>
@@ -388,25 +388,25 @@
 
 
     <footer class="bg-white w-full mt-auto overflow-hidden">
-    <section class="pt-16 pb-[84px] @@style-subscribe">
-        <div class="container">
-            <div class="grid grid-cols-12 gap-x-8">
-                <div class="col-span-6 relative">
-                    <div class="absolute w-full max-w-[100%] top-0 right-0 footer-bg z-1"></div>
+    <section class="pt-16 pb-[84px] relative @@style-subscribe">
+        <div class="container relative z-10">
+            <div class="grid grid-cols-12 gap-x-8 lg:gap-y-6">
+                <div class="col-span-6 lg:col-span-12 relative">
+                    <div class="absolute w-full max-w-[100%] top-0 right-0 footer-bg z-1 lg:hidden"></div>
                     <div class="max-w-[453px] flex flex-col relative z-2">
-                        <span class="block mb-6 text-H1 font-semibold">SUBSCRIBE</span>
-                        <p class="pl-[36px] border-l-[5px] border-yellow text-topTitle">To have new coupon lists <br> delivered directly to
+                        <span class="block mb-6 text-H1 font-semibold md:text-H1Mob">SUBSCRIBE</span>
+                        <p class="pl-[36px] border-l-[5px] border-yellow text-topTitle md:text-Body">To have new coupon lists <br> delivered directly to
                             your inbox</p>
                     </div>
                 </div>
-                <div class="col-span-6">
-                    <div class="flex flex-col gap-y-4">
+                <div class="col-span-6 lg:col-span-12 relative">
+                    <div class="flex flex-col gap-y-4 lg:gap-y-6">
                         <p class="text-Body">We do not send spam or share your mail with third parties</p>
-                        <form class="flex items-center w-full">
-                            <label class="text-none" for="subscribe-form">Subscribe</label>
-                            <input class="input h-[63px] text-Body3 w-full px-5 py-2.5 rounded-l border border-super-light-grey focus:ring-0 focus:border-super-light-grey outline-none"
+                        <form class="flex items-center w-full md:flex-col md:gap-y-5">
+                            <label class="text-none hidden" for="subscribe-form">Subscribe</label>
+                            <input class="input h-[63px] md:h-[60px] text-Body3 w-full px-5 py-2.5 rounded-l bg-white border border-super-light-grey focus:ring-0 focus:border-super-light-grey outline-none"
                                    id="subscribe-form" type="email" placeholder="Input you email and hit enter ...">
-                            <button class="h-[63px] flex items-center justify-center uppercase bg-yellow font-semibold hover:bg-yellow-hover transition py-5 px-[30px] text-Body4"
+                            <button class="h-[63px] md:h-[60px] md:w-full flex items-center justify-center uppercase bg-yellow font-semibold hover:bg-yellow-hover transition py-5 px-[30px] text-Body4"
                                     type="submit">Subscribe
                             </button>
                         </form>
@@ -414,18 +414,19 @@
                 </div>
             </div>
         </div>
+        <div class="absolute w-full max-w-[100%] bottom-0 right-0 footer-bg z-1 lg:h-full lg:bg-contain lg:bg-bottom minlg:hidden"></div>
     </section>
     <section class="bg-dark py-8 text-white overflow-hidden">
         <div class="container">
-            <div class="grid grid-cols-12 gap-x-8">
-                <div class="col-span-6 flex items-center">
+            <div class="grid grid-cols-12 gap-x-8 md:gap-y-14">
+                <div class="col-span-6 xl:col-span-7 lg:col-span-5 md:col-span-12 flex items-center lg:flex-col lg:items-start lg:gap-y-7 md:items-center">
                     <a class="" href="index.html">
                         <img class="w-[194px]" src="img/Main-logo-white.svg" alt="1SaleRX">
                     </a>
-                    <p class="ml-16 text-Body3">1SaleRX &#169; All rights reserved</p>
+                    <p class="ml-16 lg:ml-0 text-Body3">1SaleRX &#169; All rights reserved</p>
                 </div>
-                <div class="col-span-6 flex">
-                    <ul class="flex items-center gap-x-8 ml-auto">
+                <div class="col-span-6 xl:col-span-5 lg:col-span-7 md:col-span-12 flex">
+                    <ul class="flex items-center gap-x-8 ml-auto md:flex-col md:mx-auto md:gap-y-5">
                         <li>
                             <a class="text-base transition-color hover:text-yellow" href="index.html">Home</a>
                         </li>
