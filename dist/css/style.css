@@ -2876,6 +2876,13 @@ input[type=search]::-webkit-search-results-decoration {
   .md\:border-0{
     border-width: 0px;
   }
+  .md\:border-b{
+    border-bottom-width: 1px;
+  }
+  .md\:border-super-light-grey{
+    --tw-border-opacity: 1;
+    border-color: rgb(229 229 229 / var(--tw-border-opacity));
+  }
   .md\:p-4{
     padding: 1rem;
   }
