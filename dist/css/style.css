@@ -2734,6 +2734,9 @@ input[type=search]::-webkit-search-results-decoration {
   .xl\:col-span-7{
     grid-column: span 7 / span 7;
   }
+  .xl\:bg-bottom{
+    background-position: bottom;
+  }
 }
 
 @media (max-width: 1023px){
