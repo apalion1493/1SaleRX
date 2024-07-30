@@ -5,13 +5,11 @@
                 aria-controls="accordionItemOne"
                 @click="isExpanded = ! isExpanded"
                 :aria-expanded="isExpanded ? 'true' : 'false'">
-            <span class="FAQ-block__icon bg-primary text-yellow">Q</span>
             @@title
         </button>
         <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region"
              aria-labelledby="controlsAccordionItemOne" x-collapse>
             <div class="py-6 flex items-start">
-                <span class="FAQ-block__icon bg-yellow text-primary">A</span>
                 <p class="pt-1 text-Body">@@text</p>
             </div>
         </div>

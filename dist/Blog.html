@@ -85,125 +85,176 @@
 <!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
 <!--    </div>-->
 <main id="content" class="flex flex-col items-center min-h-screen">
-    <header class="w-full bg-white ">
-    <div class="border-b border-super-light-grey py-[27px]">
-        <div class="container overflow-hidden">
-            <div class="grid grid-cols-12 gap-x-8">
-                <div class="col-span-2 flex items-center">
-                    <a href="index.html">
-                        <img src="img/Main-logo.svg" alt="1SaleRx Logo">
-                    </a>
-                </div>
-                <div class="col-span-8 flex items-center">
-                    <div x-data="{ query: '', results: [1, 2, 3], showResults: false }" @click.away="showResults = false"
-     class='flex flex-col w-full relative'>
-    <label for="Id-4" class="text-none absolute -z-10">Search</label>
-    <form
-            class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-grey-2 overflow-hidden pl-5 pr-2'>
-        <div class="relative w-full">
-            <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
-                   x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
-                   class="input w-full bg-white border-0 focus:ring-0 focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
-            <button type="button" x-show="query.length > 0" @click="query = ''" aria-label="Clear search button"
-                    class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
-                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <path
-                            d="M10.2616 0.318046L6.00014 4.57951L1.73867 0.318046C1.31253 -0.108101 0.744331 -0.108101 0.318185 0.318046C-0.107962 0.744192 -0.107962 1.31239 0.318185 1.73853L4.57965 6L0.318185 10.2615C-0.107962 10.6876 -0.107962 11.2558 0.318185 11.682C0.744331 12.1081 1.31253 12.1081 1.73867 11.682L6.00014 7.42049L10.2616 11.682C10.6878 12.1081 11.2559 12.1081 11.6821 11.682C12.1082 11.2558 12.1082 10.6876 11.6821 10.2615L7.42063 6L11.6821 1.73853C12.1082 1.31239 12.1082 0.744192 11.6821 0.318046C11.2559 -0.108101 10.6878 -0.108101 10.2616 0.318046Z"
-                            fill="#19181B" />
-                </svg>
-            </button>
-        </div>
-        <button x-show="!query.length > 0" type='submit' aria-label="Search button"
-                class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10 lg:top-2">
-            <i class='Search-icon block'></i>
-        </button>
-    </form>
-    <div x-show="showResults && query.length > 0"
-         class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-grey-2 rounded-lg shadow-shadow-2 z-10">
-        <ul>
-            <template x-for="result in results" :key="result.id">
-                <li class="py-2 text-Body3 cursor-pointer" @click="selectResult(result)">
-                    <span x-text="result.title"></span>
-                </li>
-            </template>
-        </ul>
-    </div>
-</div>
-
-                </div>
-                <div class="col-span-2 flex items-center">
-                    <div class="flex items-center gap-x-5">
-                        <i class="Telephone-icon"></i>
-                        <div class="flex flex-col items-start gap-y-1">
-                            <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
-                            <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636 123 - 4567</a>
+    <header x-data="{ mobileMenuIsOpen: false }" class="w-full bg-white ">
+    <nav>
+        <div class="minlg:hidden border-b border-super-light-grey">
+            <div class="container overflow-hidden ">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12 flex items-center justify-center pb-2 pt-3 px-2">
+                        <div class="flex items-center gap-x-5">
+                            <i class="Telephone-icon"></i>
+                            <div class="flex flex-col items-start gap-y-1">
+                                <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                                <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636
+                                    123 - 4567</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container overflow-hidden">
-        <div class="grid grid-cols-12 gap-x-8">
-            <div class="col-span-12">
-                <nav class="pt-4 mega-menu">
-                    <ul class="flex items-center gap-x-8">
-                        <li class="mega-menu__items active pb-[18px] ">
-                            <a class="flex items-center gap-x-2" href="#">
-                                <i class="Home-icon"></i>
-                                <span class="text-Body">Home</span>
-                            </a>
-                        </li>
-                        <li class="mega-menu__line">
-                            <span class="h-[30px] border-l border-super-light-grey block"></span>
-                        </li>
-                        <li class="mega-menu__items pb-[18px]">
-                            <a class="flex items-center gap-x-2" href="#">
-                                <i class="Products-icon"></i>
-                                <span class="text-Body">Products</span>
-                            </a>
-                        </li>
-                        <li class="mega-menu__line">
-                            <span class="h-[30px] border-l border-super-light-grey block"></span>
-                        </li>
-                        <li class="mega-menu__items pb-[18px]">
-                            <a class="flex items-center gap-x-2" href="#">
-                                <i class="About-icon"></i>
-                                <span class="text-Body">About Us</span>
-                            </a>
-                        </li>
-                        <li class="mega-menu__line">
-                            <span class="h-[30px] border-l border-super-light-grey block"></span>
-                        </li>
-                        <li class="mega-menu__items pb-[18px]">
-                            <a class="flex items-center gap-x-2" href="#">
-                                <i class="FAQ-icon"></i>
-                                <span class="text-Body">FAQ</span>
-                            </a>
-                        </li>
-                        <li class="mega-menu__line">
-                            <span class="h-[30px] border-l border-super-light-grey block"></span>
-                        </li>
-                        <li class="mega-menu__items pb-[18px]">
-                            <a class="flex items-center gap-x-2" href="#">
-                                <i class="Contact-icon"></i>
-                                <span class="text-Body">Contact Us</span>
-                            </a>
-                        </li>
-                        <li class="mega-menu__line">
-                            <span class="h-[30px] border-l border-super-light-grey block"></span>
-                        </li>
-                        <li class="mega-menu__items pb-[18px]">
-                            <a class="flex items-center gap-x-2" href="#">
-                                <i class="Blog-icon"></i>
-                                <span class="text-Body">Blog</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
+        <div class="border-b border-super-light-grey py-[27px] lg:border-0">
+            <div class="container">
+                <div class="grid grid-cols-12 gap-x-8">
+                    <div class="lg:col-span-3 minlg:hidden">
+                        <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
+                                aria-label="Menu burger"
+                                id='burger-button'
+                                class='flex flex-col items-center justify-center w-12 h-12 min-w-12 text-white minlg:hidden z-[31] relative gap-y-1'>
+                                <span
+                                        :class="mobileMenuIsOpen ? 'rotate-45 transform translate-y-[6px]' : 'translate-y-0'"
+                                        class="block w-6 h-[2px] bg-light-grey transition-all duration-300 rounded-full"></span>
+                            <span :class="mobileMenuIsOpen ? 'opacity-0' : 'opacity-100'"
+                                  class="block w-6 h-[2px] bg-light-grey transition-opacity duration-300 rounded-full"></span>
+                            <span
+                                    :class="mobileMenuIsOpen ? '-rotate-45 transform -translate-y-[6px]' : 'translate-y-0'"
+                                    class="block w-6 h-[2px] bg-light-grey transition-all duration-300 rounded-full"></span>
+                        </button>
+                    </div>
+                    <div class="col-span-2 xl:col-span-3 lg:col-span-6 flex items-center justify-center">
+                        <a href="index.html">
+                            <img src="img/Main-logo.svg" alt="1SaleRx Logo">
+                        </a>
+                    </div>
+                    <div class="col-span-8 xl:col-span-6 lg:col-span-3 flex items-center">
+                        <div x-data="{ query: '', results: [1, 2, 3], showResults: false }"
+                             @click.away="showResults = false"
+                             class='flex flex-col w-full relative'>
+                            <label for="Id-4" class="text-none absolute -z-10">Search</label>
+                            <form
+                                    class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-grey overflow-hidden pl-5 pr-2'>
+                                <div class="relative w-full">
+                                    <input type="search" id="Id-4" name="Search bar" placeholder="Search..."
+                                           x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true"
+                                           class="input w-full bg-white border-0 focus:ring-0 focus:border-0 text-Body3 outline-none p-0 pr-40 leading-8 transition-colors duration-200 ease-in-out lg:pr-[75px]">
+                                    <button type="button" x-show="query.length > 0" @click="query = ''"
+                                            aria-label="Clear search button"
+                                            class="absolute right-1 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                             fill="none">
+                                            <path
+                                                    d="M10.2616 0.318046L6.00014 4.57951L1.73867 0.318046C1.31253 -0.108101 0.744331 -0.108101 0.318185 0.318046C-0.107962 0.744192 -0.107962 1.31239 0.318185 1.73853L4.57965 6L0.318185 10.2615C-0.107962 10.6876 -0.107962 11.2558 0.318185 11.682C0.744331 12.1081 1.31253 12.1081 1.73867 11.682L6.00014 7.42049L10.2616 11.682C10.6878 12.1081 11.2559 12.1081 11.6821 11.682C12.1082 11.2558 12.1082 10.6876 11.6821 10.2615L7.42063 6L11.6821 1.73853C12.1082 1.31239 12.1082 0.744192 11.6821 0.318046C11.2559 -0.108101 10.6878 -0.108101 10.2616 0.318046Z"
+                                                    fill="#19181B"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <button x-show="!query.length > 0" type='submit' aria-label="Search button"
+                                        class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10 lg:top-2">
+                                    <i class='Search-icon block'></i>
+                                </button>
+                            </form>
+                            <div x-show="showResults && query.length > 0"
+                                 class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-grey-2 rounded-lg shadow-shadow-2 z-10">
+                                <ul>
+                                    <template x-for="result in results" :key="">
+                                        <li class="py-2 text-Body3 cursor-pointer" @click="selectResult(result)">
+                                            <span x-text="result.title"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-span-2 xl:col-span-3 flex items-center lg:hidden">
+                        <div class="flex items-center gap-x-5">
+                            <i class="Telephone-icon"></i>
+                            <div class="flex flex-col items-start gap-y-1">
+                                <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                                <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636
+                                    123 - 4567</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="container overflow-hidden lg:hidden">
+            <div class="grid grid-cols-12 gap-x-8">
+                <div class="col-span-12">
+                    <nav class="pt-4 mega-menu">
+                        <ul class="flex items-center gap-x-8">
+                            <li class="mega-menu__items active pb-[18px] ">
+                                <a class="flex items-center gap-x-2" href="#">
+                                    <i class="Home-icon"></i>
+                                    <span class="text-Body">Home</span>
+                                </a>
+                            </li>
+                            <li class="mega-menu__line">
+                                <span class="h-[30px] border-l border-super-light-grey block"></span>
+                            </li>
+                            <li class="mega-menu__items pb-[18px]">
+                                <a class="flex items-center gap-x-2" href="#">
+                                    <i class="Products-icon"></i>
+                                    <span class="text-Body">Products</span>
+                                </a>
+                            </li>
+                            <li class="mega-menu__line">
+                                <span class="h-[30px] border-l border-super-light-grey block"></span>
+                            </li>
+                            <li class="mega-menu__items pb-[18px]">
+                                <a class="flex items-center gap-x-2" href="#">
+                                    <i class="About-icon"></i>
+                                    <span class="text-Body">About Us</span>
+                                </a>
+                            </li>
+                            <li class="mega-menu__line">
+                                <span class="h-[30px] border-l border-super-light-grey block"></span>
+                            </li>
+                            <li class="mega-menu__items pb-[18px]">
+                                <a class="flex items-center gap-x-2" href="#">
+                                    <i class="FAQ-icon"></i>
+                                    <span class="text-Body">FAQ</span>
+                                </a>
+                            </li>
+                            <li class="mega-menu__line">
+                                <span class="h-[30px] border-l border-super-light-grey block"></span>
+                            </li>
+                            <li class="mega-menu__items pb-[18px]">
+                                <a class="flex items-center gap-x-2" href="#">
+                                    <i class="Contact-icon"></i>
+                                    <span class="text-Body">Contact Us</span>
+                                </a>
+                            </li>
+                            <li class="mega-menu__line">
+                                <span class="h-[30px] border-l border-super-light-grey block"></span>
+                            </li>
+                            <li class="mega-menu__items pb-[18px]">
+                                <a class="flex items-center gap-x-2" href="#">
+                                    <i class="Blog-icon"></i>
+                                    <span class="text-Body">Blog</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+        <div id='mobile-menu' class="relative z-[1000]">
+            <div x-cloak x-show="mobileMenuIsOpen"
+                x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+                x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+                x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+                x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" id="mobileMenu"
+                class="fixed max-h-svh overflow-x-auto inset-x-0 top-0 z-[32] flex w-full h-full minlg:hidden overflow-y-scroll items-center">
+                <div class="w-[330px] min-w-[330px] h-full bg-white">
+                    <button class="close-mob-menu" @click="mobileMenuIsOpen = false">X</button>
+                </div>
+                <div @click="mobileMenuIsOpen = false" class="w-full h-full bg-grey-3 menu-overlay"></div>
+            </div>
+        </div>
+    </nav>
 </header>
 
     <section class="py-6">
@@ -705,6 +756,11 @@
             ]
         }
         this.showResults = this.results.length > 0
+    }
+
+    function selectResult(result) {
+        this.query = result.title
+        this.showResults = false
     }
 
 

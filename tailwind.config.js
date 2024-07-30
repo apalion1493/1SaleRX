@@ -79,6 +79,7 @@ module.exports = {
                 'light-grey': '#C4C4C4',
                 'super-light-grey': '#E5E5E5',
                 'grey-2': '#F6F6F6',
+                'grey-3': 'rgba(47, 52, 54, 0.30)',
                 secondary: 'rgba(25, 24, 27, 0.05)',
                 white: '#ffffff',
                 purple: '#3f3cbb',

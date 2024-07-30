@@ -91,14 +91,20 @@ document.querySelectorAll('.mega-menu').forEach(menu => {
 })
 
 document.addEventListener('DOMContentLoaded', function () {
-    const burgerButton = document.getElementById('burger-button')
-    const mobileMenu = document.getElementById('mobile-menu')
+    const burgerButton = document.getElementById('burger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenuBtn = document.querySelector('.close-mob-menu');
+    const menuOverlay = document.querySelector('.menu-overlay');
 
-    if (burgerButton && mobileMenu) {
-        burgerButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('active')
-            document.body.classList.toggle('overflow-hidden')
-        })
+    const toggleMenu = () => {
+        mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('overflow-hidden');
+    };
+
+    if (burgerButton && mobileMenu && closeMenuBtn && menuOverlay) {
+        burgerButton.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        menuOverlay.addEventListener('click', toggleMenu);
     }
 })
 
