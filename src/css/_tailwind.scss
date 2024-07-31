@@ -40,7 +40,7 @@ section {
 }
 
 .input[type="search"]::placeholder {
-	@apply text-super-light-grey focus:text-grey;
+	@apply text-Body3 text-light-grey focus:text-grey;
 }
 
 /* Стиль для скрытия оригинального input */
