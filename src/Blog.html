@@ -37,9 +37,9 @@
     <section class="mb-14">
         <div class="container">
             <div class="bg-white py-12 px-8 rounded">
-                <div class="grid grid-cols-12 gap-8 mb-14">
+                <div class="grid grid-cols-12 gap-x-8">
                     <div class="col-span-12">
-                         <div class="flex flex-col mb-4">
+                         <div class="flex flex-col mb-14">
                              <div class="flex items-center justify-between mb-5">
                                  <h1 class="text-H1 font-semibold">Our Blog</h1>
                                  @@include('components/Filter.html', {
@@ -52,67 +52,167 @@
                              </div>
                          </div>
                      </div>
-                    <div class="col-span-6">
-                        @@include('components/Blog-Card.html', {
-                        'style': 'blog-card--big',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
+                    <div class="col-span-3">
+                        <div class="flex flex-col sticky top-3">
+                            <h2 class="mb-6 text-H2 font-semibold">Categories</h2>
+                            <ul class="flex flex-col border-t border-super-light-grey">
+                                <li>
+                                    <div class="border-b p-4 border-super-light-grey flex items-center">
+                                        <label class="custom-checkbox">
+                                        <span class="custom-checkbox__block">
+                                            <i class="Check-box-inactive-icon"></i>
+                                        </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark">
+                                             <i class="Check-box-active-icon"></i>
+                                        </span>
+                                            <span class="ml-3 font-semibold text-Body inline-flex">Category</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="border-b p-4 border-super-light-grey flex items-center">
+                                        <label class="custom-checkbox">
+                                        <span class="custom-checkbox__block">
+                                            <i class="Check-box-inactive-icon"></i>
+                                        </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark">
+                                             <i class="Check-box-active-icon"></i>
+                                        </span>
+                                            <span class="ml-3 font-semibold text-Body inline-flex">Category</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="border-b p-4 border-super-light-grey flex items-center">
+                                        <label class="custom-checkbox">
+                                        <span class="custom-checkbox__block">
+                                            <i class="Check-box-inactive-icon"></i>
+                                        </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark">
+                                             <i class="Check-box-active-icon"></i>
+                                        </span>
+                                            <span class="ml-3 font-semibold text-Body inline-flex">Category</span>
+                                        </label>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="border-b p-4 border-super-light-grey flex items-center">
+                                        <label class="custom-checkbox">
+                                        <span class="custom-checkbox__block">
+                                            <i class="Check-box-inactive-icon"></i>
+                                        </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark">
+                                             <i class="Check-box-active-icon"></i>
+                                        </span>
+                                            <span class="ml-3 font-semibold text-Body inline-flex">Category</span>
+                                        </label>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-span-6">
-                        @@include('components/Blog-Card.html', {
-                        'style': 'blog-card--big',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
+                    <div class="col-span-9">
+                        <div class="flex flex-col gap-y-8">
+                            @@include('components/Blog-Card.html', {
+                            'style': '',
+                            'link': '#',
+                            })
+
+                            @@include('components/Blog-Card.html', {
+                            'style': 'blog-card--big',
+                            'link': '#',
+                            })
+
+                            @@include('components/Blog-Card.html', {
+                            'style': 'blog-card--big',
+                            'link': '#',
+                            })
+
+                            @@include('components/Blog-Card.html', {
+                            'style': 'blog-card--big',
+                            'link': '#',
+                            })
+
+                            @@include('components/Blog-Card.html', {
+                            'style': 'blog-card--big',
+                            'link': '#',
+                            })
+
+                            @@include('components/Blog-Card.html', {
+                            'style': 'blog-card--big',
+                            'link': '#',
+                            })
+
+                            @@include('components/Blog-Card.html', {
+                            'style': 'blog-card--big',
+                            'link': '#',
+                            })
+
+                            <div class="mt-8">
+                                @@include('components/Pagination.html')
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-span-4">
-                        @@include('components/Blog-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
-                    </div>
-                    <div class="col-span-4">
-                        @@include('components/Blog-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
-                    </div>
-                    <div class="col-span-4">
-                        @@include('components/Blog-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
-                    </div>
-                    <div class="col-span-4">
-                        @@include('components/Blog-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
-                    </div>
-                    <div class="col-span-4">
-                        @@include('components/Blog-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
-                    </div>
-                    <div class="col-span-4">
-                        @@include('components/Blog-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',
-                        })
-                    </div>
-                </div>
-                <div class="grid grid-cols-12 gap-x-8">
-                    <div class="col-span-12">
-                        @@include('components/Pagination.html')
-                    </div>
+<!--                    <div class="col-span-6">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': 'blog-card&#45;&#45;big',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-6">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': 'blog-card&#45;&#45;big',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-4">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': '',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-4">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': '',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-4">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': '',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-4">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': '',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-4">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': '',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
+<!--                    <div class="col-span-4">-->
+<!--                        @@include('components/Blog-Card.html', {-->
+<!--                        'style': '',-->
+<!--                        'link': '#',-->
+<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
+<!--                        })-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
