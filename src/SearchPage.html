@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/head.html', {
+'title': 'Search page'
+})
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen">
+    @@include('components/Header.html', {
+    'commonStyle': ' ',
+    })
+
+    <section class="py-6">
+        <div class="container">
+            <nav class="text-Body8 md:text-Body6 text-light-grey" aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-x-2">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-none">
+                            <i class="Home-icon-small"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center" aria-current="page">Search result</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container">
+            <div class="bg-white py-12 px-20 rounded">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                        <div class="flex flex-col items-center mb-14">
+                            <div class="flex items-baseline justify-center w-full">
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                                <h1 class="text-H1 font-semibold mb-4 px-8 md:text-H1Mob md:px-3 text-center leading-normal">Search for “lorem ipsum”</h1>
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                            </div>
+                            <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                            <span class="text-grey text-Body3 text-center mt-[30px] block">Products not Found!</span>
+                        </div>
+
+                        <span class="Search-image mx-auto"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container">
+            <div class="bg-white py-12 px-20 rounded">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                        <div class="flex flex-col items-center mb-14">
+                            <div class="flex items-baseline justify-center w-full">
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                                <h1 class="text-H1 font-semibold mb-4 px-8 md:text-H1Mob md:px-3 text-center leading-normal">Don't find the right medicine?</h1>
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                            </div>
+                            <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                            <span class="text-Body text-center mt-[32px] block">Сontact us by filling out the form below and we will contact to <br> help you choose the right medicine!</span>
+                        </div>
+                    </div>
+                    <div class="col-span-2 xl:col-span-1 lg:hidden"></div>
+                    <div class="col-span-8 xl:col-span-10 lg:col-span-12">
+                        <form class="grid grid-cols-12 gap-x-8 gap-y-5 md:gap-x-0 p-8 md:p-0 md:border-0 border border-super-light-grey rounded">
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/input.html', {
+                                'common-style': '',
+                                'styleInput': '',
+                                'label': 'Full Name <span class="text-red">*</span>',
+                                'type': 'text',
+                                'placeholder': '',
+                                'idInput': 'ID1',
+                                'errorStyle': 'hidden',
+                                })
+                            </div>
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/input.html', {
+                                'common-style': '',
+                                'styleInput': '',
+                                'label': 'Email <span class="text-red">*</span>',
+                                'type': 'email',
+                                'placeholder': '',
+                                'idInput': 'ID2',
+                                'errorStyle': 'hidden',
+                                })
+                            </div>
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/input.html', {
+                                'common-style': '',
+                                'styleInput': '',
+                                'label': 'Message Subject <span class="text-red">*</span>',
+                                'type': 'text',
+                                'placeholder': '',
+                                'idInput': 'ID3',
+                                'errorStyle': 'hidden',
+                                })
+                            </div>
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/FilterState.html', {
+                                'idFilter': 'FilterStateId',
+                                'label': 'Select State <span class="text-red">*</span>',
+                                'styleInput': 'h-10 w-full',
+                                'style': 'w-full max-w-full',
+                                })
+                            </div>
+                            <div class="col-span-12">
+                                @@include('components/textarea.html', {
+                                'commonStyle': '',
+                                'styleTextarea': 'md:min-h-[100px]',
+                                'label': 'Message <span class="text-red">*</span>',
+                                'type': 'text',
+                                'placeholder': '',
+                                'idTextarea': 'ID4',
+                                'rows': '3',
+                                })
+                            </div>
+                            <div class="col-span-12">
+                                @@include('components/button.html', {
+                                'style': 'flex w-full mt-1',
+                                'type': 'submit',
+                                'title': 'SEND MESSAGE',
+                                'ariaLabel': 'SEND MESSAGE',
+                                })
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-span-2 xl:col-span-1 lg:hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('components/Footer.html')
+</main>
+
+@@include('components/script.html')
+</body>
+
+</html>

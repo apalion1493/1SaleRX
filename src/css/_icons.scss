@@ -192,3 +192,13 @@
   background: url("../img/icon/Home-icon.svg");
   @apply block h-[12px] w-[12px] bg-100-auto bg-center bg-no-repeat;
 }
+
+.Search-image {
+  background: url("../img/Search-image.png");
+  @apply block h-[132px] w-[132px] bg-100-auto bg-center bg-no-repeat;
+}
+
+.Baner-blog-1 {
+  background: url("../img/Baner-blog-1.png");
+  @apply block w-full bg-cover bg-center bg-no-repeat;
+}

@@ -165,6 +165,10 @@ input[type='search']::-webkit-search-results-decoration {
 		@apply h-[50px]
 	}
 
+	&.btn-white {
+		@apply text-Body9 border-white bg-transparent hover:bg-white text-white py-3 h-[35px] max-w-[167px] hover:text-primary;
+	}
+
 	@apply text-Body4 px-10 h-[60px] md:py-3 rounded-full border transition border-yellow bg-yellow items-center justify-center hover:bg-transparent text-primary
 }
 
