@@ -146,7 +146,7 @@
                                     </svg>
                                 </button>
                             </div>
-                            <button @click="$refs.inputField.focus()" @focus="showForm = true" type="button" x-show="!query.length > 0" aria-label="Search button"
+                            <button @click="$refs.inputField.focus(); showForm = true" type="button" x-show="!query.length > 0" aria-label="Search button"
                                     class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10">
                                 <i class='Search-icon block'></i>
                             </button>
