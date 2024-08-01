@@ -2958,6 +2958,9 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 @media (max-width: 1023px){
+  .lg\:fixed{
+    position: fixed;
+  }
   .lg\:absolute{
     position: absolute;
   }
@@ -3212,6 +3215,9 @@ input[type=search]::-webkit-search-results-decoration {
 @media (min-width: 1024px){
   .minlg\:relative{
     position: relative;
+  }
+  .minlg\:sticky{
+    position: sticky;
   }
   .minlg\:hidden{
     display: none;

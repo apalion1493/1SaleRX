@@ -340,9 +340,9 @@
         </div>
     </section>
     <section class="mb-14">
-        <div class="container">
+        <div x-data="{ mobileFilter: false }" class="container">
             <div class="bg-white py-12 px-8 rounded">
-                <div class="grid grid-cols-12 gap-x-8">
+                <div class="grid grid-cols-12 gap-x-8 lg:gap-x-0">
                     <div class="col-span-12">
                          <div class="flex flex-col mb-14">
                              <div class="flex items-center justify-between mb-5">
@@ -446,8 +446,8 @@
                              </div>
                          </div>
                      </div>
-                    <div class="col-span-3">
-                        <div class="flex flex-col sticky top-3">
+                    <div class="col-span-3 lg:col-span-12">
+                        <div class="flex flex-col minlg:sticky top-3 lg:hidden">
                             <h2 class="mb-6 text-H2 font-semibold">Categories</h2>
                             <ul class="flex flex-col border-t border-super-light-grey">
                                 <li>
@@ -509,7 +509,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-span-9">
+                    <div class="col-span-9 lg:col-span-12">
                         <div class="flex flex-col gap-y-8">
                             <a href="#" class="blog-card group ">
     <div class="flex flex-col items-start h-full">
@@ -739,62 +739,6 @@
                             </div>
                         </div>
                     </div>
-<!--                    <div class="col-span-6">-->
-
-<!--                        'style': 'blog-card&#45;&#45;big',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-6">-->
-
-<!--                        'style': 'blog-card&#45;&#45;big',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-4">-->
-
-<!--                        'style': '',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-4">-->
-
-<!--                        'style': '',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-4">-->
-
-<!--                        'style': '',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-4">-->
-
-<!--                        'style': '',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-4">-->
-
-<!--                        'style': '',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
-<!--                    <div class="col-span-4">-->
-
-<!--                        'style': '',-->
-<!--                        'link': '#',-->
-<!--                        'img': 'img/hr-handshaking-successful-candidate-getting-hired-new-job-closeup.png',-->
-<!--                        })-->
-<!--                    </div>-->
                 </div>
             </div>
         </div>
