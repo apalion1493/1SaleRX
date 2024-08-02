@@ -126,7 +126,7 @@
                 </div>
                 <div class="col-span-8 xl:col-span-6 lg:col-span-3 md:col-span-2 flex items-center h-[56px]">
                     <div x-data="{ query: '', results: [1, 2, 3], showResults: false, showForm: false }"
-                         @click.away="showResults = false, showForm = false"
+                         @click.away="showResults = false, showForm = false "
                          class='flex flex-col w-full z-[100] minlg:relative' :class='showForm ? "lg:absolute lg:top-0 lg:right-0" : "relative"'>
                         <label for="Id-4" class="text-none absolute -z-10">Search</label>
                         <form :class='showForm ? "border" : "lg:border-0"'

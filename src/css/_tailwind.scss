@@ -172,6 +172,13 @@ input[type='search']::-webkit-search-results-decoration {
 	@apply text-Body4 px-10 h-[60px] md:py-3 rounded-full border transition border-yellow bg-yellow items-center justify-center hover:bg-transparent text-primary
 }
 
+.testimonial-text {
+	display: -webkit-box;
+	-webkit-line-clamp: 5;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
 @media (max-width: 1279.98px) {
 }
 
