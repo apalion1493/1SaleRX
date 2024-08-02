@@ -84,7 +84,7 @@
     @apply flex-row items-center p-5 gap-x-4
   }
 
-  @apply flex flex-col justify-between p-8 bg-white hover:shadow-color-1 outline-1 outline-dashed outline-light-grey transition rounded
+  @apply flex flex-col justify-between p-8 md:p-4 bg-white hover:shadow-color-1 outline-1 outline-dashed outline-light-grey transition rounded
 }
 
 // Blog Card Style End

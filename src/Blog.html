@@ -14,7 +14,7 @@
     'commonStyle': ' ',
     })
 
-    <section class="py-6">
+    <section class="py-6 md:py-5">
         <div class="container">
             <nav class="text-Body8 md:text-Body6 text-light-grey" aria-label="breadcrumb">
                 <ol class="flex flex-wrap items-center gap-x-2">
@@ -34,19 +34,35 @@
             </nav>
         </div>
     </section>
-    <section class="mb-14">
-        <div x-data="{ mobileFilter: false }" class="container">
-            <div class="bg-white py-12 px-8 rounded">
+    <section class="mb-14 md:mb-10">
+        <div x-data="{ mobileFilter: false }" class="container md:px-0">
+            <div class="bg-white py-12 px-8 md:px-4 md:py-8 rounded">
                 <div class="grid grid-cols-12 gap-x-8 lg:gap-x-0">
                     <div class="col-span-12">
-                         <div class="flex flex-col mb-14">
-                             <div class="flex items-center justify-between mb-5">
-                                 <h1 class="text-H1 font-semibold">Our Blog</h1>
-                                 @@include('components/Filter.html', {
-                                 'style': 'max-w-[288px]'
-                                 })
+                         <div class="flex flex-col mb-14 lg:mb-8">
+                             <div class="flex items-center justify-between lg:flex-col lg:items-start lg:gap-y-8 lg:mb-0 mb-5">
+                                 <div class="lg:flex lg:flex-col lg:gap-y-5 lg:w-full">
+                                     <h1 class="text-H1 font-semibold md:text-H1Mob ">Our Blog</h1>
+                                     <div class="flex items-center gap-x-6 minlg:hidden">
+                                         <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                                         <span class="w-full border-b border-super-light-grey"></span>
+                                     </div>
+                                 </div>
+                                 <div class="flex items-center justify-between max-w-[288px] lg:max-w-full w-full">
+                                     @@include('components/Filter.html', {
+                                     'style': 'max-w-[288px] lg:max-w-[291px] w-full h-10 gap-y-0',
+                                     'buttonStyle': 'h-10',
+                                     })
+
+                                     <button class="minlg:hidden text-none w-10 min-w-10 h-10 flex items-center justify-center rounded-[3px] overflow-hidden ml-3 border border-super-light-grey" type="button" aria-label="Mob button filter">
+                                         Filter
+                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                             <path d="M9.5 7V6.5H9H3C2.72386 6.5 2.5 6.27614 2.5 6C2.5 5.72386 2.72386 5.5 3 5.5H9H9.5V5V4C9.5 3.72386 9.72386 3.5 10 3.5C10.2761 3.5 10.5 3.72386 10.5 4V8C10.5 8.27614 10.2761 8.5 10 8.5C9.72386 8.5 9.5 8.27614 9.5 8V7ZM15 11.5H15.5V11V10.012C15.5 9.73586 15.7239 9.512 16 9.512C16.2761 9.512 16.5 9.73586 16.5 10.012V14C16.5 14.2761 16.2761 14.5 16 14.5C15.7239 14.5 15.5 14.2761 15.5 14V13V12.5H15H3C2.72386 12.5 2.5 12.2761 2.5 12C2.5 11.7239 2.72386 11.5 3 11.5H15ZM5 17.5H5.5V17V16C5.5 15.7239 5.72386 15.5 6 15.5C6.27614 15.5 6.5 15.7239 6.5 16V20C6.5 20.2761 6.27614 20.5 6 20.5C5.72386 20.5 5.5 20.2761 5.5 20V19V18.5H5H3C2.72386 18.5 2.5 18.2761 2.5 18C2.5 17.7239 2.72386 17.5 3 17.5H5ZM13.5 6C13.5 5.72386 13.7239 5.5 14 5.5H21C21.2761 5.5 21.5 5.72386 21.5 6C21.5 6.27614 21.2761 6.5 21 6.5H14C13.7239 6.5 13.5 6.27614 13.5 6ZM9.5 18C9.5 17.7239 9.72386 17.5 10 17.5H21C21.2761 17.5 21.5 17.7239 21.5 18C21.5 18.2761 21.2761 18.5 21 18.5H10C9.72386 18.5 9.5 18.2761 9.5 18ZM19.5 12C19.5 11.7239 19.7239 11.5 20 11.5H21C21.2761 11.5 21.5 11.7239 21.5 12C21.5 12.2761 21.2761 12.5 21 12.5H20C19.7239 12.5 19.5 12.2761 19.5 12Z" fill="#C4C4C4" stroke="#AAAAAA"/>
+                                         </svg>
+                                     </button>
+                                 </div>
                              </div>
-                             <div class="flex items-center gap-x-6">
+                             <div class="flex items-center gap-x-6 lg:hidden">
                                  <span class="w-[50px] border-b-[5px] border-yellow"></span>
                                  <span class="w-full border-b border-super-light-grey"></span>
                              </div>

@@ -676,7 +676,6 @@
             <span class="font-semibold text-Body">READ MORE</span>
             <i class="Plus-icon"></i>
         </div>
-
     </div>
 </a>
         <br>
@@ -706,7 +705,6 @@
             <span class="font-semibold text-Body">READ MORE</span>
             <i class="Plus-icon"></i>
         </div>
-
     </div>
 </a>
         <br>
@@ -736,7 +734,6 @@
             <span class="font-semibold text-Body">READ MORE</span>
             <i class="Plus-icon"></i>
         </div>
-
     </div>
 </a>
         <br>
@@ -816,7 +813,7 @@
                 }
             }
         },
-    }" class="w-full max-w-xs flex flex-col gap-1 @@style"
+    }" class="w-full max-w-xs flex flex-col gap-y-1 @@style"
      x-on:keydown="highlightFirstMatchingOption($event.key)"
      x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
     >
@@ -825,10 +822,8 @@
 
         <!-- trigger button  -->
         <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
-        border-slate-300 bg-white px-3 py-2.5 text-grey
-        transition
-        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-        focus-visible:outline-blue-700 rounded border"
+        border-super-light-grey bg-white px-3 py-2.5 text-grey
+        transition rounded border @@buttonStyle"
                 aria-haspopup="listbox" aria-controls="industriesList"
                 x-on:click="isOpen = ! isOpen"
                 x-on:keydown.down.prevent="openedWithKeyboard = true"
@@ -836,7 +831,7 @@
                 x-on:keydown.space.prevent="openedWithKeyboard = true"
                 x-bind:aria-label="selectedOption ? selectedOption.value : 'Sort by'"
                 x-bind:aria-expanded="isOpen || openedWithKeyboard">
-            <span class="text-sm font-normal" x-text="selectedOption ? selectedOption.value : 'Sort by'"></span>
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'Sort by'"></span>
             <!-- Chevron  -->
             <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
         </button>
@@ -883,12 +878,12 @@
         <i class="Arrow-direction-right-icon rotate-180 pagination-button--arrow"></i>
         Previous
     </a>
-    <ul class="flex flex-shrink-0 items-center gap-x-5 text-Body6 font-semibold">
+    <ul class="flex flex-shrink-0 items-center gap-x-5 lg:gap-x-0 text-Body6 font-semibold">
         <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 bg-dark text-yellow hover:text-yellow transition" aria-label="page 1">1</a></li>
         <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition" aria-current="page" aria-label="page 2">2</a></li>
         <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition" aria-current="page" aria-label="page 3">3</a></li>
-        <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition" aria-current="page" aria-label="page 4">4</a></li>
-        <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition" aria-current="page" aria-label="page 5">5</a></li>
+        <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition lg:hidden" aria-current="page" aria-label="page 4">4</a></li>
+        <li><a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition lg:hidden" aria-current="page" aria-label="page 5">5</a></li>
         <li>
             <a href="#" class="flex size-10 items-center justify-center rounded-full p-1 text-primary hover:text-yellow transition dark:text-slate-300 dark:hover:text-blue-600" aria-label="more pages">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" aria-hidden="true" stroke="currentColor" class="w-6 h-6">
