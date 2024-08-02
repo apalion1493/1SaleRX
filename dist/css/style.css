@@ -1106,6 +1106,9 @@ body{
 .max-w-xs{
   max-width: 20rem;
 }
+.max-w-\[588px\]{
+  max-width: 588px;
+}
 .flex-1{
   flex: 1 1 0%;
 }
@@ -1684,6 +1687,9 @@ body{
 }
 .leading-normal{
   line-height: 1.5;
+}
+.leading-tight{
+  line-height: 1.25;
 }
 .text-gray-500{
   --tw-text-opacity: 1;
@@ -3230,6 +3236,9 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .md\:leading-tight{
     line-height: 1.25;
+  }
+  .md\:leading-normal{
+    line-height: 1.5;
   }
 }
 
