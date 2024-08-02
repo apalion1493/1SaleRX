@@ -347,6 +347,52 @@
         </div>
     </section>
 
+    <section class="mb-14">
+        <div class="container">
+            <div class="p-8 md:px-4 bg-white rounded">
+                <div class="grid grid-cols-12 gap-y-14">
+                    <div class="col-span-12">
+                        <div class="flex flex-col">
+                            <h1 class="text-H1 block mb-5 font-semibold md:text-H1Mob">Actos Testimonials</h1>
+                            <div class="flex items-center gap-x-6">
+                                <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                                <span class="w-full border-b border-super-light-grey"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12">
+                        <div class="grid grid-cols-12 gap-8 md:gap-x-0">
+                            <div class="col-span-4 lg:col-span-12">
+                                @@include('components/Testimonial-brand.html', {
+                                'brandLogo': 'actos-icon',
+                                'brandName': 'Actos',
+                                'title': 'The service is exceptional!',
+                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.'
+                                })
+                            </div>
+                            <div class="col-span-4 lg:col-span-12">
+                                @@include('components/Testimonial-brand.html', {
+                                'brandLogo': 'actos-icon',
+                                'brandName': 'Actos',
+                                'title': 'Great Effect!',
+                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.'
+                                })
+                            </div>
+                            <div class="col-span-4 lg:col-span-12">
+                                @@include('components/Testimonial-brand.html', {
+                                'brandLogo': 'actos-icon',
+                                'brandName': 'Actos',
+                                'title': 'Best medicament!',
+                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.'
+                                })
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     @@include('components/Footer.html')
 </main>
 

@@ -34,20 +34,17 @@
                 }
             }
         },
-    }" class="w-full max-w-xs flex flex-col gap-1 @@style"
+    }" class="w-full flex flex-col gap-1 @@style"
      x-on:keydown="highlightFirstMatchingOption($event.key)"
      x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
-    >
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
 
     <label class="mb-[6px] text-Body6" for="@@idFilter">@@label</label>
     <div class="relative">
 
         <!-- trigger button  -->
         <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
-        border-super-light-grey bg-white px-3 py-2.5 text-grey
-        transition
-        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-        focus-visible:outline-blue-700 rounded border"
+        border-super-light-grey bg-white px-3 py-2.5 text-grey transition rounded border"
                 aria-haspopup="listbox" aria-controls="industriesList"
                 x-on:click="isOpen = ! isOpen"
                 x-on:keydown.down.prevent="openedWithKeyboard = true"
@@ -55,7 +52,7 @@
                 x-on:keydown.space.prevent="openedWithKeyboard = true"
                 x-bind:aria-label="selectedOption ? selectedOption.value : 'Select Position'"
                 x-bind:aria-expanded="isOpen || openedWithKeyboard">
-            <span class="text-sm font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
             <!-- Chevron  -->
             <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
         </button>

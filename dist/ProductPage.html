@@ -612,16 +612,16 @@
         options: [
             {
                 value: 'State 1',
-                label: 'State 1',
+                label: 'State 1'
             },
             {
                 value: 'State 2',
-                label: 'State 2',
+                label: 'State 2'
             },
             {
                 value: 'State 3',
-                label: 'State 3',
-            },
+                label: 'State 3'
+            }
         ],
         isOpen: false,
         openedWithKeyboard: false,
@@ -643,11 +643,11 @@
                     allOptions[index].focus()
                 }
             }
-        },
+        }
     }" class="w-full flex flex-col @@style"
      x-on:keydown="highlightFirstMatchingOption($event.key)"
      x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
-    >
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/XSL/Transform">
 
     <label class="mb-[6px] text-Body6" for="FilterStateId">Select State <span class="text-red">*</span></label>
     <div class="relative">
@@ -663,7 +663,7 @@
                 x-on:keydown.space.prevent="openedWithKeyboard = true"
                 x-bind:aria-label="selectedOption ? selectedOption.value : 'State'"
                 x-bind:aria-expanded="isOpen || openedWithKeyboard">
-            <span class="text-sm font-normal" x-text="selectedOption ? selectedOption.value : 'State'"></span>
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'State'"></span>
             <!-- Chevron  -->
             <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
         </button>
@@ -686,11 +686,12 @@
                     role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
                     x-bind:id="'option-' + index" tabindex="0">
                     <!-- Label  -->
-                    <span x-bind:class="selectedOption == item ? 'text-primary' : null" class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <span x-bind:class="selectedOption === item ? 'text-primary' : null"
+                          class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
                     <!-- Screen reader 'selected' indicator  -->
-                    <span class="sr-only" x-text="selectedOption == item ? 'selected' : null"></span>
+                    <span class="sr-only" x-text="selectedOption === item ? 'selected' : null"></span>
                     <!-- Checkmark  -->
-                    <svg x-cloak x-show="selectedOption == item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    <svg x-cloak x-show="selectedOption === item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                          stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
                     </svg>
@@ -735,20 +736,17 @@
                 }
             }
         },
-    }" class="w-full max-w-xs flex flex-col gap-1 @@style"
+    }" class="w-full flex flex-col gap-1 @@style"
      x-on:keydown="highlightFirstMatchingOption($event.key)"
      x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
-    >
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
 
     <label class="mb-[6px] text-Body6" for="FilterPositionId">Select Position <span class="text-red">*</span></label>
     <div class="relative">
 
         <!-- trigger button  -->
         <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
-        border-super-light-grey bg-white px-3 py-2.5 text-grey
-        transition
-        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
-        focus-visible:outline-blue-700 rounded border"
+        border-super-light-grey bg-white px-3 py-2.5 text-grey transition rounded border"
                 aria-haspopup="listbox" aria-controls="industriesList"
                 x-on:click="isOpen = ! isOpen"
                 x-on:keydown.down.prevent="openedWithKeyboard = true"
@@ -756,7 +754,7 @@
                 x-on:keydown.space.prevent="openedWithKeyboard = true"
                 x-bind:aria-label="selectedOption ? selectedOption.value : 'Select Position'"
                 x-bind:aria-expanded="isOpen || openedWithKeyboard">
-            <span class="text-sm font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
             <!-- Chevron  -->
             <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
         </button>
@@ -827,6 +825,169 @@
                         </div>
                     </div>
                     <div class="col-span-1"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-14">
+        <div class="container">
+            <div class="p-8 md:px-4 bg-white rounded">
+                <div class="grid grid-cols-12 gap-y-14">
+                    <div class="col-span-12">
+                        <div class="flex flex-col">
+                            <h1 class="text-H1 block mb-5 font-semibold md:text-H1Mob">Actos Testimonials</h1>
+                            <div class="flex items-center gap-x-6">
+                                <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                                <span class="w-full border-b border-super-light-grey"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12">
+                        <div class="grid grid-cols-12 gap-8 md:gap-x-0">
+                            <div class="col-span-4 lg:col-span-12">
+                                <div class="p-5 flex flex-col gap-y-5 outline-1 outline-dashed outline-light-grey rounded h-full max-h-[331px] @@style">
+    <div class="flex items-center gap-x-3 text-Body6 text-grey">
+        <div class="flex items-center gap-x-3 text-primary text-H2 font-semibold">
+            <i class="actos-icon"></i>
+            <span>Actos</span>
+        </div>
+        <span class="relative -top-[2px]">|</span>
+        <span>28tab</span>
+        <span class="relative -top-[2px]">|</span>
+        <span>30mg</span>
+    </div>
+    <div class="flex items-center gap-x-1">
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-super-light-grey" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+    </div>
+    <span class="font-semibold textH2">The service is exceptional!</span>
+    <p class="text-grey text-Body4 testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.
+    </p>
+    <div class="flex items-center justify-between w-full">
+        <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+        <span class="block w-full border-t border-grey-2"></span>
+    </div>
+    <div class="flex flex-col mt-auto">
+        <p class="mb-1 text-Body3">Maria Reineb</p>
+        <p class="flex items-center text-Body6 text-grey gap-x-2">
+            <span class="uppercase">NEW YORK</span>
+            <span class="relative -top-[2px]">|</span>
+            <span class="">07/01/2024</span>
+        </p>
+    </div>
+</div>
+                            </div>
+                            <div class="col-span-4 lg:col-span-12">
+                                <div class="p-5 flex flex-col gap-y-5 outline-1 outline-dashed outline-light-grey rounded h-full max-h-[331px] @@style">
+    <div class="flex items-center gap-x-3 text-Body6 text-grey">
+        <div class="flex items-center gap-x-3 text-primary text-H2 font-semibold">
+            <i class="actos-icon"></i>
+            <span>Actos</span>
+        </div>
+        <span class="relative -top-[2px]">|</span>
+        <span>28tab</span>
+        <span class="relative -top-[2px]">|</span>
+        <span>30mg</span>
+    </div>
+    <div class="flex items-center gap-x-1">
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-super-light-grey" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+    </div>
+    <span class="font-semibold textH2">Great Effect!</span>
+    <p class="text-grey text-Body4 testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.
+    </p>
+    <div class="flex items-center justify-between w-full">
+        <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+        <span class="block w-full border-t border-grey-2"></span>
+    </div>
+    <div class="flex flex-col mt-auto">
+        <p class="mb-1 text-Body3">Maria Reineb</p>
+        <p class="flex items-center text-Body6 text-grey gap-x-2">
+            <span class="uppercase">NEW YORK</span>
+            <span class="relative -top-[2px]">|</span>
+            <span class="">07/01/2024</span>
+        </p>
+    </div>
+</div>
+                            </div>
+                            <div class="col-span-4 lg:col-span-12">
+                                <div class="p-5 flex flex-col gap-y-5 outline-1 outline-dashed outline-light-grey rounded h-full max-h-[331px] @@style">
+    <div class="flex items-center gap-x-3 text-Body6 text-grey">
+        <div class="flex items-center gap-x-3 text-primary text-H2 font-semibold">
+            <i class="actos-icon"></i>
+            <span>Actos</span>
+        </div>
+        <span class="relative -top-[2px]">|</span>
+        <span>28tab</span>
+        <span class="relative -top-[2px]">|</span>
+        <span>30mg</span>
+    </div>
+    <div class="flex items-center gap-x-1">
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-super-light-grey" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+    </div>
+    <span class="font-semibold textH2">Best medicament!</span>
+    <p class="text-grey text-Body4 testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.
+    </p>
+    <div class="flex items-center justify-between w-full">
+        <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+        <span class="block w-full border-t border-grey-2"></span>
+    </div>
+    <div class="flex flex-col mt-auto">
+        <p class="mb-1 text-Body3">Maria Reineb</p>
+        <p class="flex items-center text-Body6 text-grey gap-x-2">
+            <span class="uppercase">NEW YORK</span>
+            <span class="relative -top-[2px]">|</span>
+            <span class="">07/01/2024</span>
+        </p>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

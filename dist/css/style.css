@@ -977,6 +977,9 @@ body{
 .max-h-\[290px\]{
   max-height: 290px;
 }
+.max-h-\[331px\]{
+  max-height: 331px;
+}
 .max-h-full{
   max-height: 100%;
 }
@@ -2560,6 +2563,16 @@ input[type=search]::-webkit-search-results-decoration {
   background-repeat: no-repeat;
 }
 
+.actos-icon {
+  background: url("../img/icon/actos-icon.png");
+  display: block;
+  height: 1.5rem;
+  width: 1.5rem;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .footer-bg {
   background: url("../img/Footer-bg-1.png");
   height: calc(100% + 84px);
@@ -2915,22 +2928,6 @@ input[type=search]::-webkit-search-results-decoration {
 .focus-visible\:outline-none:focus-visible{
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.focus-visible\:outline:focus-visible{
-  outline-style: solid;
-}
-
-.focus-visible\:outline-2:focus-visible{
-  outline-width: 2px;
-}
-
-.focus-visible\:outline-offset-2:focus-visible{
-  outline-offset: 2px;
-}
-
-.focus-visible\:outline-blue-700:focus-visible{
-  outline-color: #1d4ed8;
 }
 
 .group:hover .group-hover\:bg-transparent{

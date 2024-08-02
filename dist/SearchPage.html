@@ -416,16 +416,16 @@
         options: [
             {
                 value: 'State 1',
-                label: 'State 1',
+                label: 'State 1'
             },
             {
                 value: 'State 2',
-                label: 'State 2',
+                label: 'State 2'
             },
             {
                 value: 'State 3',
-                label: 'State 3',
-            },
+                label: 'State 3'
+            }
         ],
         isOpen: false,
         openedWithKeyboard: false,
@@ -447,11 +447,11 @@
                     allOptions[index].focus()
                 }
             }
-        },
+        }
     }" class="w-full flex flex-col w-full max-w-full"
      x-on:keydown="highlightFirstMatchingOption($event.key)"
      x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
-    >
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/XSL/Transform">
 
     <label class="mb-[6px] text-Body6" for="FilterStateId">Select State <span class="text-red">*</span></label>
     <div class="relative">
@@ -467,7 +467,7 @@
                 x-on:keydown.space.prevent="openedWithKeyboard = true"
                 x-bind:aria-label="selectedOption ? selectedOption.value : 'State'"
                 x-bind:aria-expanded="isOpen || openedWithKeyboard">
-            <span class="text-sm font-normal" x-text="selectedOption ? selectedOption.value : 'State'"></span>
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'State'"></span>
             <!-- Chevron  -->
             <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
         </button>
@@ -490,11 +490,12 @@
                     role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
                     x-bind:id="'option-' + index" tabindex="0">
                     <!-- Label  -->
-                    <span x-bind:class="selectedOption == item ? 'text-primary' : null" class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <span x-bind:class="selectedOption === item ? 'text-primary' : null"
+                          class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
                     <!-- Screen reader 'selected' indicator  -->
-                    <span class="sr-only" x-text="selectedOption == item ? 'selected' : null"></span>
+                    <span class="sr-only" x-text="selectedOption === item ? 'selected' : null"></span>
                     <!-- Checkmark  -->
-                    <svg x-cloak x-show="selectedOption == item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    <svg x-cloak x-show="selectedOption === item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
                          stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
                         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
                     </svg>
