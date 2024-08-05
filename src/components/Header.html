@@ -64,7 +64,7 @@
                                 <i class='Search-icon block'></i>
                             </button>
                         </form>
-                        <div x-show="showResults && query.length > 0"
+                        <div style="display: none" x-show="showResults && query.length > 0"
                              class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-grey-2 rounded-lg shadow-shadow-2 z-10">
                             <ul class="flex flex-col gap-y-4">
                                 <template x-for="result in results" :key="">
@@ -152,7 +152,7 @@
     </div>
 
     <div id='mobile-menu' class="relative z-[1000]">
-        <div x-cloak x-show="mobileMenuIsOpen"
+        <div style="display: none" x-cloak x-show="mobileMenuIsOpen"
              x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
              x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
              x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"

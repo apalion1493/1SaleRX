@@ -151,7 +151,7 @@
                                 <i class='Search-icon block'></i>
                             </button>
                         </form>
-                        <div x-show="showResults && query.length > 0"
+                        <div style="display: none" x-show="showResults && query.length > 0"
                              class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-grey-2 rounded-lg shadow-shadow-2 z-10">
                             <ul class="flex flex-col gap-y-4">
                                 <template x-for="result in results" :key="">
@@ -239,7 +239,7 @@
     </div>
 
     <div id='mobile-menu' class="relative z-[1000]">
-        <div x-cloak x-show="mobileMenuIsOpen"
+        <div style="display: none" x-cloak x-show="mobileMenuIsOpen"
              x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
              x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
              x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
@@ -1178,42 +1178,44 @@
             <br>
             <br>
 
-            <div class="FAQ-block w-full overflow-hidden text-slate-700">
-    <div x-data="{ isExpanded: false }" class="">
-        <button id="controlsAccordionItemOne" type="button"
-                class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
-                aria-controls="accordionItemOne"
-                @click="isExpanded = ! isExpanded"
-                :aria-expanded="isExpanded ? 'true' : 'false'">
-            Who is 1salerx?
-        </button>
-        <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region"
-             aria-labelledby="controlsAccordionItemOne" x-collapse>
-            <div class="py-6 flex items-start">
-                <p class="pt-1 text-Body">1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur assumenda doloribus earum error, inventore natus obcaecati quibusdam saepe sed. Animi dolore, in quo sapiente suscipit voluptas voluptatem. Quasi, repellendus.</p>
-            </div>
+            <div x-data="{ isExpanded: true, isMobile: 0 }"
+     x-resize.document="isMobile = $width"
+     class="">
+    <button id="controlsAccordionItemOne" type="button"
+            class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
+            aria-controls="accordionItemOne"
+            @click="isMobile < 1000 ? isExpanded = ! isExpanded : null"
+            :aria-expanded="isExpanded ? 'true' : 'false'">
+        <span class="inline-flex text-Body font-semibold pb-2 border-b border-dashed border-yellow">
+
+        </span>
+    </button>
+    <div x-cloak x-show="isExpanded || isMobile > 1000" id="accordionItemOne" role="region"
+         aria-labelledby="controlsAccordionItemOne" x-collapse>
+        <div class="flex items-start">
+
         </div>
     </div>
 </div>
+            <div x-data="{ isExpanded: true, isMobile: 0 }"
+     x-resize.document="isMobile = $width"
+     class="">
+    <button id="controlsAccordionItemOne" type="button"
+            class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
+            aria-controls="accordionItemOne"
+            @click="isMobile < 1000 ? isExpanded = ! isExpanded : null"
+            :aria-expanded="isExpanded ? 'true' : 'false'">
+        <span class="inline-flex text-Body font-semibold pb-2 border-b border-dashed border-yellow">
 
-            <div class="FAQ-block w-full overflow-hidden text-slate-700">
-    <div x-data="{ isExpanded: false }" class="">
-        <button id="controlsAccordionItemOne" type="button"
-                class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
-                aria-controls="accordionItemOne"
-                @click="isExpanded = ! isExpanded"
-                :aria-expanded="isExpanded ? 'true' : 'false'">
-            Who is 1salerx?
-        </button>
-        <div x-cloak x-show="isExpanded" id="accordionItemOne" role="region"
-             aria-labelledby="controlsAccordionItemOne" x-collapse>
-            <div class="py-6 flex items-start">
-                <p class="pt-1 text-Body">1salerx.com is owned and operated by Helios Pharmacy a licensed Texas Board of Pharmacy entity.</p>
-            </div>
+        </span>
+    </button>
+    <div x-cloak x-show="isExpanded || isMobile > 1000" id="accordionItemOne" role="region"
+         aria-labelledby="controlsAccordionItemOne" x-collapse>
+        <div class="flex items-start">
+
         </div>
     </div>
 </div>
-
 
             <br>
             <br>

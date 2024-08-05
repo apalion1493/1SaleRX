@@ -45,11 +45,11 @@
         </div>
     </section>
     <section class="mb-14">
-        <div class="container">
-            <div class="bg-white py-12 px-0 rounded">
+        <div class="container lg:px-0">
+            <div class="bg-white py-12 px-0 lg:px-4 rounded">
                 <div class="grid grid-cols-12 gap-x-8">
-                    <div class="col-span-1"></div>
-                    <div class="col-span-10">
+                    <div class="col-span-1 lg:hidden"></div>
+                    <div class="col-span-10 lg:col-span-12">
                         <div class="flex flex-col mb-4">
                             <div class="flex items-center justify-start mb-5">
                                 <h1 class="text-H1 font-semibold inline-flex mr-2">Actos</h1>
@@ -90,7 +90,7 @@
                                 <span class="w-full border-b border-super-light-grey"></span>
                             </div>
                         </div>
-                        <div class="flex gap-x-8">
+                        <div class="flex gap-x-8 xl:flex-col xl:gap-x-0">
                             <div class="flex flex-col gap-y-20">
                                 <div class="flex gap-x-8">
                                     <div class="min-w-[225px] w-[225px] overflow-hidden">
@@ -128,7 +128,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div thumbsSlider="" class="swiper mySwiper ">
+                                        <div thumbsSlider="" class="swiper mySwiper">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <img src="img/Main_Photo-product.png" />
@@ -175,101 +175,300 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="mb-6 flex flex-col">
-                                    <div class="flex items-center mb-1">
-                                        <i class="Attention-icon mr-1"></i>
-                                        <span class="text-Body">Drug info</span>
+                                <div x-data="{ selectedTab: 'groups' }" class="mb-6 flex flex-col">
+                                    <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex items-end gap-x-12">
+                                        <button @click="selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelGroups">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                  <path :class="selectedTab === 'groups' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M10.0003 9.58317V13.7498M10.0003 6.25817L10.0087 6.249M10.0003 18.3332C14.6028 18.3332 18.3337 14.6023 18.3337 9.99984C18.3337 5.39734 14.6028 1.6665 10.0003 1.6665C5.39783 1.6665 1.66699 5.39734 1.66699 9.99984C1.66699 14.6023 5.39783 18.3332 10.0003 18.3332Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">Drug info</span>
+                                        </button>
+                                        <button @click="selectedTab = 'likes'" :aria-selected="selectedTab === 'likes'" :tabindex="selectedTab === 'likes' ? '0' : '-1'" :class="selectedTab === 'likes' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelLikes">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                  <path :class="selectedTab === 'likes' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M9.95956 6.66675V10.0001M9.95956 13.3418L9.96789 13.3326M9.60623 1.18675C9.69998 1.09312 9.82706 1.04053 9.95956 1.04053C10.0921 1.04053 10.2191 1.09312 10.3129 1.18675L18.7729 9.64675C18.8665 9.7405 18.9191 9.86759 18.9191 10.0001C18.9191 10.1326 18.8665 10.2597 18.7729 10.3534L10.3129 18.8134C10.2191 18.9071 10.0921 18.9596 9.95956 18.9596C9.82706 18.9596 9.69998 18.9071 9.60623 18.8134L1.14623 10.3534C1.05259 10.2597 1 10.1326 1 10.0001C1 9.86759 1.05259 9.7405 1.14623 9.64675L9.60623 1.18675Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">Side Effects</span>
+                                        </button>
+                                        <button @click="selectedTab = 'comments'" :aria-selected="selectedTab === 'comments'" :tabindex="selectedTab === 'comments' ? '0' : '-1'" :class="selectedTab === 'comments' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelComments">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                  <path :class="selectedTab === 'comments' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M8.91895 17C13.3373 17 16.9189 13.4184 16.9189 9C16.9189 4.5816 13.3373 1 8.91895 1C4.50055 1 0.918945 4.5816 0.918945 9C0.918945 13.4184 4.50055 17 8.91895 17Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  <path :class="selectedTab === 'comments' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M6.51953 6.6C6.51953 3.8 10.9195 3.8 10.9195 6.6C10.9195 8.6 8.91953 8.2 8.91953 10.6M8.91953 13.808L8.92753 13.7992" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">FAQ</span>
+                                        </button>
+                                        <button @click="selectedTab = 'saved'" :aria-selected="selectedTab === 'saved'" :tabindex="selectedTab === 'saved' ? '0' : '-1'" :class="selectedTab === 'saved' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelSaved">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                                                  <path :class="selectedTab === 'saved' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M9.25228 18.3332C13.8548 18.3332 17.5856 14.6023 17.5856 9.99984C17.5856 5.39734 13.8548 1.6665 9.25228 1.6665C4.64978 1.6665 0.918945 5.39734 0.918945 9.99984C0.918945 14.6023 4.64978 18.3332 9.25228 18.3332Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  <path :class="selectedTab === 'saved' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M11.752 7.08301C11.1811 6.51217 10.1761 6.11551 9.25195 6.09051M9.25195 6.09051C8.15195 6.06051 7.16862 6.55801 7.16862 7.91634C7.16862 10.4163 11.752 9.16634 11.752 11.6663C11.752 13.0922 10.532 13.7047 9.25195 13.6588M9.25195 6.09051V4.58301M6.75195 12.4997C7.28862 13.2163 8.28779 13.6247 9.25195 13.6588M9.25195 13.6588V15.4163" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">How to buy</span>
+                                        </button>
                                     </div>
                                     <div class="flex items-center mb-6">
                                         <span class="w-[110px] min-w-[110px] border-b-[5px] border-yellow"></span>
                                         <span class="w-full border-b border-super-light-grey"></span>
                                     </div>
-                                    <article class="flex gap-x-8">
-                                        <div class="flex flex-col min-w-[128px]">
-                                            <div class="sticky top-3">
-                                                <span class="inline-flex mb-6 text-Body font-semibold pb-2 border-b border-dashed border-yellow">Quick Links</span>
-                                                <ul class=" flex flex-col gap-y-2">
-                                                    <li>
-                                                        <a class="text-grey text-Body6" href="#Id-1">Overview</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="text-grey text-Body6" href="#Id-2">What is actos?</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="text-grey text-Body6" href="#Id-3">FAQs about Actos</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="text-grey text-Body6" href="#Id-1">Tips of Actos</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="text-grey text-Body6" href="#Id-1">Tips of Actos</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="text-grey text-Body6" href="#Id-1">Drug Class</a>
-                                                    </li>
-                                                </ul>
+                                    <div>
+                                        <div x-show="selectedTab === 'groups'" id="tabpanelGroups" role="tabpanel" aria-label="groups" class="flex gap-x-8 md:flex-col md:gap-x-0">
+                                            <div class="flex flex-col min-w-[128px] md:mb-8">
+                                                <div class="minmd:sticky minmd:top-3">
+                                                    <span class="inline-flex mb-6 text-Body font-semibold pb-2 border-b border-dashed border-yellow">Quick Links</span>
+                                                    <ul class=" flex flex-col gap-y-2">
+                                                        <li>
+                                                            <a class="text-grey text-Body6" href="#Id-1">Overview</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="text-grey text-Body6" href="#Id-2">What is actos?</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="text-grey text-Body6" href="#Id-3">FAQs about Actos</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <span class="border-r border-dashed border-light-grey"></span>
-                                        <div>
-                                            <ul class="flex flex-col">
-                                                <li id="Id-1" class="pb-8 border-b border-super-light-grey flex flex-col items-start gap-y-4">
-                                                    <span class="inline-flex text-Body font-semibold pb-2 border-b border-dashed border-yellow">Overview</span>
-                                                    <p class="text-Body6">Actos (pioglitazone) is an add-on medication to diet and exercise to control blood sugar in people with type 2 diabetes.</p>
+                                            <span class="border-r border-dashed border-light-grey md:hidden"></span>
+                                            <ul class="flex flex-col w-full">
+                                                <li id="Id-1" class="pb-8 md:pb-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                    <div class="w-full overflow-hidden text-slate-700">
+                                                        <div class="w-full overflow-hidden text-slate-700">
+                                                            <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                 x-resize.document="isMobile = $width"
+                                                                 class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                <button id="controlsAccordionItemOne" type="button"
+                                                                        class="flex w-full items-center justify-between pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                        aria-controls="accordionItemOne"
+                                                                        @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                        :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                    <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 md:border-0 border-b border-dashed border-yellow">Overview</span>
+                                                                </button>
+                                                                <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItemOne" role="region"
+                                                                     aria-labelledby="controlsAccordionItemOne" x-collapse class="md:pt-5">
+                                                                    <div class="flex items-start">
+                                                                        <p class="text-Body6 md:text-Body">Actos (pioglitazone) is an add-on medication to diet and exercise to control blood sugar in people with type 2 diabetes.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </li>
-                                                <li id="Id-2" class="py-8 border-b border-super-light-grey flex flex-col items-start gap-y-4">
-                                                    <span class="inline-flex text-Body font-semibold pb-2 border-b border-dashed border-yellow">What is Actos?</span>
-                                                    <p class="text-Body6">How Actos (pioglitazone) works?</p>
-                                                    <ul class="font-semibold list-disc pl-6">
-                                                        <li>
-                                                            <p class="text-Body6">Actos (pioglitazone) is a thiazolidinedione that improves your body's ability to use insulin to lower your blood sugar</p>
-                                                        </li>
-                                                    </ul>
-                                                    <p class="text-Body6">What is Actos (pioglitazone) used for?</p>
-                                                    <ul class="font-semibold list-disc pl-6">
-                                                        <li>
-                                                            <p>Type 2 diabetes</p>
-                                                        </li>
-                                                    </ul>
-                                                    <p class="text-Body6">Actos (pioglitazone) dosage forms:</p>
-                                                    <ul class="font-semibold list-disc pl-6">
-                                                        <li>
-                                                            <p class="text-Body6">15mg</p>
-                                                        </li>
-                                                        <li>
-                                                            <p class="text-Body6">30mg</p>
-                                                        </li>
-                                                        <li>
-                                                            <p class="text-Body6">45mg</p>
-                                                        </li>
-                                                        <li>
-                                                            <p class="text-Body6">tablet</p>
-                                                        </li>
-                                                    </ul>
+                                                <li id="Id-2" class="py-8 md:py-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                    <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                         x-resize.document="isMobile = $width"
+                                                         class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                        <button id="controlsAccordionItem2" type="button"
+                                                                class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                aria-controls="accordionItem2"
+                                                                @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                            <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">What is Actos?</span>
+                                                        </button>
+                                                        <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem2" role="region"
+                                                             aria-labelledby="controlsAccordionItem2" x-collapse class="md:pt-5">
+                                                            <div class="flex flex-col items-start gap-y-4">
+                                                                <p class="text-Body6">How Actos (pioglitazone) works?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">Actos (pioglitazone) is a thiazolidinedione that improves your body's ability to use insulin to lower your blood sugar</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="text-Body6">What is Actos (pioglitazone) used for?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">Type 2 diabetes</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="text-Body6">Actos (pioglitazone) dosage forms:</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">15mg</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="text-Body6">30mg</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="text-Body6">45mg</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="text-Body6">tablet</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </li>
-                                                <li id="Id-3" class="py-8 border-b border-super-light-grey flex flex-col items-start gap-y-4">
-                                                    <span class="inline-flex text-Body font-semibold pb-2 border-b border-dashed border-yellow">
-                                                        FAQs about Actos
-                                                    </span>
-                                                    <p class="text-Body6">Can you take metformin and Actos (pioglitazone) together?</p>
-                                                    <ul class="font-semibold list-disc pl-6">
-                                                        <li>
-                                                            <p class="text-Body6">Metformin and Actos (pioglitazone) can be used together along with diet and exercise to control blood sugar in adults with type 2 diabetes.</p>
-                                                        </li>
-                                                    </ul>
-                                                    <p class="text-Body6">How quickly does Actos (pioglitazone) work?</p>
-                                                    <ul class="font-semibold list-disc pl-6">
-                                                        <li>
-                                                            <p class="text-Body6">It may take several weeks to lower your blood sugar and 2 to 3 months for you to see the full effect of Actos (pioglitazone).</p>
-                                                        </li>
-                                                    </ul>
+                                                <li id="Id-3" class="py-8 md:py-2 md:border-0 border-0 border-super-light-grey flex flex-col items-start gap-y-4">
+                                                    <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                         x-resize.document="isMobile = $width"
+                                                         class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                        <button id="controlsAccordionItem3" type="button"
+                                                                class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                aria-controls="accordionItem3"
+                                                                @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                           <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
+                                                               FAQs about Actos
+                                                           </span>
+                                                        </button>
+                                                        <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem3" role="region"
+                                                             aria-labelledby="controlsAccordionItem3" x-collapse class="md:pt-5">
+                                                            <div class="flex flex-col items-start gap-y-4">
+                                                                <p class="text-Body6">Can you take metformin and Actos (pioglitazone) together?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">Metformin and Actos (pioglitazone) can be used together along with diet and exercise to control blood sugar in adults with type 2 diabetes.</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="text-Body6">How quickly does Actos (pioglitazone) work?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">It may take several weeks to lower your blood sugar and 2 to 3 months for you to see the full effect of Actos (pioglitazone).</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </li>
                                             </ul>
                                         </div>
-                                    </article>
+                                        <div x-show="selectedTab === 'likes'" id="tabpanelLikes" role="tabpanel" aria-label="likes" class="flex gap-x-8 md:flex-col md:gap-x-0">
+                                            <div class="flex flex-col min-w-[128px] md:mb-8">
+                                                <div class="minmd:sticky minmd:top-3">
+                                                    <span class="inline-flex mb-6 text-Body font-semibold pb-2 border-b border-dashed border-yellow">Quick Links</span>
+                                                    <ul class=" flex flex-col gap-y-2">
+                                                        <li>
+                                                            <a class="text-grey text-Body6" href="#Id-41">Overview</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="text-grey text-Body6" href="#Id-5">What is actos?</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="text-grey text-Body6" href="#Id-6">FAQs about Actos</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <span class="border-r border-dashed border-light-grey md:hidden"></span>
+                                            <ul class="flex flex-col w-full">
+                                                <li id="Id-41" class="pb-8 md:pb-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                    <div class="w-full overflow-hidden text-slate-700">
+                                                        <div class="w-full overflow-hidden text-slate-700">
+                                                            <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                 x-resize.document="isMobile = $width"
+                                                                 class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                <button id="controlsAccordionItem4" type="button"
+                                                                        class="flex w-full items-center justify-between pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                        aria-controls="accordionItem4"
+                                                                        @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                        :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                    <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 md:border-0 border-b border-dashed border-yellow">Overview</span>
+                                                                </button>
+                                                                <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem4" role="region"
+                                                                     aria-labelledby="controlsAccordionItem4" x-collapse class="md:pt-5">
+                                                                    <div class="flex items-start">
+                                                                        <p class="text-Body6 md:text-Body">Actos (pioglitazone) is an add-on medication to diet and exercise to control blood sugar in people with type 2 diabetes.</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li id="Id-5" class="py-8 md:py-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                    <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                         x-resize.document="isMobile = $width"
+                                                         class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                        <button id="controlsAccordionItem5" type="button"
+                                                                class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                aria-controls="accordionItem5"
+                                                                @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                            <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">What is Actos?</span>
+                                                        </button>
+                                                        <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem5" role="region"
+                                                             aria-labelledby="controlsAccordionItem5" x-collapse class="md:pt-5">
+                                                            <div class="flex flex-col items-start gap-y-4">
+                                                                <p class="text-Body6">How Actos (pioglitazone) works?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">Actos (pioglitazone) is a thiazolidinedione that improves your body's ability to use insulin to lower your blood sugar</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="text-Body6">What is Actos (pioglitazone) used for?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">Type 2 diabetes</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="text-Body6">Actos (pioglitazone) dosage forms:</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">15mg</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="text-Body6">30mg</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="text-Body6">45mg</p>
+                                                                    </li>
+                                                                    <li>
+                                                                        <p class="text-Body6">tablet</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li id="Id-6" class="py-8 md:py-2 md:border-0 border-0 border-super-light-grey flex flex-col items-start gap-y-4">
+                                                    <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                         x-resize.document="isMobile = $width"
+                                                         class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                        <button id="controlsAccordionItem6" type="button"
+                                                                class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                aria-controls="accordionItem6"
+                                                                @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                           <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
+                                                               FAQs about Actos
+                                                           </span>
+                                                        </button>
+                                                        <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem6" role="region"
+                                                             aria-labelledby="controlsAccordionItem6" x-collapse class="md:pt-5">
+                                                            <div class="flex flex-col items-start gap-y-4">
+                                                                <p class="text-Body6">Can you take metformin and Actos (pioglitazone) together?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">Metformin and Actos (pioglitazone) can be used together along with diet and exercise to control blood sugar in adults with type 2 diabetes.</p>
+                                                                    </li>
+                                                                </ul>
+                                                                <p class="text-Body6">How quickly does Actos (pioglitazone) work?</p>
+                                                                <ul class="font-semibold list-disc pl-6">
+                                                                    <li>
+                                                                        <p class="text-Body6">It may take several weeks to lower your blood sugar and 2 to 3 months for you to see the full effect of Actos (pioglitazone).</p>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div x-show="selectedTab === 'comments'" id="tabpanelComments" role="tabpanel" aria-label="comments">
+                                            <b><a href="#" class="underline">Comments</a></b> tab is selected
+                                        </div>
+                                        <div x-show="selectedTab === 'saved'" id="tabpanelSaved" role="tabpanel" aria-label="saved">
+                                            <b><a href="#" class="underline">Saved</a></b> tab is selected
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <form class="flex flex-col gap-y-6 w-[365px] min-w-[365px] w-full ml-auto">
+                            <form class="xl:hidden flex flex-col gap-y-6 w-[365px] min-w-[365px] w-full ml-auto">
                                 <div class="p-6 border rounded border-super-light-grey w-full">
                                     <div class="flex flex-col gap-y-2 mb-6">
                                         <span class="font-semibold text-H2">Get the product!</span>
@@ -341,7 +540,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-1"></div>
+                    <div class="col-span-1 lg:hidden"></div>
                 </div>
             </div>
         </div>
