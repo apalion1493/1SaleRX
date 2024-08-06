@@ -502,7 +502,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div x-data="{ selectedTab: 'groups' }" class="mb-6 flex flex-col">
+                                <div x-data="{ selectedTab: 'groups', scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); } }" class="mb-6 flex flex-col">
                                     <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex items-end gap-x-12 md:hidden">
                                         <button @click="selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelGroups">
                                             <span class="mr-1">
@@ -546,8 +546,7 @@
                                     <div>
                                         <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex flex-col md:gap-y-5">
                                             <div class="flex flex-col">
-                                                <a href="#tabpanelGroups" class="no-underline w-full flex items-center">
-                                                    <button @click="selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelGroups">
+                                                <button @click.prevent="scrollToSection('tabpanelGroups'); selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelGroups">
                                                     <span :class="selectedTab === 'groups' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
                                                         <span class="mr-1">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -556,9 +555,8 @@
                                                         </span>
                                                         <span class="text-Body">Drug info</span>
                                                     </span>
-                                                        <span :class="selectedTab === 'groups' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
-                                                    </button>
-                                                </a>
+                                                    <span :class="selectedTab === 'groups' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
+                                                </button>
                                                 <div x-show="selectedTab === 'groups'" id="tabpanelGroups" role="tabpanel" aria-label="groups" class="flex gap-x-8 md:pt-8 md:flex-col md:gap-x-0">
                                                     <div class="flex flex-col min-w-[128px] md:mb-8">
                                                         <div class="minmd:sticky minmd:top-3">
@@ -682,8 +680,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex flex-col">
-                                                <a href="#tabpanelLikes" class="no-underline w-full flex items-center">
-                                                    <button @click="selectedTab = 'likes'" :aria-selected="selectedTab === 'likes'" :tabindex="selectedTab === 'likes' ? '0' : '-1'" :class="selectedTab === 'likes' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelLikes">
+                                                <button @click.prevent="selectedTab = 'likes'; scrollToSection('tabpanelLikes')" :aria-selected="selectedTab === 'likes'" :tabindex="selectedTab === 'likes' ? '0' : '-1'" :class="selectedTab === 'likes' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelLikes">
                                                     <span :class="selectedTab === 'likes' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
                                                         <span class="mr-1">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -692,9 +689,8 @@
                                                         </span>
                                                         <span class="text-Body">Side Effects</span>
                                                     </span>
-                                                        <span :class="selectedTab === 'likes' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
-                                                    </button>
-                                                </a>
+                                                    <span :class="selectedTab === 'likes' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
+                                                </button>
                                                 <div x-show="selectedTab === 'likes'" id="tabpanelLikes" role="tabpanel" aria-label="likes" class="flex gap-x-8 md:pt-8 md:flex-col md:gap-x-0">
                                                     <div class="flex flex-col min-w-[128px] md:mb-8">
                                                         <div class="minmd:sticky minmd:top-3">
@@ -818,7 +814,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex flex-col">
-                                                <button @click="selectedTab = 'comments'" :aria-selected="selectedTab === 'comments'" :tabindex="selectedTab === 'comments' ? '0' : '-1'" :class="selectedTab === 'comments' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelComments">
+                                                <button @click.prevent="selectedTab = 'comments'; scrollToSection('tabpanelComments');" :aria-selected="selectedTab === 'comments'" :tabindex="selectedTab === 'comments' ? '0' : '-1'" :class="selectedTab === 'comments' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelComments">
                                                     <span :class="selectedTab === 'comments' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
                                                         <span class="mr-1">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -835,7 +831,7 @@
                                                 </div>
                                             </div>
                                             <div class="flex flex-col">
-                                                <button @click="selectedTab = 'saved'" :aria-selected="selectedTab === 'saved'" :tabindex="selectedTab === 'saved' ? '0' : '-1'" :class="selectedTab === 'saved' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelSaved">
+                                                <button @click.prevent="selectedTab = 'saved'; scrollToSection('tabpanelSaved');" :aria-selected="selectedTab === 'saved'" :tabindex="selectedTab === 'saved' ? '0' : '-1'" :class="selectedTab === 'saved' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelSaved">
                                                     <span :class="selectedTab === 'saved' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
                                                         <span class="mr-1">
                                                             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
