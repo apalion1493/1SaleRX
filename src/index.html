@@ -156,30 +156,6 @@
                         'button': 'buy',
                         })
                     </div>
-                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
-                        @@include('components/Product-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/Product-3.jpg',
-                        'title': 'Glucophage',
-                        'dosage': '1000 mg - 120 tabs',
-                        'oldPrice': '$120.99',
-                        'price': '$109.99',
-                        'button': 'buy',
-                        })
-                    </div>
-                    <div class="col-span-3 xl:col-span-4 lg:col-span-6 md:col-span-12">
-                        @@include('components/Product-Card.html', {
-                        'style': '',
-                        'link': '#',
-                        'img': 'img/Product-4.jpg',
-                        'title': 'Eliquis',
-                        'dosage': '2,5 mg - 60 tabs',
-                        'oldPrice': '$120.99',
-                        'price': '$109.99',
-                        'button': 'buy',
-                        })
-                    </div>
                 </div>
             </div>
         </div>
@@ -198,47 +174,103 @@
                         </div>
                     </div>
                     <div class="col-span-12">
-                        <div class="grid grid-cols-12 gap-8 md:gap-x-0">
-                            <div class="col-span-4 lg:col-span-6 md:col-span-12">
-                                @@include('components/Testimonial.html', {
-                                'title': 'The service is exceptional!',
-                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.'
-                                })
+<!--                        <div class="grid grid-cols-12 gap-8 md:gap-x-0">-->
+<!--                            <div class="col-span-4 lg:col-span-6 md:col-span-12">-->
+<!--                                @@include('components/Testimonial.html', {-->
+<!--                                'title': 'The service is exceptional!',-->
+<!--                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.'-->
+<!--                                })-->
+<!--                            </div>-->
+<!--                            <div class="col-span-4 lg:col-span-6 md:col-span-12">-->
+<!--                                @@include('components/Testimonial.html', {-->
+<!--                                'title': 'Delivery is very fast!',-->
+<!--                                'text': 'Lorem ipsum dolor sit amet'-->
+<!--                                })-->
+<!--                            </div>-->
+<!--                            <div class="col-span-4 lg:col-span-6 md:col-span-12">-->
+<!--                                @@include('components/Testimonial.html', {-->
+<!--                                'title': 'Best Pharmacy website!',-->
+<!--                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'-->
+<!--                                })-->
+<!--                            </div>-->
+<!--                            <div class="col-span-4 lg:col-span-6 md:col-span-12">-->
+<!--                                @@include('components/Testimonial.html', {-->
+<!--                                'title': 'The service is exceptional!',-->
+<!--                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.'-->
+<!--                                })-->
+<!--                            </div>-->
+<!--                            <div class="col-span-4 lg:col-span-6 md:col-span-12">-->
+<!--                                @@include('components/Testimonial.html', {-->
+<!--                                'title': 'Delivery is very fast!',-->
+<!--                                'text': 'Lorem ipsum dolor sit amet'-->
+<!--                                })-->
+<!--                            </div>-->
+<!--                            <div class="col-span-4 lg:col-span-6 md:col-span-12">-->
+<!--                                @@include('components/Testimonial.html', {-->
+<!--                                'title': 'Best Pharmacy website!',-->
+<!--                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'-->
+<!--                                })-->
+<!--                            </div>-->
+<!--                        </div>-->
+                        <div class="swiper mySwiper3 max-h-[616px] pr-[2px]">
+                            <div class="swiper-wrapper pt-[1px] pl-[1px]">
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
+                                <div class="swiper-slide">
+                                    @@include('components/Testimonial.html', {
+                                    'title': 'Best Pharmacy website!',
+                                    'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
+                                    })
+                                </div>
                             </div>
-                            <div class="col-span-4 lg:col-span-6 md:col-span-12">
-                                @@include('components/Testimonial.html', {
-                                'title': 'Delivery is very fast!',
-                                'text': 'Lorem ipsum dolor sit amet'
-                                })
-                            </div>
-                            <div class="col-span-4 lg:col-span-6 md:col-span-12">
-                                @@include('components/Testimonial.html', {
-                                'title': 'Best Pharmacy website!',
-                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
-                                })
-                            </div>
-                            <div class="col-span-4 lg:col-span-6 md:col-span-12">
-                                @@include('components/Testimonial.html', {
-                                'title': 'The service is exceptional!',
-                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.'
-                                })
-                            </div>
-                            <div class="col-span-4 lg:col-span-6 md:col-span-12">
-                                @@include('components/Testimonial.html', {
-                                'title': 'Delivery is very fast!',
-                                'text': 'Lorem ipsum dolor sit amet'
-                                })
-                            </div>
-                            <div class="col-span-4 lg:col-span-6 md:col-span-12">
-                                @@include('components/Testimonial.html', {
-                                'title': 'Best Pharmacy website!',
-                                'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt.'
-                                })
-                            </div>
+                            <div class="swiper-pagination"></div>
                         </div>
-                    </div>
-                    <div class="col-span-12">
-                        @@include('components/Pagination.html')
                     </div>
                 </div>
             </div>
