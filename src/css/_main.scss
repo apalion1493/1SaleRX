@@ -198,3 +198,11 @@
     @apply flex items-center justify-center border border-super-light-grey rounded overflow-hidden;
   }
 }
+
+@media (max-width: 767.98px) {
+
+  .triangle {
+    background: url("../img/bg-yellow-svg--mob.svg");
+    @apply flex bg-cover bg-right-bottom bg-no-repeat;
+  }
+}
