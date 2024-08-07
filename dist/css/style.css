@@ -3158,6 +3158,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:gap-y-8{
     row-gap: 2rem;
   }
+  .lg\:gap-y-0{
+    row-gap: 0px;
+  }
   .lg\:border-0{
     border-width: 0px;
   }
