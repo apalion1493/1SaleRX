@@ -3420,17 +3420,17 @@ focus-trap/dist/focus-trap.esm.js:
 window.addEventListener('DOMContentLoaded', () => {
     console.log('Loaded Scripts')
 
-    const swiperGreed = new Swiper(".mySwiper3", {
-        slidesPerView: 3,
-        grid: {
-            rows: 2,
-        },
-        spaceBetween: 32,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
-    });
+    // const swiperGreed = new Swiper(".mySwiper3", {
+    //     slidesPerView: 3,
+    //     grid: {
+    //         rows: 2,
+    //     },
+    //     spaceBetween: 32,
+    //     pagination: {
+    //         el: ".swiper-pagination",
+    //         clickable: true,
+    //     },
+    // });
 
     const swiper = new Swiper(".mySwiper", {
         spaceBetween: 16,

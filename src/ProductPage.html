@@ -95,20 +95,20 @@
                         <div class="flex gap-x-8 xl:flex-col xl:gap-x-0">
                             <div class="flex flex-col gap-y-20 md:gap-y-8">
                                 <div class="flex gap-x-8 md:flex-col md:gap-x-0 md:gap-y-8">
-                                    <div class="min-w-[225px] w-[225px] md:w-[343px] overflow-hidden">
+                                    <div class="min-w-[225px] w-[225px] md:max-w-[343px] md:mx-auto md:w-full overflow-hidden">
                                         <div class="swiper mySwiper2 mb-4">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <img src="img/Main_Photo-product.png"  alt=""/>
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg"  alt=""/>
+                                                    <img src="img/hand-img.png" />
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                                    <img src="img/hand-img.png" />
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
@@ -136,7 +136,7 @@
                                                     <img src="img/Main_Photo-product.png" />
                                                 </div>
                                                 <div class="swiper-slide">
-                                                    <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+                                                    <img src="img/hand-img.png" />
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
@@ -191,9 +191,14 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="flex flex-col">
-                                            <span class="text-Body font-semibold pb-3 block border-b border-super-light-grey mb-3 md:border-0 md:p-0">Select Option</span>
-
+                                        <div class="flex flex-col mb-10 md:mb-8">
+                                            <span class="text-Body font-semibold block mb-3 md:p-0">Select Option</span>
+                                            @@include('components/FilterPosition.html', {
+                                            'idFilter': 'FilterOptionId',
+                                            'labelStyle': 'text-none mb-0',
+                                            'style': 'gap-y-0',
+                                            'label': '',
+                                            })
                                         </div>
                                         <div class="flex flex-col">
                                             <span class="text-Body font-semibold pb-3 block border-b border-super-light-grey mb-3 md:border-0 md:p-0">Description</span>
@@ -201,6 +206,64 @@
                                         </div>
                                     </div>
                                 </div>
+                                <form class="minxl:hidden flex flex-col gap-y-6 w-full ml-auto border-b py-8 border-super-light-grey">
+                                    <div class="pt-8 border-t border-super-light-grey w-full">
+                                        <div class="flex flex-col gap-y-2 mb-6">
+                                            <span class="font-semibold text-H2">Get the product!</span>
+                                            <p class="text-grey text-base">Make sure your prescription is active</p>
+                                        </div>
+                                        <div class="flex flex-col gap-y-4">
+                                            @@include('components/input.html', {
+                                            'common-style': '',
+                                            'styleInput': '',
+                                            'label': 'Full Name <span class="text-red">*</span>',
+                                            'type': 'text',
+                                            'placeholder': '',
+                                            'idInput': 'ID1',
+                                            'errorStyle': 'block',
+                                            })
+                                            @@include('components/input.html', {
+                                            'common-style': '',
+                                            'styleInput': '',
+                                            'label': 'Email <span class="text-red">*</span>',
+                                            'type': 'email',
+                                            'placeholder': '',
+                                            'idInput': 'ID2',
+                                            'errorStyle': 'hidden',
+                                            })
+                                            @@include('components/input.html', {
+                                            'common-style': '',
+                                            'styleInput': '',
+                                            'label': 'Phone Number <span class="text-red">*</span>',
+                                            'type': 'text',
+                                            'placeholder': '',
+                                            'idInput': 'ID3',
+                                            'errorStyle': 'hidden',
+                                            })
+                                            @@include('components/FilterState.html', {
+                                            'idFilter': 'FilterStateId',
+                                            'label': 'Select State <span class="text-red">*</span>',
+                                            })
+                                            @@include('components/FilterPosition.html', {
+                                            'idFilter': 'FilterPositionId',
+                                            'label': 'Select Position <span class="text-red">*</span>',
+                                            'labelStyle': '',
+                                            })
+                                        </div>
+                                    </div>
+                                    @@include('components/checkbox.html', {
+                                    'styleText': '',
+                                    'text': 'I have read and agree to the Terms',
+                                    'errorText': 'Please confirm that you agree',
+                                    'errorStyle': '',
+                                    })
+                                    @@include('components/button.html', {
+                                    'style': 'flex w-full',
+                                    'type': 'submit',
+                                    'title': 'Get Deal',
+                                    'ariaLabel': 'Get Deal',
+                                    })
+                                </form>
                                 <div x-data="{ selectedTab: 'groups', scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); } }" class="mb-6 flex flex-col">
                                     <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex items-end gap-x-12 md:hidden">
                                         <button @click="selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelGroups">
@@ -284,9 +347,10 @@
                                                                         <button id="controlsAccordionItemOne" type="button"
                                                                                 class="flex w-full items-center justify-between pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
                                                                                 aria-controls="accordionItemOne"
-                                                                                @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                                @click="isMobile < 768 ? isExpanded = !isExpanded : null"
                                                                                 :aria-expanded="isExpanded ? 'true' : 'false'">
                                                                             <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 md:border-0 border-b border-dashed border-yellow">Overview</span>
+                                                                            <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
                                                                         </button>
                                                                         <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItemOne" role="region"
                                                                              aria-labelledby="controlsAccordionItemOne" x-collapse class="md:pt-5">
@@ -305,9 +369,10 @@
                                                                 <button id="controlsAccordionItem2" type="button"
                                                                         class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
                                                                         aria-controls="accordionItem2"
-                                                                        @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                        @click="isMobile < 768 ? isExpanded = !isExpanded : null"
                                                                         :aria-expanded="isExpanded ? 'true' : 'false'">
                                                                     <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">What is Actos?</span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
                                                                 </button>
                                                                 <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem2" role="region"
                                                                      aria-labelledby="controlsAccordionItem2" x-collapse class="md:pt-5">
@@ -350,11 +415,12 @@
                                                                 <button id="controlsAccordionItem3" type="button"
                                                                         class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
                                                                         aria-controls="accordionItem3"
-                                                                        @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                        @click="isMobile < 768 ? isExpanded = !isExpanded : null"
                                                                         :aria-expanded="isExpanded ? 'true' : 'false'">
-                                                           <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
-                                                               FAQs about Actos
-                                                           </span>
+                                                                   <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
+                                                                       FAQs about Actos
+                                                                   </span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
                                                                 </button>
                                                                 <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem3" role="region"
                                                                      aria-labelledby="controlsAccordionItem3" x-collapse class="md:pt-5">
@@ -421,6 +487,7 @@
                                                                                 @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
                                                                                 :aria-expanded="isExpanded ? 'true' : 'false'">
                                                                             <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 md:border-0 border-b border-dashed border-yellow">Overview</span>
+                                                                            <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
                                                                         </button>
                                                                         <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem4" role="region"
                                                                              aria-labelledby="controlsAccordionItem4" x-collapse class="md:pt-5">
@@ -442,6 +509,7 @@
                                                                         @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
                                                                         :aria-expanded="isExpanded ? 'true' : 'false'">
                                                                     <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">What is Actos?</span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
                                                                 </button>
                                                                 <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem5" role="region"
                                                                      aria-labelledby="controlsAccordionItem5" x-collapse class="md:pt-5">
@@ -486,9 +554,10 @@
                                                                         aria-controls="accordionItem6"
                                                                         @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
                                                                         :aria-expanded="isExpanded ? 'true' : 'false'">
-                                                           <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
-                                                               FAQs about Actos
-                                                           </span>
+                                                                   <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
+                                                                       FAQs about Actos
+                                                                   </span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
                                                                 </button>
                                                                 <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem6" role="region"
                                                                      aria-labelledby="controlsAccordionItem6" x-collapse class="md:pt-5">
@@ -550,7 +619,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <form class="xl:hidden flex flex-col gap-y-6 w-[365px] min-w-[365px] w-full ml-auto">
+                            <form class="xl:hidden flex flex-col gap-y-6 w-[365px] min-w-[365px] ml-auto">
                                 <div class="p-6 border rounded border-super-light-grey w-full">
                                     <div class="flex flex-col gap-y-2 mb-6">
                                         <span class="font-semibold text-H2">Get the product!</span>
@@ -591,6 +660,7 @@
                                         @@include('components/FilterPosition.html', {
                                         'idFilter': 'FilterPositionId',
                                         'label': 'Select Position <span class="text-red">*</span>',
+                                        'labelStyle': '',
                                         })
                                     </div>
                                 </div>
@@ -608,19 +678,6 @@
                                 })
                             </form>
                         </div>
-<!--                        <div class="flex w-full overflow-hidden rounded mt-14 min-h-[175px] bg-primary md:flex-col">-->
-<!--                            <div class="bg-yellow w-[60%] md:w-full triangle flex items-center justify-end py-5 pl-10 pr-10 md:px-6 md:pb-14">-->
-<!--                                <p class="text-display-2 md:text-topTitle font-semibold">Pay to express shipping up to-->
-<!--                                    $80 and get product for <span class="uppercase">free</span>!-->
-<!--                                </p>-->
-<!--                            </div>-->
-<!--                            <div class="text-white flex flex-col justify-center px-6 md:py-4 md:px-6">-->
-<!--                                <div class="max-w-[353px]">-->
-<!--                                    <span class="block text-light-grey text-Body3">Note: </span>-->
-<!--                                    <p class="text-Body3">We don’t accept patients with Medicare, Medicade or any other government or private insurance</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
                         <div class="flex items-center justify-center w-full mt-14">
                             <a class="w-full" href="#">
                                 <img class="w-full sm:hidden" src="img/Banner-product-1.png" alt="Banner 1">
@@ -634,8 +691,8 @@
         </div>
     </section>
     <section class="mb-14">
-        <div class="container">
-            <div class="p-8 md:px-4 bg-white rounded">
+        <div class="container lg:px-0">
+            <div class="p-8 md:px-4 bg-white lg:px-4 rounded">
                 <div class="grid grid-cols-12 gap-y-14">
                     <div class="col-span-12">
                         <div class="flex flex-col">
