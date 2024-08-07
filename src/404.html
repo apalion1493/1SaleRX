@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+@@include('components/head.html', {
+'title': 'Preview Page'
+})
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen bg-beige">
+    @@include('components/Header.html', {
+    'commonStyle': '',
+    })
+
+    <section class="mt-auto lg:pt-16">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-8 lg:gap-0">
+                <div class="col-span-6 lg:col-span-12 flex">
+                    <div class="flex flex-col my-auto lg:items-center lg:w-full">
+                        <h1 class="text-display-3 font-semibold mb-8 lg:text-H1Mob lg:text-center">404 oops...</h1>
+                        <a class="button flex items-center max-w-[313px] text-center" href="index.html">
+                            <span class="font-semibold capitalize">Go to main page</span>
+                            <svg class="ml-8" xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none">
+                                <path d="M1 7C0.447715 7 0 7.44772 0 8C0 8.55228 0.447715 9 1 9V7ZM21.7071 8.70711C22.0976 8.31658 22.0976 7.68342 21.7071 7.29289L15.3431 0.928932C14.9526 0.538408 14.3195 0.538408 13.9289 0.928932C13.5384 1.31946 13.5384 1.95262 13.9289 2.34315L19.5858 8L13.9289 13.6569C13.5384 14.0474 13.5384 14.6805 13.9289 15.0711C14.3195 15.4616 14.9526 15.4616 15.3431 15.0711L21.7071 8.70711ZM1 9H21V7H1V9Z" fill="#2E3436"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-span-6 lg:col-span-12">
+                    <div class="overflow-hidden flex justify-end lg:justify-center">
+                        <img class="lg:h-[547px]" src="img/hand-img.png" alt="Preview background image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @@include('components/Footer.html', {
+    'style-subscribe': 'hidden'
+    })
+</main>
+
+@@include('components/script.html')
+</body>
+
+</html>

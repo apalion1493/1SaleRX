@@ -1687,12 +1687,12 @@ body{
   font-size: 16px;
   line-height: 140%;
 }
-.text-display-1{
-  font-size: 50px;
-  line-height: 100%;
-}
 .text-display-2{
   font-size: 35px;
+  line-height: 100%;
+}
+.text-display-3{
+  font-size: 110px;
   line-height: 100%;
 }
 .text-none{
@@ -3112,6 +3112,9 @@ input[type=search]::-webkit-search-results-decoration {
   .lg\:h-full{
     height: 100%;
   }
+  .lg\:h-\[547px\]{
+    height: 547px;
+  }
   .lg\:w-10{
     width: 2.5rem;
   }
@@ -3129,6 +3132,15 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:items-start{
     align-items: flex-start;
+  }
+  .lg\:items-center{
+    align-items: center;
+  }
+  .lg\:justify-center{
+    justify-content: center;
+  }
+  .lg\:gap-0{
+    gap: 0px;
   }
   .lg\:gap-x-0{
     -moz-column-gap: 0px;
@@ -3172,6 +3184,29 @@ input[type=search]::-webkit-search-results-decoration {
   }
   .lg\:pr-\[75px\]{
     padding-right: 75px;
+  }
+  .lg\:pt-8{
+    padding-top: 2rem;
+  }
+  .lg\:pt-12{
+    padding-top: 3rem;
+  }
+  .lg\:pt-14{
+    padding-top: 3.5rem;
+  }
+  .lg\:pt-16{
+    padding-top: 4rem;
+  }
+  .lg\:text-center{
+    text-align: center;
+  }
+  .lg\:text-display-1{
+    font-size: 50px;
+    line-height: 100%;
+  }
+  .lg\:text-H1Mob{
+    font-size: 30px;
+    line-height: 70%;
   }
 }
 
