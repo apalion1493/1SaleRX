@@ -35,13 +35,13 @@
         </div>
     </section>
     <section class="mb-14">
-        <div class="container">
-            <div class="bg-white py-12 px-8 rounded">
-                <div class="grid grid-cols-12 gap-8">
+        <div class="container md:px-0">
+            <div class="bg-white py-12 px-8 md:px-4 md:py-8 rounded">
+                <div class="grid grid-cols-12 gap-8 md:gap-x-0">
                     <div class="col-span-12">
                         <div class="flex flex-col mb-4">
                             <div class="flex items-center justify-start mb-5">
-                                <h1 class="text-H1 font-semibold">Our Products</h1>
+                                <h1 class="text-H1 font-semibold md:leading-tight md:text-H1Mob">Our Products</h1>
                             </div>
                             <div class="flex items-center gap-x-6">
                                 <span class="w-[82px] border-b-[5px] border-yellow"></span>
@@ -49,296 +49,169 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-span-3">
-                        <div class="flex flex-col sticky top-3">
-                            <div class="mb-14">
-                                <span class="mb-4 text-H2 font-semibold">Price</span>
-                                <div id="slider">
-
-                                </div>
+                    <div class="col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-1.png',
+                        'alt': 'Product 1',
+                        'title': 'Exforge',
+                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        'button': 'button',
+                        })
+                    </div>
+                    <div class="col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-2.jpg',
+                        'alt': 'Product 2',
+                        'title': 'Dymista Nasal Spray',
+                        'dosage': '137 mcg / 50 mcg 1 bottle',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        'button': 'button',
+                        })
+                    </div>
+                    <div class="col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-3.jpg',
+                        'alt': 'Product 3',
+                        'title': 'Glucophage',
+                        'dosage': '1000 mg - 120 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        'button': 'button',
+                        })
+                    </div>
+                    <div class="col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-1.png',
+                        'alt': 'Product 1',
+                        'title': 'Exforge',
+                        'dosage': '10 mg / 160 mg 28 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        'button': 'button',
+                        })
+                    </div>
+                    <div class="col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-2.jpg',
+                        'alt': 'Product 2',
+                        'title': 'Dymista Nasal Spray',
+                        'dosage': '137 mcg / 50 mcg 1 bottle',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        'button': 'button',
+                        })
+                    </div>
+                    <div class="col-span-4 lg:col-span-6 md:col-span-12">
+                        @@include('components/Product-Card.html', {
+                        'style': '',
+                        'link': '#',
+                        'img': 'img/Product-3.jpg',
+                        'alt': 'Product 3',
+                        'title': 'Glucophage',
+                        'dosage': '1000 mg - 120 tabs',
+                        'oldPrice': '$120.99',
+                        'price': '$109.99',
+                        'button': 'button',
+                        })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container md:px-0">
+            <div class="bg-white py-12 px-20 md:px-4 md:py-8 rounded">
+                <div class="grid grid-cols-12">
+                    <div class="col-span-12">
+                        <div class="flex flex-col items-center mb-14">
+                            <div class="flex items-baseline justify-center w-full">
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
+                                <h2 class="text-H1 font-semibold leading-tight md:leading-tight mb-4 px-8 md:text-H1Mob md:px-3 text-center">Don't find the right medicine?</h2>
+                                <span class="flex-1 border-b border-super-light-grey block"></span>
                             </div>
-                            <div class="flex flex-col mb-6">
-                                <span class="mb-4 text-H2 font-semibold">Serach by Brand</span>
-
-                            </div>
-                            <div class="flex flex-col border-t border-super-light-grey">
-                                <div class="border-b p-4 border-super-light-grey flex items-center">
-                                    <label class="custom-checkbox">
-                                        <span class="custom-checkbox__block">
-                                            <i class="Check-box-inactive-icon"></i>
-                                        </span>
-                                        <input type="checkbox">
-                                        <span class="checkmark">
-                                             <i class="Check-box-active-icon"></i>
-                                        </span>
-                                        <span class="ml-3 font-semibold text-Body inline-flex">Brand 1 <span class="text-light-grey inline-flex ml-[10px]">·  1</span></span>
-                                    </label>
-                                </div>
-                                <div class="border-b p-4 border-super-light-grey flex items-center">
-                                    <label class="custom-checkbox">
-                                        <span class="custom-checkbox__block">
-                                            <i class="Check-box-inactive-icon"></i>
-                                        </span>
-                                        <input type="checkbox">
-                                        <span class="checkmark">
-                                             <i class="Check-box-active-icon"></i>
-                                        </span>
-                                        <span class="ml-3 font-semibold text-Body inline-flex">Brand 2 <span class="text-light-grey inline-flex ml-[10px]">·  3</span></span>
-                                    </label>
-                                </div>
-                                <div class="border-b p-4 border-super-light-grey flex items-center">
-                                    <label class="custom-checkbox">
-                                        <span class="custom-checkbox__block">
-                                            <i class="Check-box-inactive-icon"></i>
-                                        </span>
-                                        <input type="checkbox">
-                                        <span class="checkmark">
-                                             <i class="Check-box-active-icon"></i>
-                                        </span>
-                                        <span class="ml-3 font-semibold text-Body inline-flex">Brand 3 <span class="text-light-grey inline-flex ml-[10px]">·  12</span></span>
-                                    </label>
-                                </div>
-                                <div class="border-b p-4 border-super-light-grey flex items-center">
-                                    <label class="custom-checkbox">
-                                        <span class="custom-checkbox__block">
-                                            <i class="Check-box-inactive-icon"></i>
-                                        </span>
-                                        <input type="checkbox">
-                                        <span class="checkmark">
-                                             <i class="Check-box-active-icon"></i>
-                                        </span>
-                                        <span class="ml-3 font-semibold text-Body inline-flex">Brand 4 <span class="text-light-grey inline-flex ml-[10px]">·  5</span></span>
-                                    </label>
-                                </div>
-                            </div>
+                            <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                            <span class="text-Body text-center mt-[32px] block max-w-[588px] lg:max-w-full">Сontact us by filling out the form below and we will contact to help you choose the right medicine!</span>
                         </div>
                     </div>
-                    <div class="col-span-9">
-                        <div class="grid grid-cols-9 gap-8 mb-8">
-                            <div class="col-span-3">
-                                @@include('components/Filter.html')
-                            </div>
-                            <div class="col-span-6"></div>
-                        </div>
-                        <div class="grid grid-cols-9 gap-8">
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-1.png',
-                                'alt': 'Product 1',
-                                'title': 'Exforge',
-                                'dosage': '10 mg / 160 mg 28 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
+                    <div class="col-span-2 xl:col-span-1 lg:hidden"></div>
+                    <div class="col-span-8 xl:col-span-10 lg:col-span-12">
+                        <form class="grid grid-cols-12 gap-x-8 gap-y-5 md:gap-x-0 p-8 md:p-0 md:border-0 border border-super-light-grey rounded">
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/input.html', {
+                                'common-style': '',
+                                'styleInput': '',
+                                'label': 'Full Name <span class="text-red">*</span>',
+                                'type': 'text',
+                                'placeholder': '',
+                                'idInput': 'ID1',
+                                'errorStyle': 'hidden',
                                 })
                             </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-2.jpg',
-                                'alt': 'Product 2',
-                                'title': 'Dymista Nasal Spray',
-                                'dosage': '137 mcg / 50 mcg 1 bottle',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/input.html', {
+                                'common-style': '',
+                                'styleInput': '',
+                                'label': 'Email <span class="text-red">*</span>',
+                                'type': 'email',
+                                'placeholder': '',
+                                'idInput': 'ID2',
+                                'errorStyle': 'hidden',
                                 })
                             </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-3.jpg',
-                                'alt': 'Product 3',
-                                'title': 'Glucophage',
-                                'dosage': '1000 mg - 120 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/input.html', {
+                                'common-style': '',
+                                'styleInput': '',
+                                'label': 'Message Subject <span class="text-red">*</span>',
+                                'type': 'text',
+                                'placeholder': '',
+                                'idInput': 'ID3',
+                                'errorStyle': 'hidden',
                                 })
                             </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-1.png',
-                                'alt': 'Product 1',
-                                'title': 'Exforge',
-                                'dosage': '10 mg / 160 mg 28 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
+                            <div class="col-span-6 md:col-span-12">
+                                @@include('components/FilterState.html', {
+                                'idFilter': 'FilterStateId',
+                                'label': 'Select State <span class="text-red">*</span>',
+                                'styleInput': 'h-10 w-full',
+                                'style': 'w-full max-w-full',
                                 })
                             </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-2.jpg',
-                                'alt': 'Product 2',
-                                'title': 'Dymista Nasal Spray',
-                                'dosage': '137 mcg / 50 mcg 1 bottle',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
+                            <div class="col-span-12">
+                                @@include('components/textarea.html', {
+                                'commonStyle': '',
+                                'styleTextarea': 'md:min-h-[100px]',
+                                'label': 'Message <span class="text-red">*</span>',
+                                'type': 'text',
+                                'placeholder': '',
+                                'idTextarea': 'ID4',
+                                'rows': '3',
                                 })
                             </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-3.jpg',
-                                'alt': 'Product 3',
-                                'title': 'Glucophage',
-                                'dosage': '1000 mg - 120 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
+                            <div class="col-span-12">
+                                @@include('components/button.html', {
+                                'style': 'flex w-full mt-1',
+                                'type': 'submit',
+                                'title': 'SEND MESSAGE',
+                                'ariaLabel': 'SEND MESSAGE',
                                 })
                             </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-1.png',
-                                'alt': 'Product 1',
-                                'title': 'Exforge',
-                                'dosage': '10 mg / 160 mg 28 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-2.jpg',
-                                'alt': 'Product 2',
-                                'title': 'Dymista Nasal Spray',
-                                'dosage': '137 mcg / 50 mcg 1 bottle',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-3.jpg',
-                                'alt': 'Product 3',
-                                'title': 'Glucophage',
-                                'dosage': '1000 mg - 120 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-1.png',
-                                'alt': 'Product 1',
-                                'title': 'Exforge',
-                                'dosage': '10 mg / 160 mg 28 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-2.jpg',
-                                'alt': 'Product 2',
-                                'title': 'Dymista Nasal Spray',
-                                'dosage': '137 mcg / 50 mcg 1 bottle',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-3.jpg',
-                                'alt': 'Product 3',
-                                'title': 'Glucophage',
-                                'dosage': '1000 mg - 120 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-1.png',
-                                'alt': 'Product 1',
-                                'title': 'Exforge',
-                                'dosage': '10 mg / 160 mg 28 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-2.jpg',
-                                'alt': 'Product 2',
-                                'title': 'Dymista Nasal Spray',
-                                'dosage': '137 mcg / 50 mcg 1 bottle',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-3.jpg',
-                                'alt': 'Product 3',
-                                'title': 'Glucophage',
-                                'dosage': '1000 mg - 120 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-1.png',
-                                'alt': 'Product 1',
-                                'title': 'Exforge',
-                                'dosage': '10 mg / 160 mg 28 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-2.jpg',
-                                'alt': 'Product 2',
-                                'title': 'Dymista Nasal Spray',
-                                'dosage': '137 mcg / 50 mcg 1 bottle',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                            <div class="col-span-3">
-                                @@include('components/Product-Card.html', {
-                                'style': '',
-                                'link': '#',
-                                'img': 'img/Product-3.jpg',
-                                'alt': 'Product 3',
-                                'title': 'Glucophage',
-                                'dosage': '1000 mg - 120 tabs',
-                                'oldPrice': '$120.99',
-                                'price': '$109.99',
-                                })
-                            </div>
-                        </div>
+                        </form>
                     </div>
+                    <div class="col-span-2 xl:col-span-1 lg:hidden"></div>
                 </div>
             </div>
         </div>
