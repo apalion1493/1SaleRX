@@ -55,7 +55,7 @@
                                      })
 
                                      <button @click="mobileFilter = !mobileFilter" :aria-expanded="mobileFilter"
-                                             class="minlg:hidden text-none w-10 min-w-10 h-10 flex items-center justify-center rounded-[3px] overflow-hidden ml-3 border border-super-light-grey" type="button" aria-label="Mob button filter">
+                                             class="mobileFilterButton minlg:hidden text-none w-10 min-w-10 h-10 flex items-center justify-center rounded-[3px] overflow-hidden ml-3 border border-super-light-grey" type="button" aria-label="Mob button filter">
                                          Filter
                                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                              <path d="M9.5 7V6.5H9H3C2.72386 6.5 2.5 6.27614 2.5 6C2.5 5.72386 2.72386 5.5 3 5.5H9H9.5V5V4C9.5 3.72386 9.72386 3.5 10 3.5C10.2761 3.5 10.5 3.72386 10.5 4V8C10.5 8.27614 10.2761 8.5 10 8.5C9.72386 8.5 9.5 8.27614 9.5 8V7ZM15 11.5H15.5V11V10.012C15.5 9.73586 15.7239 9.512 16 9.512C16.2761 9.512 16.5 9.73586 16.5 10.012V14C16.5 14.2761 16.2761 14.5 16 14.5C15.7239 14.5 15.5 14.2761 15.5 14V13V12.5H15H3C2.72386 12.5 2.5 12.2761 2.5 12C2.5 11.7239 2.72386 11.5 3 11.5H15ZM5 17.5H5.5V17V16C5.5 15.7239 5.72386 15.5 6 15.5C6.27614 15.5 6.5 15.7239 6.5 16V20C6.5 20.2761 6.27614 20.5 6 20.5C5.72386 20.5 5.5 20.2761 5.5 20V19V18.5H5H3C2.72386 18.5 2.5 18.2761 2.5 18C2.5 17.7239 2.72386 17.5 3 17.5H5ZM13.5 6C13.5 5.72386 13.7239 5.5 14 5.5H21C21.2761 5.5 21.5 5.72386 21.5 6C21.5 6.27614 21.2761 6.5 21 6.5H14C13.7239 6.5 13.5 6.27614 13.5 6ZM9.5 18C9.5 17.7239 9.72386 17.5 10 17.5H21C21.2761 17.5 21.5 17.7239 21.5 18C21.5 18.2761 21.2761 18.5 21 18.5H10C9.72386 18.5 9.5 18.2761 9.5 18ZM19.5 12C19.5 11.7239 19.7239 11.5 20 11.5H21C21.2761 11.5 21.5 11.7239 21.5 12C21.5 12.2761 21.2761 12.5 21 12.5H20C19.7239 12.5 19.5 12.2761 19.5 12Z" fill="#C4C4C4" stroke="#AAAAAA"/>
@@ -141,7 +141,7 @@
                                 <div class="w-[330px] min-w-[330px] h-full max-h-svh bg-white flex flex-col py-6 px-4 overflow-y-scroll">
                                     <div class="flex items-center justify-between pb-6">
                                         <h2 class="text-H2 font-semibold">Categories</h2>
-                                        <button class="close-mob-menu" @click="mobileFilter = false">
+                                        <button class="close-mob-menu-filter" @click="mobileFilter = false">
                                             <i class="Cross-black-icon"></i>
                                         </button>
                                     </div>
@@ -213,7 +213,7 @@
                                         })
                                     </div>
                                 </div>
-                                <div @click="mobileFilter = false" class="w-full h-full max-h-svh bg-grey-3 menu-overlay"></div>
+                                <div @click="mobileFilter = false" class="w-full h-full max-h-svh bg-grey-3 menu-overlay-filter"></div>
                             </div>
                         </div>
                     </div>

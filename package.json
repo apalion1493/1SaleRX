@@ -54,6 +54,7 @@
 		"@alpinejs/resize": "^3.14.1",
 		"@splidejs/splide": "^4.1.4",
 		"@splidejs/splide-extension-grid": "^0.4.1",
-		"alpinejs": "^3.14.1"
+		"alpinejs": "^3.14.1",
+		"swiper": "^11.1.9"
 	}
 }
