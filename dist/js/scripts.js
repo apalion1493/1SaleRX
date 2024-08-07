@@ -3420,18 +3420,6 @@ focus-trap/dist/focus-trap.esm.js:
 window.addEventListener('DOMContentLoaded', () => {
     console.log('Loaded Scripts')
 
-    // const swiperGreed = new Swiper(".mySwiper3", {
-    //     slidesPerView: 3,
-    //     grid: {
-    //         rows: 2,
-    //     },
-    //     spaceBetween: 32,
-    //     pagination: {
-    //         el: ".swiper-pagination",
-    //         clickable: true,
-    //     },
-    // });
-
     const swiper = new Swiper(".mySwiper", {
         spaceBetween: 16,
         slidesPerView: 3,
@@ -3444,6 +3432,105 @@ window.addEventListener('DOMContentLoaded', () => {
             swiper: swiper,
         },
     });
+
+    const splide = new Splide('.splide', {
+        grid: {
+            rows: 2,
+            cols: 3,
+            gap: {
+                row: '2rem',
+                col: '2rem',
+            },
+        },
+        breakpoints: {
+            1024: {
+                grid: {
+                    rows: 2,
+                    cols: 2,
+                },
+            },
+            768: {
+                grid: {
+                    rows: 3,
+                    cols: 1,
+                },
+            }
+        },
+    });
+
+    splide.on('pagination:mounted', function (data) {
+        // Вы можете добавить свой класс к UL элементу
+        data.list.classList.add('splide__pagination--custom');
+
+        function updatePagination() {
+            const totalPages = data.items.length;
+            const activePage = splide.index; // текущая активная страница
+
+            // Скрываем все элементы пагинации
+            data.items.forEach(item => {
+                item.li.style.display = 'none';
+            });
+
+            // Удаляем все существующие элементы троеточий
+            const existingDots = document.querySelectorAll('.splide__pagination-dots');
+            existingDots.forEach(dot => dot.remove());
+
+            if (totalPages > 4) {
+                if (activePage < 3) {
+                    // Отображаем первые 3 элемента пагинации
+                    for (let i = 0; i < 3; i++) {
+                        data.items[i].li.style.display = 'inline-block';
+                    }
+                    // Добавляем "..." между 3-м и последним элементом пагинации
+                    const dots = document.createElement('li');
+                    dots.textContent = '...';
+                    dots.classList.add('splide__pagination-dots');
+                    data.list.insertBefore(dots, data.items[totalPages - 1].li);
+                } else {
+                    // Добавляем "..." перед 2-й активной страницей
+                    if (activePage > 1) {
+                        const dotsBefore = document.createElement('li');
+                        dotsBefore.textContent = '...';
+                        dotsBefore.classList.add('splide__pagination-dots');
+                        data.list.insertBefore(dotsBefore, data.items[1].li);
+                    }
+
+                    // Отображаем текущую активную страницу, 1 страницу перед ней и 1 после нее
+                    for (let i = Math.max(activePage - 1, 0); i <= Math.min(activePage + 1, totalPages - 1); i++) {
+                        data.items[i].li.style.display = 'inline-block';
+                    }
+
+                    // Добавляем "..." перед последним элементом пагинации
+                    if (activePage < totalPages - 2) {
+                        const dotsAfter = document.createElement('li');
+                        dotsAfter.textContent = '...';
+                        dotsAfter.classList.add('splide__pagination-dots');
+                        data.list.insertBefore(dotsAfter, data.items[totalPages - 1].li);
+                    }
+                }
+                // Отображаем последний элемент пагинации
+                data.items[totalPages - 1].li.style.display = 'inline-block';
+            } else {
+                // Если страниц 3 или меньше, отображаем все элементы пагинации
+                data.items.forEach(item => {
+                    item.li.style.display = 'inline-block';
+                });
+            }
+        }
+
+        // `items` содержит все элементы точек
+        data.items.forEach(function (item) {
+            item.button.textContent = String(item.page + 1);
+        });
+
+        // Первоначальное обновление пагинации
+        updatePagination();
+
+        // Обновление пагинации при смене слайда
+        splide.on('move', updatePagination);
+    });
+
+    splide.mount(window.splide.Extensions);
 
 
 })

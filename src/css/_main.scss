@@ -125,7 +125,7 @@
 .pagination-button {
   $this: &;
 
-  &--disabled {
+  &--disabled, &:disabled {
     cursor: auto;
     pointer-events: none;
 
@@ -206,3 +206,72 @@
     @apply flex bg-cover bg-right-bottom bg-no-repeat;
   }
 }
+
+// Splide slider Start
+.splide-testimonials {
+  .splide__pagination {
+
+    @media (max-width: 767.98px) {
+      @apply gap-x-1
+    }
+
+    @apply gap-x-5
+  }
+
+  .splide__pagination__page {
+
+    @media (max-width: 360px) {
+      @apply w-8 h-8 mb-2
+    }
+
+    &.is-active {
+      @apply bg-primary text-yellow scale-100 opacity-100
+    }
+
+    @apply w-10 h-10 flex items-center justify-center rounded-full bg-transparent opacity-100 text-primary text-Body4 font-semibold
+  }
+
+  .splide__list {
+    padding: 1px !important;
+  }
+
+  .splide__list > .splide__slide {
+    margin-right: 32px;
+    padding-left: 2px;
+    padding-right: 2px;
+  }
+
+  .splide__arrow {
+    top: auto;
+    bottom: -9px;
+    border: 1px solid;
+
+    $this: &;
+
+    .pagination-button--arrow {
+      @apply hidden
+    }
+
+    .pagination-button--arrow-red {
+      @apply block
+    }
+
+    &:disabled {
+      cursor: auto;
+      pointer-events: none;
+
+      .pagination-button--arrow {
+        @apply block
+      }
+
+      .pagination-button--arrow-red {
+        @apply hidden
+      }
+
+      @apply opacity-100 border-light-grey;
+    }
+
+    @apply flex items-center justify-center opacity-100 text-none size-10 border rounded-full border-red bg-transparent;
+  }
+}
+// Splide slider End
