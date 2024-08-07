@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .loaded {
+            opacity: 1
+        }
+    </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Product Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <style>
+        .loader-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .loader {
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.1s forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.1s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     setTimeout(() => {
+        //         const loader = document.getElementById('loader');
+        //         const content = document.getElementById('content');
+        //         const body = document.querySelector('body');
+        //         loader.classList.add('fade-out');
+        //         loader.addEventListener('animationend', () => {
+        //             loader.classList.add('hidden');
+        //             content.classList.remove('hidden');
+        //             body.classList.remove('loader-wrapper')
+        //
+        //             content.classList.add('fade-in');
+        //         }, { once: true });
+        //     }, 500);
+        // });
+
+    </script>
+</head>
+
+<body class=""> <!--loader-wrapper-->
+<!--    <div id="loader" class="loader w-16 h-16">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><radialGradient id="a12" cx=".66" fx=".66" cy=".3125" fy=".3125" gradientTransform="scale(1.5)"><stop offset="0" stop-color="#FF3F56"></stop><stop offset=".3" stop-color="#FF3F56" stop-opacity=".9"></stop><stop offset=".6" stop-color="#FF3F56" stop-opacity=".6"></stop><stop offset=".8" stop-color="#FF3F56" stop-opacity=".3"></stop><stop offset="1" stop-color="#FF3F56" stop-opacity="0"></stop></radialGradient><circle transform-origin="center" fill="none" stroke="url(#a12)" stroke-width="15" stroke-linecap="round" stroke-dasharray="200 1000" stroke-dashoffset="0" cx="100" cy="100" r="70"><animateTransform type="rotate" attributeName="transform" calcMode="spline" dur="2" values="360;0" keyTimes="0;1" keySplines="0 0 1 1" repeatCount="indefinite"></animateTransform></circle><circle transform-origin="center" fill="none" opacity=".2" stroke="#FF3F56" stroke-width="15" stroke-linecap="round" cx="100" cy="100" r="70"></circle></svg>-->
+<!--    </div>-->
+<main id="content" class="flex flex-col items-center min-h-screen">
+    <header x-data="{ mobileMenuIsOpen: false }" class="w-full bg-white  ">
+    <div class="minlg:hidden border-b border-super-light-grey">
+        <div class="container overflow-hidden ">
+            <div class="grid grid-cols-12">
+                <div class="col-span-12 flex items-center justify-center pb-2 pt-3 px-2">
+                    <div class="flex items-center gap-x-5">
+                        <i class="Telephone-icon"></i>
+                        <div class="flex flex-col items-start gap-y-1">
+                            <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                            <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636 - 123 - 4567</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="border-b border-super-light-grey py-[27px] lg:border-0">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8 md:gap-x-0 relative">
+                <div class="lg:col-span-3 md:col-span-2 minlg:hidden flex items-center">
+                    <button @click="mobileMenuIsOpen = !mobileMenuIsOpen" :aria-expanded="mobileMenuIsOpen"
+                            aria-label="Menu burger"
+                            id='burger-button'
+                            class='flex flex-col items-center justify-center w-6 h-6 min-w-6 text-white minlg:hidden z-[31] relative gap-y-1'>
+                                <span
+                                        :class="mobileMenuIsOpen ? 'rotate-45 transform translate-y-[6px]' : 'translate-y-0'"
+                                        class="block w-6 h-[2px] bg-light-grey transition-all duration-300 rounded-full"></span>
+                        <span :class="mobileMenuIsOpen ? 'opacity-0' : 'opacity-100'"
+                              class="block w-6 h-[2px] bg-light-grey transition-opacity duration-300 rounded-full"></span>
+                        <span
+                                :class="mobileMenuIsOpen ? '-rotate-45 transform -translate-y-[6px]' : 'translate-y-0'"
+                                class="block w-6 h-[2px] bg-light-grey transition-all duration-300 rounded-full"></span>
+                    </button>
+                </div>
+                <div class="col-span-2 xl:col-span-3 lg:col-span-6 md:col-span-8 flex items-center justify-center">
+                    <a class="md:max-w-[160px]" href="index.html">
+                        <img src="img/Main-logo.svg" alt="1SaleRx Logo">
+                    </a>
+                </div>
+                <div class="col-span-8 xl:col-span-6 lg:col-span-3 md:col-span-2 flex items-center h-[56px]">
+                    <div x-data="{ query: '', results: [1, 2, 3], showResults: false, showForm: false }"
+                         @click.away="showResults = false, showForm = false "
+                         class='flex flex-col w-full z-[100] minlg:relative' :class='showForm ? "lg:absolute lg:top-0 lg:right-0" : "relative"'>
+                        <label for="Id-4" class="text-none absolute -z-10">Search</label>
+                        <form :class='showForm ? "border" : "lg:border-0"'
+                                class='flex items-center rounded-[40px] bg-white w-full h-[45px] lg:h-14 border border-light-grey overflow-hidden pl-5 pr-2 relative'>
+                            <div :class='showForm ? "" : "lg:hidden"' class="w-full transition-all">
+                                <input x-ref="inputField" type="search" id="Id-4" name="Search bar" placeholder="Search..."
+                                       x-model="query" @input.debounce.300="fetchResults" @focus="showResults = true, showForm = true"
+                                       class="input w-full bg-white border-0 focus:ring-0 focus:border-0 text-Body3 outline-none p-0 pr-10 leading-8 transition-colors duration-200 ease-in-out">
+                                <button type="button" x-show="query.length > 0" @click="query = ''"
+                                        aria-label="Clear search button"
+                                        class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 p-3 hover:text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"
+                                         fill="none">
+                                        <path
+                                                d="M10.2616 0.318046L6.00014 4.57951L1.73867 0.318046C1.31253 -0.108101 0.744331 -0.108101 0.318185 0.318046C-0.107962 0.744192 -0.107962 1.31239 0.318185 1.73853L4.57965 6L0.318185 10.2615C-0.107962 10.6876 -0.107962 11.2558 0.318185 11.682C0.744331 12.1081 1.31253 12.1081 1.73867 11.682L6.00014 7.42049L10.2616 11.682C10.6878 12.1081 11.2559 12.1081 11.6821 11.682C12.1082 11.2558 12.1082 10.6876 11.6821 10.2615L7.42063 6L11.6821 1.73853C12.1082 1.31239 12.1082 0.744192 11.6821 0.318046C11.2559 -0.108101 10.6878 -0.108101 10.2616 0.318046Z"
+                                                fill="#19181B"/>
+                                    </svg>
+                                </button>
+                            </div>
+                            <button @click="$refs.inputField.focus(); showForm = true" type="button" x-show="!query.length > 0" aria-label="Search button"
+                                    class="px-5 inline-flex items-center justify-center ml-auto absolute top-1/2 -translate-y-1/2 right-0 z-30 lg:p-0 lg:w-10 lg:h-10">
+                                <i class='Search-icon block'></i>
+                            </button>
+                        </form>
+                        <div style="display: none" x-show="showResults && query.length > 0"
+                             class="absolute top-full mt-2 p-5 w-full bg-white border shadow-color-1 border-grey-2 rounded-lg shadow-shadow-2 z-10">
+                            <ul class="flex flex-col gap-y-4">
+                                <template x-for="result in results" :key="">
+                                    <li class="text-Body3 cursor-pointer" @click="selectResult(result)">
+                                        <span x-text="result.title"></span>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-span-2 xl:col-span-3 flex items-center lg:hidden">
+                    <div class="flex items-center gap-x-5">
+                        <i class="Telephone-icon"></i>
+                        <div class="flex flex-col items-start gap-y-1">
+                            <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                            <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636
+                                123 - 4567</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container overflow-hidden lg:hidden">
+        <div class="grid grid-cols-12 gap-x-8">
+            <div class="col-span-12">
+                <nav class="pt-4 mega-menu">
+                    <ul class="flex items-center gap-x-8">
+                        <li class="mega-menu__items active pb-[18px] ">
+                            <a class="flex items-center gap-x-2" href="index.html">
+                                <i class="Home-icon"></i>
+                                <span class="text-Body">Home</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="Products.html">
+                                <i class="Products-icon"></i>
+                                <span class="text-Body">Products</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="AboutUs.html">
+                                <i class="About-icon"></i>
+                                <span class="text-Body">About Us</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="FAQ.html">
+                                <i class="FAQ-icon"></i>
+                                <span class="text-Body">FAQ</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="ContactUs.html">
+                                <i class="Contact-icon"></i>
+                                <span class="text-Body">Contact Us</span>
+                            </a>
+                        </li>
+                        <li class="mega-menu__line">
+                            <span class="h-[30px] border-l border-super-light-grey block"></span>
+                        </li>
+                        <li class="mega-menu__items pb-[18px]">
+                            <a class="flex items-center gap-x-2" href="Blog.html">
+                                <i class="Blog-icon"></i>
+                                <span class="text-Body">Blog</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div id='mobile-menu' class="relative z-[1000]">
+        <div style="display: none" x-cloak x-show="mobileMenuIsOpen"
+             x-transition:enter="transition motion-reduce:transition-none ease-out duration-300"
+             x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0"
+             x-transition:leave="transition motion-reduce:transition-none ease-out duration-300"
+             x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" id="mobileMenu"
+             class="fixed max-h-svh overflow-x-auto inset-x-0 top-0 z-[32] flex w-full h-full minlg:hidden items-center">
+            <div class="w-[330px] min-w-[330px] h-full max-h-svh bg-white flex flex-col pt-6 pb-8 overflow-y-scroll">
+                <nav class="flex flex-col mb-10">
+                    <div class="flex items-center justify-between pb-6 px-4">
+                        <a href="index.html" class="max-w-[160px]">
+                            <img src="img/Main-logo.svg" alt="1SaleRx Logo">
+                        </a>
+                        <button class="close-mob-menu" @click="mobileMenuIsOpen = false">
+                            <i class="Cross-black-icon"></i>
+                        </button>
+                    </div>
+                    <ul class="flex flex-col border-t border-super-light-grey">
+                        <li class="px-4 py-5 border-b border-super-light-grey">
+                            <a class="flex items-center gap-x-2 font-semibold" href="index.html">
+                                <i class="Home-icon"></i>
+                                <span class="text-Body">Home</span>
+                            </a>
+                        </li>
+                        <li class="px-4 py-5 border-b border-super-light-grey">
+                            <a class="flex items-center gap-x-2" href="Products.html">
+                                <i class="Products-icon"></i>
+                                <span class="text-Body">Products</span>
+                            </a>
+                        </li>
+                        <li class="px-4 py-5 border-b border-super-light-grey">
+                            <a class="flex items-center gap-x-2" href="AboutUs.html">
+                                <i class="About-icon"></i>
+                                <span class="text-Body">About Us</span>
+                            </a>
+                        </li>
+                        <li class="px-4 py-5 border-b border-super-light-grey">
+                            <a class="flex items-center gap-x-2" href="FAQ.html">
+                                <i class="FAQ-icon"></i>
+                                <span class="text-Body">FAQ</span>
+                            </a>
+                        </li>
+                        <li class="px-4 py-5 border-b border-super-light-grey">
+                            <a class="flex items-center gap-x-2" href="ContactUs.html">
+                                <i class="Contact-icon"></i>
+                                <span class="text-Body">Contact Us</span>
+                            </a>
+                        </li>
+                        <li class="px-4 py-5 border-b border-super-light-grey">
+                            <a class="flex items-center gap-x-2" href="Blog.html">
+                                <i class="Blog-icon"></i>
+                                <span class="text-Body">Blog</span>
+                            </a>
+                        </li>
+                        <li class="px-4 py-8 border-b border-super-light-grey">
+                            <ul class="flex flex-col gap-y-6">
+                                <li>
+                                    <a class="text-grey text-Body3" href="Disclaimers.html">Disclaimers</a>
+                                </li>
+                                <li>
+                                    <a class="text-grey text-Body3" href="TermsOfUse.html">Terms of Use</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="mt-auto px-4">
+                    <div class="flex items-center gap-x-5">
+                        <i class="Telephone-icon"></i>
+                        <div class="flex flex-col items-start gap-y-1">
+                            <span class="uppercase text-grey text-Body8">SUPPORT CLIENT</span>
+                            <a class="font-semibold text-Body transition hover:text-yellow" href="tel:+16361234567">636 - 123 - 4567</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div @click="mobileMenuIsOpen = false" class="w-full h-full max-h-svh bg-grey-3 menu-overlay"></div>
+        </div>
+    </div>
+</header>
+
+    <section class="py-6">
+        <div class="container">
+            <nav class="text-Body8 md:text-Body6 text-light-grey" aria-label="breadcrumb">
+                <ol class="flex flex-wrap items-center gap-x-2">
+                    <li class="flex items-center">
+                        <a href="index.html" class="text-none">
+                            <i class="Home-icon-small"></i>
+                            Home
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center">
+                        <a href="index.html" class="">
+                            Products
+                        </a>
+                    </li>
+                    <li class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="2" height="2" viewBox="0 0 2 2" fill="none">
+                            <circle cx="1" cy="1" r="1" fill="#C4C4C4"/>
+                        </svg>
+                    </li>
+                    <li class="flex items-center" aria-current="page">Actos</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container lg:px-0">
+            <div class="bg-white py-12 px-0 lg:px-4 rounded">
+                <div class="grid grid-cols-12 gap-x-8 lg:gap-x-0">
+                    <div class="col-span-1 lg:hidden"></div>
+                    <div class="col-span-10 lg:col-span-12">
+                        <div class="flex flex-col mb-4">
+                            <div class="flex items-center justify-start mb-5 ">
+                                <div class="flex items-center justify-start md:flex-col md:items-start md:mr-2">
+                                    <h1 class="text-H1 font-semibold inline-flex mr-2 md:text-H1Mob md:leading-6">Actos</h1>
+                                    <span class="inline-flex gap-x-2 text-grey text-Body md:text-Body3 mt-2"><span class="md:hidden">/</span>30mg,&nbsp;&nbsp;28 tabs</span>
+                                </div>
+                                <div class="flex items-center ml-auto">
+                                    <span class="block mr-5 text-grey text-Body6 md:hidden">Share</span>
+                                    <ul class="flex items-center gap-x-3 md:gap-x-2">
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] md:w-[40px] md:min-w-[40px] md:h-[40px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="twitter-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] md:w-[40px] md:min-w-[40px] md:h-[40px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="telegram-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] md:w-[40px] md:min-w-[40px] md:h-[40px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="instagram-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="w-[30px] min-w-[30px] h-[30px] md:w-[40px] md:min-w-[40px] md:h-[40px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="Facebook-icon"></i>
+                                            </a>
+                                        </li>
+                                        <li class="md:hidden">
+                                            <a class="w-[30px] min-w-[30px] h-[30px] md:w-[40px] md:min-w-[40px] md:h-[40px] rounded-full overflow-hidden border border-light-grey flex items-center justify-center" target="_blank" href="#">
+                                                <i class="Share-icon"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-x-6">
+                                <span class="w-[82px] border-b-[5px] border-yellow"></span>
+                                <span class="w-full border-b border-super-light-grey"></span>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-8 xl:flex-col xl:gap-x-0">
+                            <div class="flex flex-col gap-y-20 md:gap-y-8">
+                                <div class="flex gap-x-8 md:flex-col md:gap-x-0 md:gap-y-8">
+                                    <div class="min-w-[225px] w-[225px] md:max-w-[343px] md:mx-auto md:w-full overflow-hidden">
+                                        <div class="swiper mySwiper2 mb-4">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="img/Main_Photo-product.png"  alt=""/>
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="img/hand-img.png" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="img/hand-img.png" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div thumbsSlider="" class="swiper mySwiper">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide">
+                                                    <img src="img/Main_Photo-product.png" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="img/hand-img.png" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                                                </div>
+                                                <div class="swiper-slide">
+                                                    <img src="https://swiperjs.com/demos/images/nature-10.jpg" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <div class="md:mb-8 md:flex md:items-center">
+                                            <div class="mb-10 flex items-center gap-x-2 text-Body md:mb-0">
+                                                <span class="font-semibold md:hidden">Price:</span>
+                                                <span class="text-grey line-through">$25.99</span>
+                                                <span class="font-semibold md:text-topTitle"><span class="text-yellow">$</span>25.99</span>
+                                            </div>
+                                            <div x-data="{ currentVal: 1, minVal: 0, maxVal: 1000, decimalPoints: 0, incrementAmount: 1 }" class="flex justify-center items-center gap-1 ml-auto border-[2px] rounded-full overflow-hidden border-yellow px-4 py-2 min-w-[96px] minmd:hidden">
+                                                <label for="counterInput" class="text-none">Items(s)</label>
+                                                <div @dblclick.prevent class="flex items-center">
+                                                    <button @click="currentVal = Math.max(minVal, currentVal - incrementAmount)" class="flex w-4 h-4 items-center justify-center" aria-label="subtract">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="2" viewBox="0 0 14 2" fill="none">
+                                                            <path d="M1 1H7H1ZM13 1H7H13Z" fill="#2E3436"/>
+                                                            <path d="M1 1H7H13" stroke="#2E3436" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </button>
+                                                    <input x-model="currentVal.toFixed(decimalPoints)" id="counterInput" type="text" class="h-6 max-w-[42px] mx-3 p-0 text-center text-primary border-0 outline-none focus:border-0 focus:outline-none" readonly />
+                                                    <button @click="currentVal = Math.min(maxVal, currentVal + incrementAmount)" class="flex w-4 h-4 items-center justify-center" aria-label="add">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                                            <path d="M1 7H7H1ZM13 7H7H13ZM7 7V1V7ZM7 7V13V7Z" fill="#2E3436"/>
+                                                            <path d="M1 7H7M7 7H13M7 7V1M7 7V13" stroke="#2E3436" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-col mb-10 md:mb-8">
+                                            <span class="text-Body font-semibold block mb-3 md:p-0">Select Option</span>
+                                            <div x-data="{
+        options: [
+            {
+                value: 'I am doctor',
+                label: 'I am doctor',
+            },
+            {
+                value: 'I am not doctor',
+                label: 'I am not doctor',
+            },
+            {
+                value: 'Im Sexy and I Know It',
+                label: 'Im Sexy and I Know It',
+            },
+        ],
+        isOpen: false,
+        openedWithKeyboard: false,
+        selectedOption: null,
+        setSelectedOption(option) {
+            this.selectedOption = option
+            this.isOpen = false
+            this.openedWithKeyboard = false
+            this.$refs.hiddenTextField.value = option.value
+        },
+        highlightFirstMatchingOption(pressedKey) {
+            const option = this.options.find((item) =>
+                item.label.toLowerCase().startsWith(pressedKey.toLowerCase()),
+            )
+            if (option) {
+                const index = this.options.indexOf(option)
+                const allOptions = document.querySelectorAll('.combobox-option')
+                if (allOptions[index]) {
+                    allOptions[index].focus()
+                }
+            }
+        },
+    }" class="w-full flex flex-col gap-1 gap-y-0"
+     x-on:keydown="highlightFirstMatchingOption($event.key)"
+     x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
+
+    <label class="mb-[6px] text-none mb-0 text-Body6" for="FilterOptionId"></label>
+    <div class="relative">
+
+        <!-- trigger button  -->
+        <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
+        border-super-light-grey bg-white px-3 py-2.5 text-grey transition rounded border"
+                aria-haspopup="listbox" aria-controls="industriesList"
+                x-on:click="isOpen = ! isOpen"
+                x-on:keydown.down.prevent="openedWithKeyboard = true"
+                x-on:keydown.enter.prevent="openedWithKeyboard = true"
+                x-on:keydown.space.prevent="openedWithKeyboard = true"
+                x-bind:aria-label="selectedOption ? selectedOption.value : 'Select Position'"
+                x-bind:aria-expanded="isOpen || openedWithKeyboard">
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
+            <!-- Chevron  -->
+            <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
+        </button>
+
+        <!-- hidden input to grab the selected value  -->
+        <input id="FilterOptionId" name="FilterOptionId" type="text" x-ref="hiddenTextField" hidden/>
+        <ul x-cloak x-show="isOpen || openedWithKeyboard" id="industriesList" class="absolute z-10 left-0 top-[50px]
+        flex max-h-44 w-full flex-col overflow-hidden overflow-y-auto border-slate-300 bg-white
+        rounded border"
+            role="listbox" aria-label="industries list"
+            x-on:click.outside="isOpen = false, openedWithKeyboard = false"
+            x-on:keydown.down.prevent="$focus.wrap().next()"
+            x-on:keydown.up.prevent="$focus.wrap().previous()"
+            x-transition x-trap="openedWithKeyboard">
+            <template x-for="(item, index) in options" x-bind:key="item.value">
+                <li class="combobox-option inline-flex cursor-pointer justify-between gap-6 bg-white
+                px-3 py-2.5 group
+                focus-visible:bg-slate-800/5 focus-visible:text-black
+                focus-visible:outline-none"
+                    role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
+                    x-bind:id="'option-' + index" tabindex="0">
+                    <!-- Label  -->
+                    <span x-bind:class="selectedOption == item ? 'text-primary' : null" class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <!-- Screen reader 'selected' indicator  -->
+                    <span class="sr-only" x-text="selectedOption == item ? 'selected' : null"></span>
+                    <!-- Checkmark  -->
+                    <svg x-cloak x-show="selectedOption == item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                    </svg>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+                                        </div>
+                                        <div class="flex flex-col">
+                                            <span class="text-Body font-semibold pb-3 block border-b border-super-light-grey mb-3 md:border-0 md:p-0">Description</span>
+                                            <p class="text-Body6 text-grey">Actos is a brand-name prescription drug. It’s FDA-approved to help control blood sugar levels in adults with type 2 diabetes. This is a condition in which where your body has a high level of glucose (sugar) in your blood. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <form class="minxl:hidden flex flex-col gap-y-6 w-full ml-auto border-b py-8 border-super-light-grey">
+                                    <div class="pt-8 border-t border-super-light-grey w-full">
+                                        <div class="flex flex-col gap-y-2 mb-6">
+                                            <span class="font-semibold text-H2">Get the product!</span>
+                                            <p class="text-grey text-base">Make sure your prescription is active</p>
+                                        </div>
+                                        <div class="flex flex-col gap-y-4">
+                                            <div class="form-group flex flex-col items-start ">
+    <label class="mb-[6px] text-Body6" for="ID1">Full Name <span class="text-red">*</span></label>
+    <input
+        class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
+        focus:shadow-none focus:ring-0 focus:border-super-light-grey border-super-light-grey py-2.5 px-3
+         md:text-body6 h-10  "
+        type="text" id="ID1" placeholder="">
+    <small class="self-end text-Body8 text-red mt-1 block">Name is required</small>
+</div>
+                                            <div class="form-group flex flex-col items-start ">
+    <label class="mb-[6px] text-Body6" for="ID2">Email <span class="text-red">*</span></label>
+    <input
+        class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
+        focus:shadow-none focus:ring-0 focus:border-super-light-grey border-super-light-grey py-2.5 px-3
+         md:text-body6 h-10  "
+        type="email" id="ID2" placeholder="">
+    <small class="self-end text-Body8 text-red mt-1 hidden">Name is required</small>
+</div>
+                                            <div class="form-group flex flex-col items-start ">
+    <label class="mb-[6px] text-Body6" for="ID3">Phone Number <span class="text-red">*</span></label>
+    <input
+        class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
+        focus:shadow-none focus:ring-0 focus:border-super-light-grey border-super-light-grey py-2.5 px-3
+         md:text-body6 h-10  "
+        type="text" id="ID3" placeholder="">
+    <small class="self-end text-Body8 text-red mt-1 hidden">Name is required</small>
+</div>
+                                            <div x-data="{
+        options: [
+            {
+                value: 'State 1',
+                label: 'State 1'
+            },
+            {
+                value: 'State 2',
+                label: 'State 2'
+            },
+            {
+                value: 'State 3',
+                label: 'State 3'
+            }
+        ],
+        isOpen: false,
+        openedWithKeyboard: false,
+        selectedOption: null,
+        setSelectedOption(option) {
+            this.selectedOption = option
+            this.isOpen = false
+            this.openedWithKeyboard = false
+            this.$refs.hiddenTextField.value = option.value
+        },
+        highlightFirstMatchingOption(pressedKey) {
+            const option = this.options.find((item) =>
+                item.label.toLowerCase().startsWith(pressedKey.toLowerCase()),
+            )
+            if (option) {
+                const index = this.options.indexOf(option)
+                const allOptions = document.querySelectorAll('.combobox-option')
+                if (allOptions[index]) {
+                    allOptions[index].focus()
+                }
+            }
+        }
+    }" class="w-full flex flex-col @@style"
+     x-on:keydown="highlightFirstMatchingOption($event.key)"
+     x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/XSL/Transform">
+
+    <label class="mb-[6px] text-Body6" for="FilterStateId">Select State <span class="text-red">*</span></label>
+    <div class="relative">
+
+        <!-- trigger button  -->
+        <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
+        border-super-light-grey bg-white px-3 py-2.5 text-grey
+        transition rounded border @@styleInput"
+                aria-haspopup="listbox" aria-controls="industriesList"
+                x-on:click="isOpen = ! isOpen"
+                x-on:keydown.down.prevent="openedWithKeyboard = true"
+                x-on:keydown.enter.prevent="openedWithKeyboard = true"
+                x-on:keydown.space.prevent="openedWithKeyboard = true"
+                x-bind:aria-label="selectedOption ? selectedOption.value : 'State'"
+                x-bind:aria-expanded="isOpen || openedWithKeyboard">
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'State'"></span>
+            <!-- Chevron  -->
+            <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
+        </button>
+
+        <!-- hidden input to grab the selected value  -->
+        <input id="FilterStateId" name="FilterStateId" type="text" x-ref="hiddenTextField" hidden/>
+        <ul x-cloak x-show="isOpen || openedWithKeyboard" id="industriesList" class="absolute z-10 left-0 top-[50px]
+        flex max-h-44 w-full flex-col overflow-hidden overflow-y-auto border-slate-300 bg-white
+        rounded border"
+            role="listbox" aria-label="industries list"
+            x-on:click.outside="isOpen = false, openedWithKeyboard = false"
+            x-on:keydown.down.prevent="$focus.wrap().next()"
+            x-on:keydown.up.prevent="$focus.wrap().previous()"
+            x-transition x-trap="openedWithKeyboard">
+            <template x-for="(item, index) in options" x-bind:key="item.value">
+                <li class="combobox-option inline-flex cursor-pointer justify-between gap-6 bg-white
+                px-3 py-2.5 group
+                focus-visible:bg-slate-800/5 focus-visible:text-black
+                focus-visible:outline-none"
+                    role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
+                    x-bind:id="'option-' + index" tabindex="0">
+                    <!-- Label  -->
+                    <span x-bind:class="selectedOption === item ? 'text-primary' : null"
+                          class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <!-- Screen reader 'selected' indicator  -->
+                    <span class="sr-only" x-text="selectedOption === item ? 'selected' : null"></span>
+                    <!-- Checkmark  -->
+                    <svg x-cloak x-show="selectedOption === item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                    </svg>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+                                            <div x-data="{
+        options: [
+            {
+                value: 'I am doctor',
+                label: 'I am doctor',
+            },
+            {
+                value: 'I am not doctor',
+                label: 'I am not doctor',
+            },
+            {
+                value: 'Im Sexy and I Know It',
+                label: 'Im Sexy and I Know It',
+            },
+        ],
+        isOpen: false,
+        openedWithKeyboard: false,
+        selectedOption: null,
+        setSelectedOption(option) {
+            this.selectedOption = option
+            this.isOpen = false
+            this.openedWithKeyboard = false
+            this.$refs.hiddenTextField.value = option.value
+        },
+        highlightFirstMatchingOption(pressedKey) {
+            const option = this.options.find((item) =>
+                item.label.toLowerCase().startsWith(pressedKey.toLowerCase()),
+            )
+            if (option) {
+                const index = this.options.indexOf(option)
+                const allOptions = document.querySelectorAll('.combobox-option')
+                if (allOptions[index]) {
+                    allOptions[index].focus()
+                }
+            }
+        },
+    }" class="w-full flex flex-col gap-1 @@style"
+     x-on:keydown="highlightFirstMatchingOption($event.key)"
+     x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
+
+    <label class="mb-[6px]  text-Body6" for="FilterPositionId">Select Position <span class="text-red">*</span></label>
+    <div class="relative">
+
+        <!-- trigger button  -->
+        <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
+        border-super-light-grey bg-white px-3 py-2.5 text-grey transition rounded border"
+                aria-haspopup="listbox" aria-controls="industriesList"
+                x-on:click="isOpen = ! isOpen"
+                x-on:keydown.down.prevent="openedWithKeyboard = true"
+                x-on:keydown.enter.prevent="openedWithKeyboard = true"
+                x-on:keydown.space.prevent="openedWithKeyboard = true"
+                x-bind:aria-label="selectedOption ? selectedOption.value : 'Select Position'"
+                x-bind:aria-expanded="isOpen || openedWithKeyboard">
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
+            <!-- Chevron  -->
+            <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
+        </button>
+
+        <!-- hidden input to grab the selected value  -->
+        <input id="FilterPositionId" name="FilterPositionId" type="text" x-ref="hiddenTextField" hidden/>
+        <ul x-cloak x-show="isOpen || openedWithKeyboard" id="industriesList" class="absolute z-10 left-0 top-[50px]
+        flex max-h-44 w-full flex-col overflow-hidden overflow-y-auto border-slate-300 bg-white
+        rounded border"
+            role="listbox" aria-label="industries list"
+            x-on:click.outside="isOpen = false, openedWithKeyboard = false"
+            x-on:keydown.down.prevent="$focus.wrap().next()"
+            x-on:keydown.up.prevent="$focus.wrap().previous()"
+            x-transition x-trap="openedWithKeyboard">
+            <template x-for="(item, index) in options" x-bind:key="item.value">
+                <li class="combobox-option inline-flex cursor-pointer justify-between gap-6 bg-white
+                px-3 py-2.5 group
+                focus-visible:bg-slate-800/5 focus-visible:text-black
+                focus-visible:outline-none"
+                    role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
+                    x-bind:id="'option-' + index" tabindex="0">
+                    <!-- Label  -->
+                    <span x-bind:class="selectedOption == item ? 'text-primary' : null" class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <!-- Screen reader 'selected' indicator  -->
+                    <span class="sr-only" x-text="selectedOption == item ? 'selected' : null"></span>
+                    <!-- Checkmark  -->
+                    <svg x-cloak x-show="selectedOption == item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                    </svg>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col">
+    <label class="custom-checkbox">
+        <span class="custom-checkbox__block">
+            <i class="Check-box-inactive-icon"></i>
+        </span>
+        <input type="checkbox">
+        <span class="checkmark">
+             <i class="Check-box-active-icon"></i>
+        </span>
+        <span class="ml-3 text-Body6 ">I have read and agree to the Terms</span>
+    </label>
+    <small class="text-Body8 text-red mt-3 ">Please confirm that you agree</small>
+</div>
+                                    <button class="button flex w-full" type="submit" aria-label="Get Deal">
+    <span class="font-medium uppercase">Get Deal</span>
+</button>
+                                </form>
+                                <div x-data="{ selectedTab: 'groups', scrollToSection(id) { document.getElementById(id).scrollIntoView({ behavior: 'smooth' }); } }" class="mb-6 flex flex-col">
+                                    <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex items-end gap-x-12 md:hidden">
+                                        <button @click="selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelGroups">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                  <path :class="selectedTab === 'groups' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M10.0003 9.58317V13.7498M10.0003 6.25817L10.0087 6.249M10.0003 18.3332C14.6028 18.3332 18.3337 14.6023 18.3337 9.99984C18.3337 5.39734 14.6028 1.6665 10.0003 1.6665C5.39783 1.6665 1.66699 5.39734 1.66699 9.99984C1.66699 14.6023 5.39783 18.3332 10.0003 18.3332Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">Drug info</span>
+                                        </button>
+                                        <button @click="selectedTab = 'likes'" :aria-selected="selectedTab === 'likes'" :tabindex="selectedTab === 'likes' ? '0' : '-1'" :class="selectedTab === 'likes' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelLikes">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                  <path :class="selectedTab === 'likes' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M9.95956 6.66675V10.0001M9.95956 13.3418L9.96789 13.3326M9.60623 1.18675C9.69998 1.09312 9.82706 1.04053 9.95956 1.04053C10.0921 1.04053 10.2191 1.09312 10.3129 1.18675L18.7729 9.64675C18.8665 9.7405 18.9191 9.86759 18.9191 10.0001C18.9191 10.1326 18.8665 10.2597 18.7729 10.3534L10.3129 18.8134C10.2191 18.9071 10.0921 18.9596 9.95956 18.9596C9.82706 18.9596 9.69998 18.9071 9.60623 18.8134L1.14623 10.3534C1.05259 10.2597 1 10.1326 1 10.0001C1 9.86759 1.05259 9.7405 1.14623 9.64675L9.60623 1.18675Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">Side Effects</span>
+                                        </button>
+                                        <button @click="selectedTab = 'comments'" :aria-selected="selectedTab === 'comments'" :tabindex="selectedTab === 'comments' ? '0' : '-1'" :class="selectedTab === 'comments' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelComments">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                  <path :class="selectedTab === 'comments' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M8.91895 17C13.3373 17 16.9189 13.4184 16.9189 9C16.9189 4.5816 13.3373 1 8.91895 1C4.50055 1 0.918945 4.5816 0.918945 9C0.918945 13.4184 4.50055 17 8.91895 17Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  <path :class="selectedTab === 'comments' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M6.51953 6.6C6.51953 3.8 10.9195 3.8 10.9195 6.6C10.9195 8.6 8.91953 8.2 8.91953 10.6M8.91953 13.808L8.92753 13.7992" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">FAQ</span>
+                                        </button>
+                                        <button @click="selectedTab = 'saved'" :aria-selected="selectedTab === 'saved'" :tabindex="selectedTab === 'saved' ? '0' : '-1'" :class="selectedTab === 'saved' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center py-2 text-sm" type="button" role="tab" aria-controls="tabpanelSaved">
+                                            <span class="mr-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                                                  <path :class="selectedTab === 'saved' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M9.25228 18.3332C13.8548 18.3332 17.5856 14.6023 17.5856 9.99984C17.5856 5.39734 13.8548 1.6665 9.25228 1.6665C4.64978 1.6665 0.918945 5.39734 0.918945 9.99984C0.918945 14.6023 4.64978 18.3332 9.25228 18.3332Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  <path :class="selectedTab === 'saved' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M11.752 7.08301C11.1811 6.51217 10.1761 6.11551 9.25195 6.09051M9.25195 6.09051C8.15195 6.06051 7.16862 6.55801 7.16862 7.91634C7.16862 10.4163 11.752 9.16634 11.752 11.6663C11.752 13.0922 10.532 13.7047 9.25195 13.6588M9.25195 6.09051V4.58301M6.75195 12.4997C7.28862 13.2163 8.28779 13.6247 9.25195 13.6588M9.25195 13.6588V15.4163" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </span>
+                                            <span class="text-Body">How to buy</span>
+                                        </button>
+                                    </div>
+                                    <div class="flex items-center mb-6 md:hidden">
+                                        <span class="w-[110px] min-w-[110px] border-b-[5px] border-yellow"></span>
+                                        <span class="w-full border-b border-super-light-grey"></span>
+                                    </div>
+                                    <div>
+                                        <div @keydown.right.prevent="$focus.wrap().next()" @keydown.left.prevent="$focus.wrap().previous()" class="flex flex-col md:gap-y-5">
+                                            <div class="flex flex-col">
+                                                <button @click.prevent="scrollToSection('tabpanelGroups'); selectedTab = 'groups'" :aria-selected="selectedTab === 'groups'" :tabindex="selectedTab === 'groups' ? '0' : '-1'" :class="selectedTab === 'groups' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelGroups">
+                                                    <span :class="selectedTab === 'groups' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
+                                                        <span class="mr-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                              <path :class="selectedTab === 'groups' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M10.0003 9.58317V13.7498M10.0003 6.25817L10.0087 6.249M10.0003 18.3332C14.6028 18.3332 18.3337 14.6023 18.3337 9.99984C18.3337 5.39734 14.6028 1.6665 10.0003 1.6665C5.39783 1.6665 1.66699 5.39734 1.66699 9.99984C1.66699 14.6023 5.39783 18.3332 10.0003 18.3332Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-Body">Drug info</span>
+                                                    </span>
+                                                    <span :class="selectedTab === 'groups' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
+                                                </button>
+                                                <div x-show="selectedTab === 'groups'" id="tabpanelGroups" role="tabpanel" aria-label="groups" class="flex gap-x-8 md:pt-8 md:flex-col md:gap-x-0">
+                                                    <div class="flex flex-col min-w-[128px] md:mb-8">
+                                                        <div class="minmd:sticky minmd:top-3">
+                                                            <span class="inline-flex mb-6 text-Body font-semibold pb-2 border-b border-dashed border-yellow">Quick Links</span>
+                                                            <ul class=" flex flex-col gap-y-2">
+                                                                <li>
+                                                                    <a class="text-grey text-Body6" href="#Id-1">Overview</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="text-grey text-Body6" href="#Id-2">What is actos?</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="text-grey text-Body6" href="#Id-3">FAQs about Actos</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <span class="border-r border-dashed border-light-grey md:hidden"></span>
+                                                    <ul class="flex flex-col w-full">
+                                                        <li id="Id-1" class="pb-8 md:pb-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                            <div class="w-full overflow-hidden text-slate-700">
+                                                                <div class="w-full overflow-hidden text-slate-700">
+                                                                    <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                         x-resize.document="isMobile = $width"
+                                                                         class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                        <button id="controlsAccordionItemOne" type="button"
+                                                                                class="flex w-full items-center justify-between pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                                aria-controls="accordionItemOne"
+                                                                                @click="isMobile < 768 ? isExpanded = !isExpanded : null"
+                                                                                :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                            <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 md:border-0 border-b border-dashed border-yellow">Overview</span>
+                                                                            <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
+                                                                        </button>
+                                                                        <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItemOne" role="region"
+                                                                             aria-labelledby="controlsAccordionItemOne" x-collapse class="md:pt-5">
+                                                                            <div class="flex items-start">
+                                                                                <p class="text-Body6 md:text-Body">Actos (pioglitazone) is an add-on medication to diet and exercise to control blood sugar in people with type 2 diabetes.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li id="Id-2" class="py-8 md:py-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                            <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                 x-resize.document="isMobile = $width"
+                                                                 class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                <button id="controlsAccordionItem2" type="button"
+                                                                        class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                        aria-controls="accordionItem2"
+                                                                        @click="isMobile < 768 ? isExpanded = !isExpanded : null"
+                                                                        :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                    <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">What is Actos?</span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
+                                                                </button>
+                                                                <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem2" role="region"
+                                                                     aria-labelledby="controlsAccordionItem2" x-collapse class="md:pt-5">
+                                                                    <div class="flex flex-col items-start gap-y-4">
+                                                                        <p class="text-Body6">How Actos (pioglitazone) works?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">Actos (pioglitazone) is a thiazolidinedione that improves your body's ability to use insulin to lower your blood sugar</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <p class="text-Body6">What is Actos (pioglitazone) used for?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">Type 2 diabetes</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <p class="text-Body6">Actos (pioglitazone) dosage forms:</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">15mg</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p class="text-Body6">30mg</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p class="text-Body6">45mg</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p class="text-Body6">tablet</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li id="Id-3" class="py-8 md:py-2 md:border-0 border-0 border-super-light-grey flex flex-col items-start gap-y-4">
+                                                            <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                 x-resize.document="isMobile = $width"
+                                                                 class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                <button id="controlsAccordionItem3" type="button"
+                                                                        class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                        aria-controls="accordionItem3"
+                                                                        @click="isMobile < 768 ? isExpanded = !isExpanded : null"
+                                                                        :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                   <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
+                                                                       FAQs about Actos
+                                                                   </span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
+                                                                </button>
+                                                                <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem3" role="region"
+                                                                     aria-labelledby="controlsAccordionItem3" x-collapse class="md:pt-5">
+                                                                    <div class="flex flex-col items-start gap-y-4">
+                                                                        <p class="text-Body6">Can you take metformin and Actos (pioglitazone) together?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">Metformin and Actos (pioglitazone) can be used together along with diet and exercise to control blood sugar in adults with type 2 diabetes.</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <p class="text-Body6">How quickly does Actos (pioglitazone) work?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">It may take several weeks to lower your blood sugar and 2 to 3 months for you to see the full effect of Actos (pioglitazone).</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <button @click.prevent="selectedTab = 'likes'; scrollToSection('tabpanelLikes')" :aria-selected="selectedTab === 'likes'" :tabindex="selectedTab === 'likes' ? '0' : '-1'" :class="selectedTab === 'likes' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelLikes">
+                                                    <span :class="selectedTab === 'likes' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
+                                                        <span class="mr-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                              <path :class="selectedTab === 'likes' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M9.95956 6.66675V10.0001M9.95956 13.3418L9.96789 13.3326M9.60623 1.18675C9.69998 1.09312 9.82706 1.04053 9.95956 1.04053C10.0921 1.04053 10.2191 1.09312 10.3129 1.18675L18.7729 9.64675C18.8665 9.7405 18.9191 9.86759 18.9191 10.0001C18.9191 10.1326 18.8665 10.2597 18.7729 10.3534L10.3129 18.8134C10.2191 18.9071 10.0921 18.9596 9.95956 18.9596C9.82706 18.9596 9.69998 18.9071 9.60623 18.8134L1.14623 10.3534C1.05259 10.2597 1 10.1326 1 10.0001C1 9.86759 1.05259 9.7405 1.14623 9.64675L9.60623 1.18675Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-Body">Side Effects</span>
+                                                    </span>
+                                                    <span :class="selectedTab === 'likes' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
+                                                </button>
+                                                <div x-show="selectedTab === 'likes'" id="tabpanelLikes" role="tabpanel" aria-label="likes" class="flex gap-x-8 md:pt-8 md:flex-col md:gap-x-0">
+                                                    <div class="flex flex-col min-w-[128px] md:mb-8">
+                                                        <div class="minmd:sticky minmd:top-3">
+                                                            <span class="inline-flex mb-6 text-Body font-semibold pb-2 border-b border-dashed border-yellow">Quick Links</span>
+                                                            <ul class=" flex flex-col gap-y-2">
+                                                                <li>
+                                                                    <a class="text-grey text-Body6" href="#Id-41">Overview</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="text-grey text-Body6" href="#Id-5">What is actos?</a>
+                                                                </li>
+                                                                <li>
+                                                                    <a class="text-grey text-Body6" href="#Id-6">FAQs about Actos</a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <span class="border-r border-dashed border-light-grey md:hidden"></span>
+                                                    <ul class="flex flex-col w-full">
+                                                        <li id="Id-41" class="pb-8 md:pb-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                            <div class="w-full overflow-hidden text-slate-700">
+                                                                <div class="w-full overflow-hidden text-slate-700">
+                                                                    <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                         x-resize.document="isMobile = $width"
+                                                                         class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                        <button id="controlsAccordionItem4" type="button"
+                                                                                class="flex w-full items-center justify-between pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                                aria-controls="accordionItem4"
+                                                                                @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                                :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                            <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 md:border-0 border-b border-dashed border-yellow">Overview</span>
+                                                                            <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
+                                                                        </button>
+                                                                        <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem4" role="region"
+                                                                             aria-labelledby="controlsAccordionItem4" x-collapse class="md:pt-5">
+                                                                            <div class="flex items-start">
+                                                                                <p class="text-Body6 md:text-Body">Actos (pioglitazone) is an add-on medication to diet and exercise to control blood sugar in people with type 2 diabetes.</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li id="Id-5" class="py-8 md:py-2 md:border-0 border-b border-super-light-grey flex flex-col items-start gap-y-4">
+                                                            <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                 x-resize.document="isMobile = $width"
+                                                                 class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                <button id="controlsAccordionItem5" type="button"
+                                                                        class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                        aria-controls="accordionItem5"
+                                                                        @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                        :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                    <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">What is Actos?</span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
+                                                                </button>
+                                                                <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem5" role="region"
+                                                                     aria-labelledby="controlsAccordionItem5" x-collapse class="md:pt-5">
+                                                                    <div class="flex flex-col items-start gap-y-4">
+                                                                        <p class="text-Body6">How Actos (pioglitazone) works?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">Actos (pioglitazone) is a thiazolidinedione that improves your body's ability to use insulin to lower your blood sugar</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <p class="text-Body6">What is Actos (pioglitazone) used for?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">Type 2 diabetes</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <p class="text-Body6">Actos (pioglitazone) dosage forms:</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">15mg</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p class="text-Body6">30mg</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p class="text-Body6">45mg</p>
+                                                                            </li>
+                                                                            <li>
+                                                                                <p class="text-Body6">tablet</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li id="Id-6" class="py-8 md:py-2 md:border-0 border-0 border-super-light-grey flex flex-col items-start gap-y-4">
+                                                            <div x-data="{ isExpanded: false, isMobile: 0 }"
+                                                                 x-resize.document="isMobile = $width"
+                                                                 class="md:border border-super-light-grey rounded w-full md:p-5">
+                                                                <button id="controlsAccordionItem6" type="button"
+                                                                        class="flex w-full items-center pb-4 md:pb-0 text-left underline-offset-2 font-semibold text-Body"
+                                                                        aria-controls="accordionItem6"
+                                                                        @click="isMobile < 768 ? isExpanded = ! isExpanded : null"
+                                                                        :aria-expanded="isExpanded ? 'true' : 'false'">
+                                                                   <span class="inline-flex text-Body font-semibold pb-2 md:pb-0 border-b md:border-0 border-dashed border-yellow">
+                                                                       FAQs about Actos
+                                                                   </span>
+                                                                    <i :class="isExpanded ? 'rotate-180' : ''" class="minmd:hidden ml-auto Drop-down-icon transition"></i>
+                                                                </button>
+                                                                <div x-cloak x-show="isExpanded || isMobile > 768" id="accordionItem6" role="region"
+                                                                     aria-labelledby="controlsAccordionItem6" x-collapse class="md:pt-5">
+                                                                    <div class="flex flex-col items-start gap-y-4">
+                                                                        <p class="text-Body6">Can you take metformin and Actos (pioglitazone) together?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">Metformin and Actos (pioglitazone) can be used together along with diet and exercise to control blood sugar in adults with type 2 diabetes.</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <p class="text-Body6">How quickly does Actos (pioglitazone) work?</p>
+                                                                        <ul class="font-semibold list-disc pl-6">
+                                                                            <li>
+                                                                                <p class="text-Body6">It may take several weeks to lower your blood sugar and 2 to 3 months for you to see the full effect of Actos (pioglitazone).</p>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <button @click.prevent="selectedTab = 'comments'; scrollToSection('tabpanelComments');" :aria-selected="selectedTab === 'comments'" :tabindex="selectedTab === 'comments' ? '0' : '-1'" :class="selectedTab === 'comments' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelComments">
+                                                    <span :class="selectedTab === 'comments' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
+                                                        <span class="mr-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                                              <path :class="selectedTab === 'comments' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M8.91895 17C13.3373 17 16.9189 13.4184 16.9189 9C16.9189 4.5816 13.3373 1 8.91895 1C4.50055 1 0.918945 4.5816 0.918945 9C0.918945 13.4184 4.50055 17 8.91895 17Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                              <path :class="selectedTab === 'comments' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M6.51953 6.6C6.51953 3.8 10.9195 3.8 10.9195 6.6C10.9195 8.6 8.91953 8.2 8.91953 10.6M8.91953 13.808L8.92753 13.7992" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-Body">FAQ</span>
+                                                    </span>
+                                                    <span :class="selectedTab === 'comments' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
+                                                </button>
+                                                <div x-show="selectedTab === 'comments'" id="tabpanelComments" role="tabpanel" aria-label="comments" class="flex gap-x-8 md:pt-8 md:flex-col md:gap-x-0">
+                                                    <b><a href="#" class="underline">Comments</a></b> tab is selected
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col">
+                                                <button @click.prevent="selectedTab = 'saved'; scrollToSection('tabpanelSaved');" :aria-selected="selectedTab === 'saved'" :tabindex="selectedTab === 'saved' ? '0' : '-1'" :class="selectedTab === 'saved' ? 'text-primary ' : 'text-light-grey'" class="flex h-min items-center pt-2 text-sm minmd:hidden border-b border-super-light-grey w-full" type="button" role="tab" aria-controls="tabpanelSaved">
+                                                    <span :class="selectedTab === 'saved' ? 'border-yellow' : 'border-transparent'" class="border-b-[5px] inline-flex items-center pb-2">
+                                                        <span class="mr-1">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="20" viewBox="0 0 19 20" fill="none">
+                                                              <path :class="selectedTab === 'saved' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M9.25228 18.3332C13.8548 18.3332 17.5856 14.6023 17.5856 9.99984C17.5856 5.39734 13.8548 1.6665 9.25228 1.6665C4.64978 1.6665 0.918945 5.39734 0.918945 9.99984C0.918945 14.6023 4.64978 18.3332 9.25228 18.3332Z" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                              <path :class="selectedTab === 'saved' ? 'stroke-yellow ' : 'stroke-light-grey'" d="M11.752 7.08301C11.1811 6.51217 10.1761 6.11551 9.25195 6.09051M9.25195 6.09051C8.15195 6.06051 7.16862 6.55801 7.16862 7.91634C7.16862 10.4163 11.752 9.16634 11.752 11.6663C11.752 13.0922 10.532 13.7047 9.25195 13.6588M9.25195 6.09051V4.58301M6.75195 12.4997C7.28862 13.2163 8.28779 13.6247 9.25195 13.6588M9.25195 13.6588V15.4163" stroke="none" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                                                            </svg>
+                                                        </span>
+                                                        <span class="text-Body">How to buy</span>
+                                                    </span>
+                                                    <span :class="selectedTab === 'saved' ? 'Minus-gold-icon' : 'Plus-icon'" class="ml-auto mb-3"></span>
+                                                </button>
+                                                <div x-show="selectedTab === 'saved'" id="tabpanelSaved" role="tabpanel" aria-label="saved" class="flex gap-x-8 md:pt-8 md:flex-col md:gap-x-0">
+                                                    <b><a href="#" class="underline">Saved</a></b> tab is selected
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="xl:hidden flex flex-col gap-y-6 w-[365px] min-w-[365px] ml-auto">
+                                <div class="p-6 border rounded border-super-light-grey w-full">
+                                    <div class="flex flex-col gap-y-2 mb-6">
+                                        <span class="font-semibold text-H2">Get the product!</span>
+                                        <p class="text-grey text-base">Make sure your prescription is active</p>
+                                    </div>
+                                    <div class="flex flex-col gap-y-4">
+                                        <div class="form-group flex flex-col items-start ">
+    <label class="mb-[6px] text-Body6" for="ID1">Full Name <span class="text-red">*</span></label>
+    <input
+        class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
+        focus:shadow-none focus:ring-0 focus:border-super-light-grey border-super-light-grey py-2.5 px-3
+         md:text-body6 h-10  "
+        type="text" id="ID1" placeholder="">
+    <small class="self-end text-Body8 text-red mt-1 block">Name is required</small>
+</div>
+                                        <div class="form-group flex flex-col items-start ">
+    <label class="mb-[6px] text-Body6" for="ID2">Email <span class="text-red">*</span></label>
+    <input
+        class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
+        focus:shadow-none focus:ring-0 focus:border-super-light-grey border-super-light-grey py-2.5 px-3
+         md:text-body6 h-10  "
+        type="email" id="ID2" placeholder="">
+    <small class="self-end text-Body8 text-red mt-1 hidden">Name is required</small>
+</div>
+                                        <div class="form-group flex flex-col items-start ">
+    <label class="mb-[6px] text-Body6" for="ID3">Phone Number <span class="text-red">*</span></label>
+    <input
+        class="input rounded text-primary bg-white border text-Body6 w-full focus:outline-0
+        focus:shadow-none focus:ring-0 focus:border-super-light-grey border-super-light-grey py-2.5 px-3
+         md:text-body6 h-10  "
+        type="text" id="ID3" placeholder="">
+    <small class="self-end text-Body8 text-red mt-1 hidden">Name is required</small>
+</div>
+                                        <div x-data="{
+        options: [
+            {
+                value: 'State 1',
+                label: 'State 1'
+            },
+            {
+                value: 'State 2',
+                label: 'State 2'
+            },
+            {
+                value: 'State 3',
+                label: 'State 3'
+            }
+        ],
+        isOpen: false,
+        openedWithKeyboard: false,
+        selectedOption: null,
+        setSelectedOption(option) {
+            this.selectedOption = option
+            this.isOpen = false
+            this.openedWithKeyboard = false
+            this.$refs.hiddenTextField.value = option.value
+        },
+        highlightFirstMatchingOption(pressedKey) {
+            const option = this.options.find((item) =>
+                item.label.toLowerCase().startsWith(pressedKey.toLowerCase()),
+            )
+            if (option) {
+                const index = this.options.indexOf(option)
+                const allOptions = document.querySelectorAll('.combobox-option')
+                if (allOptions[index]) {
+                    allOptions[index].focus()
+                }
+            }
+        }
+    }" class="w-full flex flex-col @@style"
+     x-on:keydown="highlightFirstMatchingOption($event.key)"
+     x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/XSL/Transform">
+
+    <label class="mb-[6px] text-Body6" for="FilterStateId">Select State <span class="text-red">*</span></label>
+    <div class="relative">
+
+        <!-- trigger button  -->
+        <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
+        border-super-light-grey bg-white px-3 py-2.5 text-grey
+        transition rounded border @@styleInput"
+                aria-haspopup="listbox" aria-controls="industriesList"
+                x-on:click="isOpen = ! isOpen"
+                x-on:keydown.down.prevent="openedWithKeyboard = true"
+                x-on:keydown.enter.prevent="openedWithKeyboard = true"
+                x-on:keydown.space.prevent="openedWithKeyboard = true"
+                x-bind:aria-label="selectedOption ? selectedOption.value : 'State'"
+                x-bind:aria-expanded="isOpen || openedWithKeyboard">
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'State'"></span>
+            <!-- Chevron  -->
+            <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
+        </button>
+
+        <!-- hidden input to grab the selected value  -->
+        <input id="FilterStateId" name="FilterStateId" type="text" x-ref="hiddenTextField" hidden/>
+        <ul x-cloak x-show="isOpen || openedWithKeyboard" id="industriesList" class="absolute z-10 left-0 top-[50px]
+        flex max-h-44 w-full flex-col overflow-hidden overflow-y-auto border-slate-300 bg-white
+        rounded border"
+            role="listbox" aria-label="industries list"
+            x-on:click.outside="isOpen = false, openedWithKeyboard = false"
+            x-on:keydown.down.prevent="$focus.wrap().next()"
+            x-on:keydown.up.prevent="$focus.wrap().previous()"
+            x-transition x-trap="openedWithKeyboard">
+            <template x-for="(item, index) in options" x-bind:key="item.value">
+                <li class="combobox-option inline-flex cursor-pointer justify-between gap-6 bg-white
+                px-3 py-2.5 group
+                focus-visible:bg-slate-800/5 focus-visible:text-black
+                focus-visible:outline-none"
+                    role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
+                    x-bind:id="'option-' + index" tabindex="0">
+                    <!-- Label  -->
+                    <span x-bind:class="selectedOption === item ? 'text-primary' : null"
+                          class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <!-- Screen reader 'selected' indicator  -->
+                    <span class="sr-only" x-text="selectedOption === item ? 'selected' : null"></span>
+                    <!-- Checkmark  -->
+                    <svg x-cloak x-show="selectedOption === item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                    </svg>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+                                        <div x-data="{
+        options: [
+            {
+                value: 'I am doctor',
+                label: 'I am doctor',
+            },
+            {
+                value: 'I am not doctor',
+                label: 'I am not doctor',
+            },
+            {
+                value: 'Im Sexy and I Know It',
+                label: 'Im Sexy and I Know It',
+            },
+        ],
+        isOpen: false,
+        openedWithKeyboard: false,
+        selectedOption: null,
+        setSelectedOption(option) {
+            this.selectedOption = option
+            this.isOpen = false
+            this.openedWithKeyboard = false
+            this.$refs.hiddenTextField.value = option.value
+        },
+        highlightFirstMatchingOption(pressedKey) {
+            const option = this.options.find((item) =>
+                item.label.toLowerCase().startsWith(pressedKey.toLowerCase()),
+            )
+            if (option) {
+                const index = this.options.indexOf(option)
+                const allOptions = document.querySelectorAll('.combobox-option')
+                if (allOptions[index]) {
+                    allOptions[index].focus()
+                }
+            }
+        },
+    }" class="w-full flex flex-col gap-1 @@style"
+     x-on:keydown="highlightFirstMatchingOption($event.key)"
+     x-on:keydown.esc.window="isOpen = false, openedWithKeyboard = false"
+     xmlns:x-on="http://www.w3.org/1999/xhtml" xmlns:x-bind="http://www.w3.org/1999/xhtml">
+
+    <label class="mb-[6px]  text-Body6" for="FilterPositionId">Select Position <span class="text-red">*</span></label>
+    <div class="relative">
+
+        <!-- trigger button  -->
+        <button type="button" role="combobox" class="inline-flex w-full items-center justify-between gap-2 whitespace-nowrap
+        border-super-light-grey bg-white px-3 py-2.5 text-grey transition rounded border"
+                aria-haspopup="listbox" aria-controls="industriesList"
+                x-on:click="isOpen = ! isOpen"
+                x-on:keydown.down.prevent="openedWithKeyboard = true"
+                x-on:keydown.enter.prevent="openedWithKeyboard = true"
+                x-on:keydown.space.prevent="openedWithKeyboard = true"
+                x-bind:aria-label="selectedOption ? selectedOption.value : 'Select Position'"
+                x-bind:aria-expanded="isOpen || openedWithKeyboard">
+            <span class="text-Body6 font-normal" x-text="selectedOption ? selectedOption.value : 'I am doctor'"></span>
+            <!-- Chevron  -->
+            <i :class="isOpen ? 'rotate-180' : ''" class="Drop-down-icon transition"></i>
+        </button>
+
+        <!-- hidden input to grab the selected value  -->
+        <input id="FilterPositionId" name="FilterPositionId" type="text" x-ref="hiddenTextField" hidden/>
+        <ul x-cloak x-show="isOpen || openedWithKeyboard" id="industriesList" class="absolute z-10 left-0 top-[50px]
+        flex max-h-44 w-full flex-col overflow-hidden overflow-y-auto border-slate-300 bg-white
+        rounded border"
+            role="listbox" aria-label="industries list"
+            x-on:click.outside="isOpen = false, openedWithKeyboard = false"
+            x-on:keydown.down.prevent="$focus.wrap().next()"
+            x-on:keydown.up.prevent="$focus.wrap().previous()"
+            x-transition x-trap="openedWithKeyboard">
+            <template x-for="(item, index) in options" x-bind:key="item.value">
+                <li class="combobox-option inline-flex cursor-pointer justify-between gap-6 bg-white
+                px-3 py-2.5 group
+                focus-visible:bg-slate-800/5 focus-visible:text-black
+                focus-visible:outline-none"
+                    role="option" x-on:click="setSelectedOption(item)" x-on:keydown.enter="setSelectedOption(item)"
+                    x-bind:id="'option-' + index" tabindex="0">
+                    <!-- Label  -->
+                    <span x-bind:class="selectedOption == item ? 'text-primary' : null" class="text-grey transition group-hover:text-primary" x-text="item.label"></span>
+                    <!-- Screen reader 'selected' indicator  -->
+                    <span class="sr-only" x-text="selectedOption == item ? 'selected' : null"></span>
+                    <!-- Checkmark  -->
+                    <svg x-cloak x-show="selectedOption == item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                         stroke="currentColor" fill="none" stroke-width="2" class="size-4" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/>
+                    </svg>
+                </li>
+            </template>
+        </ul>
+    </div>
+</div>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col">
+    <label class="custom-checkbox">
+        <span class="custom-checkbox__block">
+            <i class="Check-box-inactive-icon"></i>
+        </span>
+        <input type="checkbox">
+        <span class="checkmark">
+             <i class="Check-box-active-icon"></i>
+        </span>
+        <span class="ml-3 text-Body6 ">I have read and agree to the Terms</span>
+    </label>
+    <small class="text-Body8 text-red mt-3 ">Please confirm that you agree</small>
+</div>
+                                <button class="button flex w-full" type="submit" aria-label="Get Deal">
+    <span class="font-medium uppercase">Get Deal</span>
+</button>
+                            </form>
+                        </div>
+                        <div class="flex items-center justify-center w-full mt-14">
+                            <a class="w-full" href="#">
+                                <img class="w-full sm:hidden" src="img/Banner-product-1.png" alt="Banner 1">
+                                <img class="w-full minsm:hidden" src="img/Banner-product-2.png" alt="Banner 1 Mob">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-span-1 lg:hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="mb-14">
+        <div class="container lg:px-0">
+            <div class="p-8 md:px-4 bg-white lg:px-4 rounded">
+                <div class="grid grid-cols-12 gap-y-14">
+                    <div class="col-span-12">
+                        <div class="flex flex-col">
+                            <h1 class="text-H1 block mb-5 font-semibold md:text-H1Mob md:leading-6">Actos Testimonials</h1>
+                            <div class="flex items-center gap-x-6">
+                                <span class="w-[50px] border-b-[5px] border-yellow"></span>
+                                <span class="w-full border-b border-super-light-grey"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-span-12">
+                        <div class="grid grid-cols-12 gap-8 md:gap-x-0">
+                            <div class="col-span-4 lg:col-span-12">
+                                <div class="p-5 flex flex-col gap-y-5 outline-1 outline-dashed outline-light-grey rounded h-full max-h-[331px] @@style">
+    <div class="flex items-center gap-x-3 text-Body6 text-grey">
+        <div class="flex items-center gap-x-3 text-primary text-H2 font-semibold">
+            <i class="actos-icon"></i>
+            <span>Actos</span>
+        </div>
+        <span class="relative -top-[2px]">|</span>
+        <span>28tab</span>
+        <span class="relative -top-[2px]">|</span>
+        <span>30mg</span>
+    </div>
+    <div class="flex items-center gap-x-1">
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-super-light-grey" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+    </div>
+    <span class="font-semibold textH2">The service is exceptional!</span>
+    <p class="text-grey text-Body4 testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex, vitae scelerisque nisi hendrerit ac.
+    </p>
+    <div class="flex items-center justify-between w-full">
+        <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+        <span class="block w-full border-t border-grey-2"></span>
+    </div>
+    <div class="flex flex-col mt-auto">
+        <p class="mb-1 text-Body3">Maria Reineb</p>
+        <p class="flex items-center text-Body6 text-grey gap-x-2">
+            <span class="uppercase">NEW YORK</span>
+            <span class="relative -top-[2px]">|</span>
+            <span class="">07/01/2024</span>
+        </p>
+    </div>
+</div>
+                            </div>
+                            <div class="col-span-4 lg:col-span-12">
+                                <div class="p-5 flex flex-col gap-y-5 outline-1 outline-dashed outline-light-grey rounded h-full max-h-[331px] @@style">
+    <div class="flex items-center gap-x-3 text-Body6 text-grey">
+        <div class="flex items-center gap-x-3 text-primary text-H2 font-semibold">
+            <i class="actos-icon"></i>
+            <span>Actos</span>
+        </div>
+        <span class="relative -top-[2px]">|</span>
+        <span>28tab</span>
+        <span class="relative -top-[2px]">|</span>
+        <span>30mg</span>
+    </div>
+    <div class="flex items-center gap-x-1">
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-super-light-grey" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+    </div>
+    <span class="font-semibold textH2">Great Effect!</span>
+    <p class="text-grey text-Body4 testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.
+    </p>
+    <div class="flex items-center justify-between w-full">
+        <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+        <span class="block w-full border-t border-grey-2"></span>
+    </div>
+    <div class="flex flex-col mt-auto">
+        <p class="mb-1 text-Body3">Maria Reineb</p>
+        <p class="flex items-center text-Body6 text-grey gap-x-2">
+            <span class="uppercase">NEW YORK</span>
+            <span class="relative -top-[2px]">|</span>
+            <span class="">07/01/2024</span>
+        </p>
+    </div>
+</div>
+                            </div>
+                            <div class="col-span-4 lg:col-span-12">
+                                <div class="p-5 flex flex-col gap-y-5 outline-1 outline-dashed outline-light-grey rounded h-full max-h-[331px] @@style">
+    <div class="flex items-center gap-x-3 text-Body6 text-grey">
+        <div class="flex items-center gap-x-3 text-primary text-H2 font-semibold">
+            <i class="actos-icon"></i>
+            <span>Actos</span>
+        </div>
+        <span class="relative -top-[2px]">|</span>
+        <span>28tab</span>
+        <span class="relative -top-[2px]">|</span>
+        <span>30mg</span>
+    </div>
+    <div class="flex items-center gap-x-1">
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-yellow" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+        <svg class="fill-super-light-grey" xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19" fill="none">
+            <path d="M9.07088 0.612343C9.41462 -0.204115 10.5854 -0.204114 10.9291 0.612346L12.9579 5.43123C13.1029 5.77543 13.4306 6.01061 13.8067 6.0404L19.0727 6.45748C19.9649 6.52814 20.3267 7.62813 19.6469 8.2034L15.6348 11.5987C15.3482 11.8412 15.223 12.2218 15.3106 12.5843L16.5363 17.661C16.744 18.5211 15.7969 19.201 15.033 18.7401L10.5245 16.0196C10.2025 15.8252 9.7975 15.8252 9.47548 16.0196L4.96699 18.7401C4.20311 19.201 3.25596 18.5211 3.46363 17.661L4.68942 12.5843C4.77698 12.2218 4.65182 11.8412 4.36526 11.5987L0.353062 8.2034C-0.326718 7.62813 0.0350679 6.52814 0.927291 6.45748L6.19336 6.0404C6.5695 6.01061 6.89716 5.77543 7.04207 5.43123L9.07088 0.612343Z"/>
+        </svg>
+    </div>
+    <span class="font-semibold textH2">Best medicament!</span>
+    <p class="text-grey text-Body4 testimonial-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum a magna vel tincidunt. Nunc pellentesque ante ex.
+    </p>
+    <div class="flex items-center justify-between w-full">
+        <span class="block min-w-14 w-14 h-1 bg-yellow mr-3"></span>
+        <span class="block w-full border-t border-grey-2"></span>
+    </div>
+    <div class="flex flex-col mt-auto">
+        <p class="mb-1 text-Body3">Maria Reineb</p>
+        <p class="flex items-center text-Body6 text-grey gap-x-2">
+            <span class="uppercase">NEW YORK</span>
+            <span class="relative -top-[2px]">|</span>
+            <span class="">07/01/2024</span>
+        </p>
+    </div>
+</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white w-full mt-auto overflow-hidden">
+    <section class="pt-16 pb-[84px] md:pb-12 md:pt-10 relative @@style-subscribe">
+        <div class="container relative z-10">
+            <div class="grid grid-cols-12 gap-x-8 lg:gap-y-6 lg:gap-x-0">
+                <div class="col-span-6 lg:col-span-12 relative">
+                    <div class="absolute w-full max-w-[100%] top-0 right-0 footer-bg z-1 xl:bg-bottom lg:hidden"></div>
+                    <div class="max-w-[453px] flex flex-col relative z-2">
+                        <span class="block mb-6 text-H1 font-semibold md:text-H1Mob">SUBSCRIBE</span>
+                        <p class="pl-[36px] md:pl-4 border-l-[5px] border-yellow text-topTitle md:text-Body">To have new coupon lists <br> delivered directly to
+                            your inbox</p>
+                    </div>
+                </div>
+                <div class="col-span-6 lg:col-span-12 relative">
+                    <div class="flex flex-col gap-y-4 lg:gap-y-6 lg:gap-x-0">
+                        <p class="text-Body">We do not send spam or share your mail with third parties</p>
+                        <form class="flex items-center w-full md:flex-col md:gap-y-5">
+                            <label class="text-none hidden" for="subscribe-form">Subscribe</label>
+                            <input class="input h-[63px] md:h-[60px] text-Body3 w-full px-5 py-2.5 rounded-l bg-white border border-super-light-grey focus:ring-0 focus:border-super-light-grey outline-none"
+                                   id="subscribe-form" type="email" placeholder="Input you email and hit enter ...">
+                            <button class="h-[63px] md:h-[60px] md:w-full flex items-center justify-center uppercase bg-yellow font-semibold hover:bg-yellow-hover transition py-5 px-[30px] text-Body4"
+                                    type="submit">Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute w-full max-w-[100%] bottom-0 right-0 footer-bg z-1 lg:h-full lg:bg-contain lg:bg-bottom minlg:hidden"></div>
+    </section>
+    <section class="bg-dark py-8 text-white overflow-hidden">
+        <div class="container">
+            <div class="grid grid-cols-12 gap-x-8 md:gap-y-14 md:gap-x-0">
+                <div class="col-span-6 xl:col-span-7 lg:col-span-5 md:col-span-12 flex items-center lg:flex-col lg:items-start lg:gap-y-7 md:items-center">
+                    <a class="" href="index.html">
+                        <img class="w-[194px]" src="img/Main-logo-white.svg" alt="1SaleRX">
+                    </a>
+                    <p class="ml-16 lg:ml-0 text-Body3">1SaleRX &#169; All rights reserved</p>
+                </div>
+                <div class="col-span-6 xl:col-span-5 lg:col-span-7 md:col-span-12 flex">
+                    <ul class="flex items-center gap-x-8 ml-auto md:flex-col md:mx-auto md:gap-y-5">
+                        <li>
+                            <a class="text-base transition-color hover:text-yellow" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="Disclaimers.html">Disclaimers</a>
+                        </li>
+                        <li>
+                            <a class="text-base text-light-grey transition-color hover:text-yellow " href="TermsOfUse.html">Terms of
+                                Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+</main>
+
+<script src="./js/scripts.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('data', () => ({
+
+        }))
+    })
+
+    function fetchResults() {
+        this.results = []
+        if (this.query.length > 0) {
+            // Имитация поиска. Поменять на реальный API вызов или логику поиска.
+            this.results = [
+                {id: 1, title: 'Result 1'},
+                {id: 2, title: 'Result 2'},
+                {id: 3, title: 'Result 3'},
+            ]
+        }
+        this.showResults = this.results.length > 0
+    }
+
+    function selectResult(result) {
+        this.query = result.title
+        this.showResults = false
+    }
+
+
+</script>
+</body>
+
+</html>

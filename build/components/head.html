@@ -1,0 +1,77 @@
+<head>
+    <style>
+        .loaded {
+            opacity: 1
+        }
+    </style>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>@@title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <style>
+        .loader-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .loader {
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 0.1s forwards;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.1s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+
+    <script>
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     setTimeout(() => {
+        //         const loader = document.getElementById('loader');
+        //         const content = document.getElementById('content');
+        //         const body = document.querySelector('body');
+        //         loader.classList.add('fade-out');
+        //         loader.addEventListener('animationend', () => {
+        //             loader.classList.add('hidden');
+        //             content.classList.remove('hidden');
+        //             body.classList.remove('loader-wrapper')
+        //
+        //             content.classList.add('fade-in');
+        //         }, { once: true });
+        //     }, 500);
+        // });
+
+    </script>
+</head>

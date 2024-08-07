@@ -1,0 +1,19 @@
+<div x-data="{ isExpanded: true, isMobile: 0 }"
+     x-resize.document="isMobile = $width"
+     class="">
+    <button id="controlsAccordionItemOne" type="button"
+            class="flex w-full items-center py-6 text-left underline-offset-2 font-semibold text-Body"
+            aria-controls="accordionItemOne"
+            @click="isMobile < 1000 ? isExpanded = ! isExpanded : null"
+            :aria-expanded="isExpanded ? 'true' : 'false'">
+        <span class="inline-flex text-Body font-semibold pb-2 border-b border-dashed border-yellow">
+
+        </span>
+    </button>
+    <div x-cloak x-show="isExpanded || isMobile > 1000" id="accordionItemOne" role="region"
+         aria-labelledby="controlsAccordionItemOne" x-collapse>
+        <div class="flex items-start">
+
+        </div>
+    </div>
+</div>
