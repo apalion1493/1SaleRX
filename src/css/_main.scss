@@ -275,3 +275,32 @@
   }
 }
 // Splide slider End
+
+// Text Block Style Start
+.text-content-block {
+  p {
+    @apply text-Body3 md:text-Body6;
+  }
+
+  h2, h3, h4 {
+    @apply text-center mb-6 font-semibold text-Body
+  }
+
+  a {
+
+    &:hover {
+      @apply text-yellow
+    }
+
+    @apply underline transition-colors
+  }
+
+  ul {
+    @apply list-disc pl-5
+  }
+
+  ol {
+    @apply list-decimal pl-5
+  }
+}
+// Text Block Style End
